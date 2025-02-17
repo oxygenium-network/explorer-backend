@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ import sttp.client3.asynchttpclient.future.AsyncHttpClientFutureBackend
 import sttp.model.{Method, Uri}
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
-import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.explorer.OxygeniumFutures
 import org.oxygenium.json.Json._
 
 object HttpFixture {
@@ -132,7 +132,7 @@ trait HttpFixture {
 }
 
 @SuppressWarnings(Array("org.wartremover.warts.DefaultArguments"))
-trait HttpRouteFixture extends HttpFixture with BeforeAndAfterAll with AlephiumFutures {
+trait HttpRouteFixture extends HttpFixture with BeforeAndAfterAll with OxygeniumFutures {
   this: Suite =>
 
   def port: Int

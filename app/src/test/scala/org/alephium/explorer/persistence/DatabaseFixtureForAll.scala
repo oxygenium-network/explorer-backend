@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,12 +21,12 @@ import org.scalatest.{BeforeAndAfterAll, Suite}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.explorer.OxygeniumFutures
 
 /** Creates and drops a new database connection for all test-cases in a test class.
   */
 @SuppressWarnings(Array("org.wartremover.warts.PlatformDefault"))
-trait DatabaseFixtureForAll extends BeforeAndAfterAll with AlephiumFutures with StrictLogging {
+trait DatabaseFixtureForAll extends BeforeAndAfterAll with OxygeniumFutures with StrictLogging {
   this: Suite =>
 
   val dbName: String = getClass.getSimpleName.toLowerCase

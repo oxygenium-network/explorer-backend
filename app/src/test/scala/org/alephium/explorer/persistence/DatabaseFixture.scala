@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,12 +23,12 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.explorer.OxygeniumFutures
 import org.oxygenium.explorer.util.TestUtils._
 
 /** Implements functions for managing test database connections.
   */
-object DatabaseFixture extends AlephiumFutures {
+object DatabaseFixture extends OxygeniumFutures {
 
   lazy val cleanTablesQuery = DBInitializer.allTables.map { table =>
     s"DELETE FROM ${table.baseTableRow.tableName};"

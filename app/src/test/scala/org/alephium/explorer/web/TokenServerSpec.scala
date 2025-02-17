@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ import org.oxygenium.protocol.model.TokenId
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
 class TokenServerSpec()
-    extends AlephiumActorSpecLike
+    extends OxygeniumActorSpecLike
     with HttpServerFixture
     with DatabaseFixtureForAll {
 

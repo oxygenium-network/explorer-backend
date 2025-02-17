@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import scala.collection.immutable.ArraySeq
 import slick.jdbc.PostgresProfile.api._
 
 import org.oxygenium.api.model
-import org.oxygenium.explorer.AlephiumActorSpecLike
+import org.oxygenium.explorer.OxygeniumActorSpecLike
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreApi._
@@ -38,7 +38,7 @@ import org.oxygenium.explorer.util.SlickUtil._
 import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
-class HolderServiceSpec extends AlephiumActorSpecLike with DatabaseFixtureForEach {
+class HolderServiceSpec extends OxygeniumActorSpecLike with DatabaseFixtureForEach {
 
   "insert initial table" in new Fixture {
     val blocks = chainGen(4, TimeStamp.now(), ChainIndex.unsafe(0, 0)).sample.get

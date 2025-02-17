@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
 import org.oxygenium.api
 import org.oxygenium.api.model
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreApi._
@@ -46,7 +46,7 @@ import org.oxygenium.protocol.model.{CliqueId, ContractId, GroupIndex, NetworkId
 import org.oxygenium.util.AVector
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
-class BlockFlowClientSpec extends AlephiumFutureSpec with DatabaseFixtureForAll {
+class BlockFlowClientSpec extends OxygeniumFutureSpec with DatabaseFixtureForAll {
 
   val group                  = GroupIndex.Zero
   val localhost: InetAddress = InetAddress.getByName("127.0.0.1")
@@ -173,7 +173,7 @@ object BlockFlowClientSpec extends ScalaFutures with IntegrationPatience {
         route(getChainParams.serverLogicSuccess(_ => { (_: Unit) =>
           Future.successful(
             model.ChainParams(
-              NetworkId.AlephiumDevNet,
+              NetworkId.OxygeniumDevNet,
               18,
               groupSetting.groupNum,
               groupSetting.groupNum

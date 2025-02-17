@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ import scala.util.Random
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
@@ -30,7 +30,7 @@ import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.protocol.model.{Address, TransactionId}
 import org.oxygenium.util.TimeStamp
 
-class MempoolQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForAll with DBRunner {
+class MempoolQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForAll with DBRunner {
 
   /** Setup tests data for table [[MempoolTransactionSchema]]
     *

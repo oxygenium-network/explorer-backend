@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,11 +22,11 @@ import scala.concurrent.ExecutionContext
 
 import org.scalatest.concurrent.Eventually
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.error.ExplorerError._
 
 @SuppressWarnings(Array("org.wartremover.warts.ThreadSleep"))
-class ExecutionContextSpec extends AlephiumSpec with Eventually {
+class ExecutionContextSpec extends OxygeniumSpec with Eventually {
 
   "ExecutionContextUtil" should {
     val count = new AtomicInteger(0)

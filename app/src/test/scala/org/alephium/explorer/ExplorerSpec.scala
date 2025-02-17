@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -63,8 +63,8 @@ import org.oxygenium.protocol.model.{Address, BlockHash, CliqueId, GroupIndex, N
 import org.oxygenium.util.{AVector, Duration, Hex, TimeStamp, U256}
 
 trait ExplorerSpec
-    extends AlephiumActorSpecLike
-    with AlephiumFutureSpec
+    extends OxygeniumActorSpecLike
+    with OxygeniumFutureSpec
     with DatabaseFixtureForAll
     with HttpRouteFixture {
 
@@ -73,7 +73,7 @@ trait ExplorerSpec
 
   override val name: String = "ExploreSpec"
 
-  val networkId: NetworkId = NetworkId.AlephiumDevNet
+  val networkId: NetworkId = NetworkId.OxygeniumDevNet
 
   val txLimit = Pagination.defaultLimit
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,14 +22,14 @@ import org.scalacheck.Gen
 import org.scalatest.matchers.should.Matchers
 
 import org.oxygenium.api
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenCoreApi._
 import org.oxygenium.explorer.GenCoreProtocol._
 import org.oxygenium.protocol
 import org.oxygenium.serde._
 
 @SuppressWarnings(Array("org.wartremover.warts.AsInstanceOf"))
-class InputAddressUtilSpec extends AlephiumSpec with Matchers {
+class InputAddressUtilSpec extends OxygeniumSpec with Matchers {
 
   "addressFromProtocolInput" should {
     "convert P2PKH input into the right address" in {

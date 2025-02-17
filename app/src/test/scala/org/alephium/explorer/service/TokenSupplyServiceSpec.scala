@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.{AlephiumFutureSpec, GroupSetting}
+import org.oxygenium.explorer.{OxygeniumFutureSpec, GroupSetting}
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.api.model._
 import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
@@ -36,7 +36,7 @@ import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
-class TokenSupplyServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class TokenSupplyServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   implicit val gs: GroupSetting = GroupSetting(1)
 

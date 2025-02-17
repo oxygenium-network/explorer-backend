@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -31,13 +31,13 @@ import sttp.tapir.CodecFormat.TextPlain
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
 import org.oxygenium.api.{alphJsonBody => jsonBody}
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.api.BaseEndpoint
 import org.oxygenium.explorer.config.ExplorerConfig
 import org.oxygenium.explorer.web.Server
 import org.oxygenium.json.Json._
 
-class MarketServiceSpec extends AlephiumFutureSpec {
+class MarketServiceSpec extends OxygeniumFutureSpec {
   import MarketServiceSpec._
 
   "return error when not started" in new Fixture {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,11 +18,11 @@ package org.oxygenium.explorer.persistence
 
 import scala.util._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.config.BootMode
 
 /** Temporary placeholder. These tests should be merged into ApplicationSpec */
-class DatabaseSpec extends AlephiumFutureSpec with DatabaseFixtureForEach {
+class DatabaseSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach {
 
   "initialiseDatabase" should {
     "successfully connect" when {

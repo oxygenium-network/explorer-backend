@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ package org.oxygenium.explorer.persistence.queries
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
@@ -30,7 +30,7 @@ import org.oxygenium.explorer.persistence.schema.OutputSchema
 import org.oxygenium.explorer.util.SlickExplainUtil._
 import org.oxygenium.util.TimeStamp
 
-class OutputQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class OutputQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "insert and ignore outputs" in {
 

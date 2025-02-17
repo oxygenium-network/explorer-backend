@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import scala.concurrent.duration._
 import org.scalacheck.Gen
 import sttp.model.Uri
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenApiModel.mempooltransactionGen
 import org.oxygenium.explorer.api.model.MempoolTransaction
 import org.oxygenium.explorer.persistence.DatabaseFixtureForEach
@@ -31,7 +31,7 @@ import org.oxygenium.explorer.persistence.dao.MempoolDao
 import org.oxygenium.explorer.util.Scheduler
 import org.oxygenium.explorer.util.TestUtils._
 
-class MempoolSyncServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach {
+class MempoolSyncServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach {
 
   "start/sync/stop" in new Fixture {
     using(Scheduler("test")) { implicit scheduler =>

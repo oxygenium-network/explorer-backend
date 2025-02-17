@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import scala.concurrent.duration._
 import org.scalacheck.{Arbitrary, Gen}
 import sttp.model.Uri
 
-/** Generators for types supplied by libraries outside Alephium eg: java or scala packages */
+/** Generators for types supplied by libraries outside Oxygenium eg: java or scala packages */
 @SuppressWarnings(Array("org.wartremover.warts.DefaultArguments"))
 object GenCommon {
 

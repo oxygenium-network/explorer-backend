@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.api.model._
@@ -33,7 +33,7 @@ import org.oxygenium.protocol.model.{ChainIndex, GroupIndex}
 import org.oxygenium.util._
 
 class TransactionHistoryServiceSpec
-    extends AlephiumFutureSpec
+    extends OxygeniumFutureSpec
     with DatabaseFixtureForEach
     with DBRunner {
 

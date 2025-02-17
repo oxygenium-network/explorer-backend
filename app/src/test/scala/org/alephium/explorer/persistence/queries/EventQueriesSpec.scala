@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import org.scalacheck.Gen
 import org.scalatest.concurrent.ScalaFutures
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreProtocol.transactionHashGen
@@ -34,7 +34,7 @@ import org.oxygenium.explorer.persistence.queries.EventQueries
 import org.oxygenium.explorer.persistence.schema.EventSchema
 
 class EventQueriesSpec
-    extends AlephiumFutureSpec
+    extends OxygeniumFutureSpec
     with DatabaseFixtureForEach
     with DBRunner
     with ScalaFutures {

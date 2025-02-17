@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-trait AlephiumSpec
+trait OxygeniumSpec
     extends AnyWordSpec
     with ImplicitConversions
     with ScalaCheckDrivenPropertyChecks
@@ -66,8 +66,8 @@ trait AlephiumSpec
   // scalastyle:on
 }
 
-trait AlephiumFutures extends ScalaFutures with Eventually with IntegrationPatience {
+trait OxygeniumFutures extends ScalaFutures with Eventually with IntegrationPatience {
   implicit def executionContext: ExecutionContext = ExecutionContext.Implicits.global
 }
 
-trait AlephiumFutureSpec extends AlephiumSpec with AlephiumFutures
+trait OxygeniumFutureSpec extends OxygeniumSpec with OxygeniumFutures

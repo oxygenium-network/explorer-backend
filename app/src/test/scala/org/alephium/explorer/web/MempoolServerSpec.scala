@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package org.oxygenium.explorer.web
 
 import org.scalacheck.Gen
 
-import org.oxygenium.explorer.{AlephiumActorSpecLike, HttpServerFixture}
+import org.oxygenium.explorer.{OxygeniumActorSpecLike, HttpServerFixture}
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.HttpFixture._
 import org.oxygenium.explorer.api.model._
@@ -27,7 +27,7 @@ import org.oxygenium.explorer.persistence.dao.MempoolDao
 
 @SuppressWarnings(Array("org.wartremover.warts.ThreadSleep", "org.wartremover.warts.Var"))
 class MempoolServerSpec()
-    extends AlephiumActorSpecLike
+    extends OxygeniumActorSpecLike
     with HttpServerFixture
     with DatabaseFixtureForAll {
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package org.oxygenium.explorer.service
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
 import org.oxygenium.explorer.persistence.model.{BlockHeader, InputEntity, LatestBlock}
@@ -28,7 +28,7 @@ import org.oxygenium.explorer.persistence.schema.LatestBlockSchema
 import org.oxygenium.protocol.model.GroupIndex
 import org.oxygenium.util.{Duration, TimeStamp}
 
-class FinalizerServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class FinalizerServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "getStartEndTime - return nothing if there's no input" in new Fixture {
     run(FinalizerService.getStartEndTime()).futureValue is None

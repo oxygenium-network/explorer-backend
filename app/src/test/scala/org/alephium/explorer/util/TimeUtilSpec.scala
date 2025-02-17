@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -24,13 +24,13 @@ import org.scalacheck.Gen
 import org.scalatest.TryValues._
 import org.scalatest.matchers.should.Matchers
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenCoreUtil._
 import org.oxygenium.explorer.error.ExplorerError.RemoteTimeStampIsBeforeLocal
 import org.oxygenium.explorer.util.TimeUtil._
 import org.oxygenium.util.{Duration, TimeStamp}
 
-class TimeUtilSpec extends AlephiumSpec with Matchers {
+class TimeUtilSpec extends OxygeniumSpec with Matchers {
 
   "toZonedDateTime" should {
     "convert OffsetTime to ZonedDateTime with today's date" in {

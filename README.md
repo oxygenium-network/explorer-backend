@@ -1,6 +1,6 @@
-# Alephium explorer backend
+# Oxygenium explorer backend
 
-Alephium's explorer backend is an indexer that provides a RESTful API to query the Alephium blockchain.
+Oxygenium's explorer backend is an indexer that provides a RESTful API to query the Oxygenium blockchain.
 
 It serves https://explorer.oxygenium.org/ as well as our wallets.
 
@@ -94,7 +94,7 @@ export EXPLORER_PORT=9191
 
 Syncing all data from scratch can take a while, you can choose to start from a snapshot instead.
 
-Alephium [archives repository](https://archives.oxygenium.org) contains the snapshots for explorer backend database.
+Oxygenium [archives repository](https://archives.oxygenium.org) contains the snapshots for explorer backend database.
 The snapshot can be loaded in the postgresql database of the explorer-backend at the first run, using the command below.
 
 * Make sure to use the network you want to load the snapshot for, and the correct database name and user.

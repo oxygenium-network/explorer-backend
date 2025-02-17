@@ -49,13 +49,13 @@ jobs:
           do
             if (( SECONDS > 60 ))
             then
-               echo "Alephium full node not working after 1 min..."
+               echo "Oxygenium full node not working after 1 min..."
                exit 1
             fi
             echo "Waiting..."
             sleep 5
           done
-          echo "Alephium full node is up"
+          echo "Oxygenium full node is up"
       - name: Start explorer-backend
         run: |
           export BLOCKFLOW_HOST=127.0.0.1

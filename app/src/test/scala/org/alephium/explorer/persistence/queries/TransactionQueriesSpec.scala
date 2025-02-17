@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import scala.util.Random
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.{AlephiumFutureSpec, TestQueries}
+import org.oxygenium.explorer.{OxygeniumFutureSpec, TestQueries}
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreProtocol._
 import org.oxygenium.explorer.GenCoreUtil._
@@ -40,7 +40,7 @@ import org.oxygenium.protocol.{ALPH, Hash}
 import org.oxygenium.protocol.model.{Address, GroupIndex, TransactionId}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
-class TransactionQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "compute locked balance when empty" in new Fixture {
     val balance = run(TransactionQueries.getBalanceAction(address, lastFinalizedTime)).futureValue

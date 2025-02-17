@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import scala.collection.immutable.ArraySeq
 import org.scalacheck.Gen
 
 import org.oxygenium.api.UtilJson._
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.Generators._
 import org.oxygenium.explorer.api.Json._
@@ -32,7 +32,7 @@ import org.oxygenium.protocol.{ALPH, Hash}
 import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
 import org.oxygenium.util.{Hex, TimeStamp}
 
-class ApiModelSpec() extends AlephiumSpec {
+class ApiModelSpec() extends OxygeniumSpec {
 
   def check[T: Reader: Writer](data: T, jsonRaw: String) = {
     write(data) is jsonRaw.filterNot(_.isWhitespace)

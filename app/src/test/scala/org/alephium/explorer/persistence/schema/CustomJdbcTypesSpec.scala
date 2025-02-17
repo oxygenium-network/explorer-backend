@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package org.oxygenium.explorer.persistence.schema
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.{AlephiumFutureSpec, GenDBModel}
+import org.oxygenium.explorer.{OxygeniumFutureSpec, GenDBModel}
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
 import org.oxygenium.explorer.persistence.queries.OutputQueries
 import org.oxygenium.explorer.persistence.schema.CustomGetResult._
@@ -28,7 +28,7 @@ import org.oxygenium.explorer.persistence.schema.TimeStampTableFixture._
 import org.oxygenium.protocol.ALPH
 import org.oxygenium.util._
 
-class CustomJdbcTypesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class CustomJdbcTypesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "convert TimeStamp" in {
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import akka.util.ByteString
 import org.scalacheck.Gen
 
 import org.oxygenium.api.model.{Val, ValAddress, ValBool, ValByteVec}
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreApi._
@@ -30,7 +30,7 @@ import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.model.ContractEntity
 import org.oxygenium.protocol.model.ChainIndex
 
-class ContractEntitySpec extends AlephiumSpec {
+class ContractEntitySpec extends OxygeniumSpec {
 
   val interfaceIdGen    = valByteVecGen
   val emptyByteVec: Val = ValByteVec(ByteString.empty)

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -20,10 +20,10 @@ import scala.util.{Failure, Success}
 
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.error.ExplorerError.InvalidBootMode
 
-class BootModeSpec extends AlephiumSpec with ScalaCheckDrivenPropertyChecks {
+class BootModeSpec extends OxygeniumSpec with ScalaCheckDrivenPropertyChecks {
 
   "validate" should {
     "fail" when {

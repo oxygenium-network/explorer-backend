@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@ package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.ConfigDefaults.groupSetting
 import org.oxygenium.explorer.GenCoreApi._
 import org.oxygenium.explorer.api.model._
 import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.service.BlockFlowClient
 
-class BlockModelConversionSpec() extends AlephiumSpec {
+class BlockModelConversionSpec() extends OxygeniumSpec {
 
   "BlockEntry" should {
     "be converted to and from core api BlockEntry" in new Fixture {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ import scala.concurrent.duration._
 import sttp.model.Uri
 
 import org.oxygenium.api.model.{ChainInfo, ChainParams, HashesAtHeight, SelfClique}
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel.chainIndexes
 import org.oxygenium.explorer.GenCoreUtil.timestampMaxValue
@@ -44,7 +44,7 @@ import org.oxygenium.protocol.model.{BlockHash, ChainIndex, CliqueId, GroupIndex
 import org.oxygenium.util.{AVector, Duration, Hex, TimeStamp}
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
-class BlockFlowSyncServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForAll {
+class BlockFlowSyncServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureForAll {
 
   "start/sync/stop" in new Fixture {
     using(Scheduler("")) { implicit scheduler =>
@@ -284,7 +284,7 @@ class BlockFlowSyncServiceSpec extends AlephiumFutureSpec with DatabaseFixtureFo
 
       override def fetchChainParams(): Future[ChainParams] =
         Future.successful(
-          ChainParams(NetworkId.AlephiumDevNet, 18, 1, 2)
+          ChainParams(NetworkId.OxygeniumDevNet, 18, 1, 2)
         )
 
       override def fetchMempoolTransactions(uri: Uri): Future[ArraySeq[MempoolTransaction]] =

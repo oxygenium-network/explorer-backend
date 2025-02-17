@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -26,13 +26,13 @@ import org.scalatest.TryValues._
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
 import org.oxygenium.api.model.ApiKey
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenCommon._
 import org.oxygenium.explorer.config.ExplorerConfig._
 import org.oxygenium.explorer.error.ExplorerError._
 import org.oxygenium.protocol.model.NetworkId
 
-class ExplorerConfigSpec extends AlephiumSpec with ScalaCheckDrivenPropertyChecks {
+class ExplorerConfigSpec extends OxygeniumSpec with ScalaCheckDrivenPropertyChecks {
 
   "ficus" should {
     "load config" in {

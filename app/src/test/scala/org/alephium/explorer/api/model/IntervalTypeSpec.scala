@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,11 +22,11 @@ import org.scalacheck.Gen
 
 import org.oxygenium.api.ApiError
 import org.oxygenium.api.model.TimeInterval
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenApiModel.intervalTypeGen
 import org.oxygenium.util.{Duration, TimeStamp}
 
-class IntervalTypeSpec() extends AlephiumFutureSpec {
+class IntervalTypeSpec() extends OxygeniumFutureSpec {
   "IntervalType" should {
     "validate TimeInterval" in {
       val now = TimeStamp.now()

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@ package org.oxygenium.explorer.persistence.queries
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
 import org.oxygenium.explorer.persistence.queries.QueryUtil._
 import org.oxygenium.explorer.persistence.schema.CustomGetResult._
 import org.oxygenium.explorer.persistence.schema.TimeStampTableFixture._
 import org.oxygenium.util._
 
-class QueryUtilSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class QueryUtilSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "date group" in {
     run(sqlu"DROP TABLE IF EXISTS timestamps").futureValue

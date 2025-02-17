@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,11 +18,11 @@ package org.oxygenium.explorer.api.model
 
 import org.scalacheck.Gen
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenApiModel.stdInterfaceIdGen
 import org.oxygenium.explorer.GenCoreProtocol.hashGen
 
-class StdInterfaceIdSpec() extends AlephiumSpec {
+class StdInterfaceIdSpec() extends OxygeniumSpec {
 
   "StdInterfaceId" should {
     "validate" in {

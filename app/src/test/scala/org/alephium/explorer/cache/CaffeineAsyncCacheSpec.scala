@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -20,9 +20,9 @@ import java.util.concurrent.{CompletableFuture, Executor, TimeUnit}
 
 import com.github.benmanes.caffeine.cache.{AsyncCacheLoader, Caffeine}
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 
-class CaffeineAsyncCacheSpec extends AlephiumFutureSpec {
+class CaffeineAsyncCacheSpec extends OxygeniumFutureSpec {
 
   "return None for getIfPresent when cache is empty (NullPointerException check)" in {
     val cache =

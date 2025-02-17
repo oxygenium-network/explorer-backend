@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import org.scalacheck.Gen
 import slick.dbio.DBIOAction
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.{AlephiumFutureSpec, GroupSetting}
+import org.oxygenium.explorer.{OxygeniumFutureSpec, GroupSetting}
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenDBModel._
@@ -33,7 +33,7 @@ import org.oxygenium.explorer.persistence.queries.result.TxByTokenQR
 import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.util.{TimeStamp, U256}
 
-class TokenQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class TokenQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "Token Queries" should {
     "list token transactions" in {

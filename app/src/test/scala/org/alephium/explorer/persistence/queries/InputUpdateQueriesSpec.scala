@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,13 +18,13 @@ package org.oxygenium.explorer.persistence.queries
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
 import org.oxygenium.explorer.persistence.schema.{InputSchema, OutputSchema}
 import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
 
-class InputUpdateQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class InputUpdateQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "Input Update" should {
     "update inputs when address is already set" in {

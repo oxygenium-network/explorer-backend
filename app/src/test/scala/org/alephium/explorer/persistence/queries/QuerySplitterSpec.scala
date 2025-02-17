@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,9 +18,9 @@ package org.oxygenium.explorer.persistence.queries
 
 import org.scalacheck.Gen
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 
-class QuerySplitterSpec extends AlephiumSpec {
+class QuerySplitterSpec extends OxygeniumSpec {
 
   // A query's parameter row
   case class Row(param1: Int, param2: Int)

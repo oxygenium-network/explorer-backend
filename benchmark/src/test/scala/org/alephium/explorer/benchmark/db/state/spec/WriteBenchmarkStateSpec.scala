@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package org.oxygenium.explorer.benchmark.db.state.spec
 
 import scala.concurrent.duration._
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.benchmark.db.DBExecutor
 import org.oxygenium.explorer.benchmark.db.state._
 import org.oxygenium.explorer.util.TestUtils._
@@ -27,7 +27,7 @@ import org.oxygenium.explorer.util.TestUtils._
   *   - [[ByteaWriteState]]
   *   - [[VarcharWriteState]]
   */
-class WriteBenchmarkStateSpec extends AlephiumSpec {
+class WriteBenchmarkStateSpec extends OxygeniumSpec {
 
   // total number of rows to generate
   val testDataCount = 10

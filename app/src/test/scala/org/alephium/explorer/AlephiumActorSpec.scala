@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,8 +23,8 @@ import akka.testkit.{ImplicitSender, TestKit, TestKitBase}
 import com.typesafe.config.ConfigFactory
 import org.scalatest.BeforeAndAfterAll
 
-trait AlephiumActorSpecLike
-    extends AlephiumFutureSpec
+trait OxygeniumActorSpecLike
+    extends OxygeniumFutureSpec
     with TestKitBase
     with ImplicitSender
     with BeforeAndAfterAll {
@@ -32,7 +32,7 @@ trait AlephiumActorSpecLike
   val name: String = this.getClass.getSimpleName
 
   implicit lazy val system: ActorSystem =
-    ActorSystem(name, ConfigFactory.parseString(AlephiumActorSpec.config))
+    ActorSystem(name, ConfigFactory.parseString(OxygeniumActorSpec.config))
 
   implicit override lazy val executionContext: ExecutionContext = system.dispatcher
 
@@ -41,7 +41,7 @@ trait AlephiumActorSpecLike
   }
 }
 
-object AlephiumActorSpec {
+object OxygeniumActorSpec {
   val config: String =
     """
       |akka {

@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,9 +21,9 @@ import java.util.concurrent.atomic.AtomicInteger
 import scala.concurrent.Future
 import scala.concurrent.duration._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 
-class AsyncReloadingCacheSpec extends AlephiumFutureSpec {
+class AsyncReloadingCacheSpec extends OxygeniumFutureSpec {
 
   "reload cache after expiration while returning existing value even during reloading" in {
     val reloadCount = new AtomicInteger() // number of times reload was executed

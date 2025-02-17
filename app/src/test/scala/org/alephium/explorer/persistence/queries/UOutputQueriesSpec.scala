@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -19,14 +19,14 @@ package org.oxygenium.explorer.persistence.queries
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.{AlephiumFutureSpec, GenCommon}
+import org.oxygenium.explorer.{OxygeniumFutureSpec, GenCommon}
 import org.oxygenium.explorer.GenCoreProtocol.transactionHashGen
 import org.oxygenium.explorer.GenDBModel._
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
 import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.persistence.schema._
 
-class UOutputQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForAll with DBRunner {
+class UOutputQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForAll with DBRunner {
 
   /** Clear [[UOutputSchema]] table and persist new test data.
     */

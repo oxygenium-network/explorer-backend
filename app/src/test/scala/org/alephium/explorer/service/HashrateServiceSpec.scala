@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults.groupSetting
 import org.oxygenium.explorer.GenDBModel.blockHeaderWithHashrate
 import org.oxygenium.explorer.api.model.{Hashrate, IntervalType}
@@ -31,7 +31,7 @@ import org.oxygenium.explorer.persistence.queries.HashrateQueries._
 import org.oxygenium.explorer.persistence.schema.BlockHeaderSchema
 import org.oxygenium.util._
 
-class HashrateServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class HashrateServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   "hourly hashrates" in new Fixture {
 

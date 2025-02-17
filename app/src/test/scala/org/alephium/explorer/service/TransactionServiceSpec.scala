@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@ import io.vertx.core.buffer.Buffer
 import org.scalacheck.Gen
 
 import org.oxygenium.api.UtilJson._
-import org.oxygenium.explorer.AlephiumActorSpecLike
+import org.oxygenium.explorer.OxygeniumActorSpecLike
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreApi._
@@ -51,7 +51,7 @@ import org.oxygenium.util.{Duration, TimeStamp, U256}
     "org.wartremover.warts.AsInstanceOf"
   )
 )
-class TransactionServiceSpec extends AlephiumActorSpecLike with DatabaseFixtureForEach {
+class TransactionServiceSpec extends OxygeniumActorSpecLike with DatabaseFixtureForEach {
 
   "limit the number of transactions in address details" in new Fixture {
 

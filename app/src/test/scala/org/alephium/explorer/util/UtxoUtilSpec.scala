@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,12 +21,12 @@ import scala.util.Random
 
 import org.scalacheck.Gen
 
-import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.OxygeniumSpec
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.api.model.{AssetOutput, ContractOutput, Output}
 import org.oxygenium.util.U256
 
-class UtxoUtilSpec extends AlephiumSpec {
+class UtxoUtilSpec extends OxygeniumSpec {
 
   "UtxoUtil.amountForAddressInInputs" should {
     "return amount in inputs" when {

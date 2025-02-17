@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ import scala.util.Random
 import org.scalacheck.{Arbitrary, Gen}
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.ConfigDefaults._
 import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.GenCoreProtocol._
@@ -35,7 +35,7 @@ import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
 import org.oxygenium.protocol.model.{ChainIndex, GroupIndex}
 
-class BlockQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
+class BlockQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
   /** Finds a block with maximum height. If two blocks have the same height, returns the one with
     * maximum timestamp.

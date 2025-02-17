@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ import scala.collection.immutable.ArraySeq
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.GenApiModel.{assetOutputGen, mempooltransactionGen}
 import org.oxygenium.explorer.GenCoreUtil.timestampGen
 import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
@@ -30,7 +30,7 @@ import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
 import org.oxygenium.protocol.model.TransactionId
 
 class MempoolTransactionDaoSpec
-    extends AlephiumFutureSpec
+    extends OxygeniumFutureSpec
     with DatabaseFixtureForEach
     with DBRunner {
 

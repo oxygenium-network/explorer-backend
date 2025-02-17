@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, Suite}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.explorer.OxygeniumFutures
 
 /** Creates and drops a new database connection for each test-case.
   */
@@ -29,7 +29,7 @@ import org.oxygenium.explorer.AlephiumFutures
 trait DatabaseFixtureForEach
     extends BeforeAndAfterEach
     with BeforeAndAfterAll
-    with AlephiumFutures
+    with OxygeniumFutures
     with StrictLogging {
   this: Suite =>
 

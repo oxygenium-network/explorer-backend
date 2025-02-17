@@ -1,4 +1,4 @@
-// Copyright 2018 The Alephium Authors
+// Copyright 2018 The Oxygenium Authors
 // This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
@@ -27,10 +27,10 @@ import org.scalacheck.Gen
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.OxygeniumFutureSpec
 import org.oxygenium.explorer.util.TestUtils._
 
-class SchedulerSpec extends AlephiumFutureSpec with ScalaCheckDrivenPropertyChecks with Matchers {
+class SchedulerSpec extends OxygeniumFutureSpec with ScalaCheckDrivenPropertyChecks with Matchers {
 
   val zoneIds: Iterable[ZoneId] =
     ZoneId.getAvailableZoneIds.asScala.map(ZoneId.of)
