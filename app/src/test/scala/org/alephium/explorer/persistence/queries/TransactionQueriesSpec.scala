@@ -36,7 +36,7 @@ import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.service.FinalizerService
 import org.oxygenium.explorer.util.SlickExplainUtil._
-import org.oxygenium.protocol.{ALPH, Hash}
+import org.oxygenium.protocol.{OXM, Hash}
 import org.oxygenium.protocol.model.{Address, GroupIndex, TransactionId}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
@@ -49,26 +49,26 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
 
   "compute locked balance" in new Fixture {
 
-    val output1 = output(address, ALPH.alph(1), None)
+    val output1 = output(address, OXM.alph(1), None)
     val output2 =
-      output(address, ALPH.alph(2), Some(TimeStamp.now().minusUnsafe(Duration.ofMinutesUnsafe(10))))
-    val output3 = output(address, ALPH.alph(3), Some(TimeStamp.now().plusMinutesUnsafe(10)))
-    val output4 = output(address, ALPH.alph(4), Some(TimeStamp.now().plusMinutesUnsafe(10)))
+      output(address, OXM.alph(2), Some(TimeStamp.now().minusUnsafe(Duration.ofMinutesUnsafe(10))))
+    val output3 = output(address, OXM.alph(3), Some(TimeStamp.now().plusMinutesUnsafe(10)))
+    val output4 = output(address, OXM.alph(4), Some(TimeStamp.now().plusMinutesUnsafe(10)))
 
     run(OutputSchema.table ++= ArraySeq(output1, output2, output3, output4)).futureValue
 
     val (total, locked) =
       run(TransactionQueries.getBalanceAction(address, lastFinalizedTime)).futureValue
 
-    total is ALPH.alph(10)
-    locked is ALPH.alph(7)
+    total is OXM.alph(10)
+    locked is OXM.alph(7)
 
   }
 
   "get balance should only return unpent outputs" in new Fixture {
 
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None)
     val input1  = input(output2.hint, output2.key).copy(outputRefAddress = Some(address))
 
     run(OutputSchema.table ++= ArraySeq(output1, output2)).futureValue
@@ -77,7 +77,7 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     val (total, _) =
       run(TransactionQueries.getBalanceAction(address, lastFinalizedTime)).futureValue
 
-    total is ALPH.alph(1)
+    total is OXM.alph(1)
 
     val from = TimeStamp.zero
     val to   = timestampMaxValue
@@ -86,13 +86,13 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     val (totalFinalized, _) =
       run(TransactionQueries.getBalanceAction(address, lastFinalizedTime)).futureValue
 
-    totalFinalized is ALPH.alph(1)
+    totalFinalized is OXM.alph(1)
   }
 
   "get balance should only take main chain outputs" in new Fixture {
 
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None).copy(mainChain = false)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None).copy(mainChain = false)
     val input1  = input(output2.hint, output2.key).copy(mainChain = false)
 
     run(OutputSchema.table ++= ArraySeq(output1, output2)).futureValue
@@ -101,14 +101,14 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     val (total, _) =
       run(TransactionQueries.getBalanceAction(address, lastFinalizedTime)).futureValue
 
-    total is ALPH.alph(1)
+    total is OXM.alph(1)
   }
 
   "txs count" in new Fixture {
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None)
-    val output3 = output(address, ALPH.alph(3), None).copy(mainChain = false)
-    val output4 = output(addressGen.sample.get, ALPH.alph(3), None)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None)
+    val output3 = output(address, OXM.alph(3), None).copy(mainChain = false)
+    val output4 = output(addressGen.sample.get, OXM.alph(3), None)
 
     val input1 = input(output2.hint, output2.key)
     val input2 = input(output3.hint, output3.key).copy(mainChain = false)
@@ -128,8 +128,8 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
 
   "update inputs when corresponding output is finally inserted" in new Fixture {
 
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None)
 
     val input1 = input(output1.hint, output1.key)
     val input2 = input(output2.hint, output2.key)
@@ -150,10 +150,10 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
 
   "get tx hashes by address" in new Fixture {
 
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None)
-    val output3 = output(address, ALPH.alph(3), None).copy(mainChain = false)
-    val output4 = output(addressGen.sample.get, ALPH.alph(3), None)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None)
+    val output3 = output(address, OXM.alph(3), None).copy(mainChain = false)
+    val output4 = output(addressGen.sample.get, OXM.alph(3), None)
     val input1  = input(output2.hint, output2.key)
     val input2  = input(output3.hint, output3.key).copy(mainChain = false)
     val input3  = input(output4.hint, output4.key)
@@ -179,12 +179,12 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
   }
 
   "get tx by address" in new Fixture {
-    val output1 = output(address, ALPH.alph(1), None)
-    val output2 = output(address, ALPH.alph(2), None)
-    val output3 = output(address, ALPH.alph(3), None).copy(mainChain = false)
+    val output1 = output(address, OXM.alph(1), None)
+    val output2 = output(address, OXM.alph(2), None)
+    val output3 = output(address, OXM.alph(3), None).copy(mainChain = false)
     val input1  = input(output2.hint, output2.key)
     val input2  = input(output3.hint, output3.key).copy(mainChain = false)
-    val output4 = output(addressGen.sample.get, ALPH.alph(3), None)
+    val output4 = output(addressGen.sample.get, OXM.alph(3), None)
       .copy(txHash = input1.txHash, blockHash = input1.blockHash, timestamp = input1.timestamp)
 
     val outputs      = ArraySeq(output1, output2, output3, output4)
@@ -208,7 +208,7 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
         networkId = 1,
         scriptOpt = None,
         1,
-        ALPH.alph(1),
+        OXM.alph(1),
         scriptExecutionOk = true,
         inputSignatures = ArraySeq.empty,
         scriptSignatures = ArraySeq.empty,
@@ -256,7 +256,7 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     )
 
     val output1 =
-      output(address, ALPH.alph(1), None).copy(txHash = tx1.hash, blockHash = tx1.blockHash)
+      output(address, OXM.alph(1), None).copy(txHash = tx1.hash, blockHash = tx1.blockHash)
     val input1 = input(output1.hint, output1.key).copy(txHash = tx2.hash, blockHash = tx2.blockHash)
     val input2 = input(output1.hint, output1.key).copy(txHash = tx2.hash).copy(mainChain = false)
 
@@ -695,7 +695,7 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
         networkId = 1,
         scriptOpt = None,
         1,
-        ALPH.alph(1),
+        OXM.alph(1),
         0,
         true,
         true,

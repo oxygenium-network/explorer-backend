@@ -37,7 +37,7 @@ import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.persistence.queries.InputUpdateQueries
 import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.explorer.service.FinalizerService
-import org.oxygenium.protocol.{ALPH, Hash}
+import org.oxygenium.protocol.{OXM, Hash}
 import org.oxygenium.protocol.model.{Address, BlockHash, GroupIndex, TransactionId}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
@@ -140,7 +140,7 @@ class AddressReadState(val db: DBExecutor)
       outputType = OutputEntity.OutputType.unsafe(Random.nextInt(2)),
       hint = Random.nextInt(),
       key = Hash.generate,
-      amount = ALPH.alph(1),
+      amount = OXM.alph(1),
       address = if (currentCacheSize % 2 == 0) address else DataGenerator.genAddress(),
       tokens = None,
       mainChain = true,
@@ -236,7 +236,7 @@ class AddressReadState(val db: DBExecutor)
       Await.result(BlockDao.insertAll(bs), batchWriteTimeout)
     }
 
-    val from = ALPH.LaunchTimestamp
+    val from = OXM.LaunchTimestamp
     val to   = DataGenerator.timestampMaxValue
     val _ =
       Await.result(

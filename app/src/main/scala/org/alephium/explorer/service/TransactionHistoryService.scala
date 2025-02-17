@@ -35,7 +35,7 @@ import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.util.Scheduler
 import org.oxygenium.explorer.util.SlickUtil._
 import org.oxygenium.explorer.util.TimeUtil._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.GroupIndex
 import org.oxygenium.util.{Duration, TimeStamp}
 
@@ -146,7 +146,7 @@ case object TransactionHistoryService extends StrictLogging {
         .map { histTs =>
           stepBack(histTs, intervalType)
         }
-        .getOrElse(ALPH.LaunchTimestamp)
+        .getOrElse(OXM.LaunchTimestamp)
 
       val ranges = getTimeRanges(start, latestTxTs, intervalType)
       val allTs  = ranges.flatMap { case (from, to) => Seq(from, to) }

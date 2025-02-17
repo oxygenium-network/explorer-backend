@@ -460,7 +460,7 @@ trait ExplorerSpec
 
   "Market price endpoints" when {
     "correctly return price" in {
-      val body = """["ALPH", "WBTC"]"""
+      val body = """["OXM", "WBTC"]"""
       Post(s"/market/prices?currency=btc", body) check { response =>
         val prices = response.as[ArraySeq[Option[Double]]]
         prices.foreach(_.isDefined is true)
@@ -469,7 +469,7 @@ trait ExplorerSpec
     }
 
     "ignore unknown symbol" in {
-      val body = """["ALPH", "yop", "nop"]"""
+      val body = """["OXM", "yop", "nop"]"""
       Post(s"/market/prices?currency=btc", body) check { response =>
         val prices = response.as[ArraySeq[Option[Double]]]
         prices.head.isDefined is true
@@ -489,7 +489,7 @@ trait ExplorerSpec
 
   "Market chart endpoints" when {
     "correctly return price charts" in {
-      List("ALPH").map { symbol =>
+      List("OXM").map { symbol =>
         Get(s"/market/prices/$symbol/charts?currency=btc") check { response =>
           response.as[TimedPrices]
           response.code is StatusCode.Ok
@@ -499,7 +499,7 @@ trait ExplorerSpec
 
     "return 404 when unknown currency" in {
       forAll(hashGen) { currency =>
-        Get(s"/market/prices/ALPH/charts?currency=${currency}") check { response =>
+        Get(s"/market/prices/OXM/charts?currency=${currency}") check { response =>
           response.code is StatusCode.NotFound
         }
       }

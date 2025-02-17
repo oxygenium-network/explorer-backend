@@ -5607,7 +5607,7 @@
         "tags": [
           "Infos"
         ],
-        "description": "Get the ALPH total supply",
+        "description": "Get the OXM total supply",
         "operationId": "getInfosSupplyTotal-alph",
         "responses": {
           "200": {
@@ -5707,7 +5707,7 @@
         "tags": [
           "Infos"
         ],
-        "description": "Get the ALPH circulating supply",
+        "description": "Get the OXM circulating supply",
         "operationId": "getInfosSupplyCirculating-alph",
         "responses": {
           "200": {
@@ -5807,7 +5807,7 @@
         "tags": [
           "Infos"
         ],
-        "description": "Get the ALPH reserved supply",
+        "description": "Get the OXM reserved supply",
         "operationId": "getInfosSupplyReserved-alph",
         "responses": {
           "200": {
@@ -5907,7 +5907,7 @@
         "tags": [
           "Infos"
         ],
-        "description": "Get the ALPH locked supply",
+        "description": "Get the OXM locked supply",
         "operationId": "getInfosSupplyLocked-alph",
         "responses": {
           "200": {
@@ -6225,7 +6225,7 @@
         "tags": [
           "Tokens"
         ],
-        "description": "Get a sorted list of top addresses by ALPH balance. Updates once per day.",
+        "description": "Get a sorted list of top addresses by OXM balance. Updates once per day.",
         "operationId": "getTokensHoldersAlph",
         "parameters": [
           {
@@ -7857,7 +7857,7 @@
                 }
               },
               "example": [
-                "ALPH",
+                "OXM",
                 "USDCeth",
                 "WBTC",
                 "WETH",

@@ -1,4 +1,4 @@
-import { ExplorerProvider, NodeProvider, ONE_ALPH } from '@oxygenium/web3'
+import { ExplorerProvider, NodeProvider, ONE_OXM } from '@oxygenium/web3'
 import { PrivateKeyWallet } from '@oxygenium/web3-wallet'
 import { getSigner, testPrivateKeyWallet } from '@oxygenium/web3-test'
 import  configuration  from './config'
@@ -37,13 +37,13 @@ describe('e2e', function () {
       signerAddress: wallet.account.address,
       destinations: [{
         address: destinationWallet.account.address,
-        attoAlphAmount: ONE_ALPH
+        attoAlphAmount: ONE_OXM
       }]
     })
 
     let value:Number = Number((await explorerProvider.addresses.getAddressesAddressBalance(destinationWallet.account.address)).balance)
 
-    const expectedValue:Number = Number(nodeBalance.balance) + Number(ONE_ALPH)
+    const expectedValue:Number = Number(nodeBalance.balance) + Number(ONE_OXM)
 
     //Wait until the explorer balance is the same as the expected value
     eventually(async () => Number((await explorerProvider.addresses.getAddressesAddressBalance(destinationWallet.account.address)).balance) === expectedValue)

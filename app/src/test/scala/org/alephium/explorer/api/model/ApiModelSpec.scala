@@ -28,7 +28,7 @@ import org.oxygenium.explorer.GenApiModel._
 import org.oxygenium.explorer.Generators._
 import org.oxygenium.explorer.api.Json._
 import org.oxygenium.json.Json._
-import org.oxygenium.protocol.{ALPH, Hash}
+import org.oxygenium.protocol.{OXM, Hash}
 import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
 import org.oxygenium.util.{Hex, TimeStamp}
 
@@ -91,7 +91,7 @@ class ApiModelSpec() extends OxygeniumSpec {
             OutputRef(1, Hash.generate),
             unlockScript = None,
             address = Some(address),
-            attoAlphAmount = Some(ALPH.alph(10)),
+            attoAlphAmount = Some(OXM.alph(10)),
             tokens = None,
             contractInput = false
           )
@@ -100,7 +100,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = ALPH.alph(8),
+            attoAlphAmount = OXM.alph(8),
             address = Address.fromBase58("14PqtYSSbwpUi2RJKUvv9yUwGafd6yHbEcke7ionuiE7w").get,
             tokens = None,
             lockTime = None,
@@ -111,7 +111,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = ALPH.alph(8),
+            attoAlphAmount = OXM.alph(8),
             address = Address.fromBase58("22fnZLkZJUSyhXgboirmJktWkEBRk1pV8L6gfpc53hvVM").get,
             tokens = None,
             lockTime = None,
@@ -122,7 +122,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = ALPH.alph(8),
+            attoAlphAmount = OXM.alph(8),
             address,
             tokens = None,
             lockTime = None,
@@ -135,7 +135,7 @@ class ApiModelSpec() extends OxygeniumSpec {
         networkId = 0,
         scriptOpt = None,
         gasAmount = 1,
-        gasPrice = ALPH.alph(1),
+        gasPrice = OXM.alph(1),
         false,
         ArraySeq.empty,
         ArraySeq.empty,

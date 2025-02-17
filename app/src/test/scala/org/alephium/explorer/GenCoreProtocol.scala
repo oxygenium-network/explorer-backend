@@ -20,7 +20,7 @@ import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 
 import org.oxygenium.explorer.GenCommon._
-import org.oxygenium.protocol.{ALPH, Hash, PrivateKey, PublicKey, SignatureSchema}
+import org.oxygenium.protocol.{OXM, Hash, PrivateKey, PublicKey, SignatureSchema}
 import org.oxygenium.protocol.model._
 import org.oxygenium.protocol.vm.{
   Instr,
@@ -79,7 +79,7 @@ object GenCoreProtocol {
       groupIndex: GroupIndex
   )(implicit groupSetting: GroupSetting): Gen[LockupScript.Asset] =
     for {
-      numKeys   <- Gen.chooseNum(1, ALPH.MaxKeysInP2MPK)
+      numKeys   <- Gen.chooseNum(1, OXM.MaxKeysInP2MPK)
       keys      <- Gen.listOfN(numKeys, publicKeyGen(groupIndex)).map(AVector.from)
       threshold <- Gen.choose(1, keys.length)
     } yield LockupScript.p2mpkh(keys, threshold).get

@@ -25,7 +25,7 @@ import org.oxygenium.explorer.persistence.schema.CustomGetResult._
 import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
 import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.persistence.schema.TimeStampTableFixture._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util._
 
 class CustomJdbcTypesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach with DBRunner {
@@ -35,7 +35,7 @@ class CustomJdbcTypesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEac
     run(sqlu"DROP TABLE IF EXISTS timestamps;").futureValue
     run(timestampTable.schema.create).futureValue
 
-    val t1 = ALPH.LaunchTimestamp
+    val t1 = OXM.LaunchTimestamp
     val t2 = ts("2020-12-31T23:59:59.999Z")
 
     val timestamps = Seq(t1, t2)

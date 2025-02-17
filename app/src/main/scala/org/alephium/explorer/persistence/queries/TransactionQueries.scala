@@ -34,7 +34,7 @@ import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.explorer.persistence.schema.CustomGetResult._
 import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.util.SlickUtil._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
 import org.oxygenium.util.{TimeStamp, U256}
 
@@ -382,7 +382,7 @@ object TransactionQueries extends StrictLogging {
       FROM outputs
       WHERE address = $address
       AND main_chain = true
-      AND block_timestamp >= ${ALPH.GenesisTimestamp}
+      AND block_timestamp >= ${OXM.GenesisTimestamp}
       AND block_timestamp <= $to
       GROUP BY ts
       """.asAS[(TimeStamp, Option[U256])]
@@ -433,7 +433,7 @@ object TransactionQueries extends StrictLogging {
       FROM inputs
       WHERE output_ref_address = $address
       AND main_chain = true
-      AND block_timestamp >= ${ALPH.GenesisTimestamp}
+      AND block_timestamp >= ${OXM.GenesisTimestamp}
       AND block_timestamp <= $to
       GROUP BY ts
       """.asAS[(TimeStamp, Option[U256])]

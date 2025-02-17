@@ -31,7 +31,7 @@ import org.oxygenium.explorer.persistence.dao.BlockDao
 import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.persistence.schema._
 import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
@@ -41,7 +41,7 @@ class TokenSupplyServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
   implicit val gs: GroupSetting = GroupSetting(1)
 
   "Build days range" in {
-    val launchTime = ALPH.LaunchTimestamp // 2021-11-08T11:20:06+00:00
+    val launchTime = OXM.LaunchTimestamp // 2021-11-08T11:20:06+00:00
     def ts(str: String): TimeStamp = {
       TimeStamp.unsafe(Instant.parse(str).toEpochMilli)
     }
@@ -176,7 +176,7 @@ class TokenSupplyServiceSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     lazy val block1 = {
       val lockTime =
         if (block1Locked) Some(TimeStamp.now().plusUnsafe(Duration.ofHoursUnsafe(2))) else None
-      val timestamp = ALPH.LaunchTimestamp.plusHoursUnsafe(1)
+      val timestamp = OXM.LaunchTimestamp.plusHoursUnsafe(1)
       val block =
         blockEntityWithParentGen(chainIndex, Some(genesisBlock)).sample.get
       block.copy(

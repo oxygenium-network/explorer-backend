@@ -94,7 +94,7 @@ class MarketServiceSpec extends OxygeniumFutureSpec {
     }
 
     eventually {
-      val prices = marketService.getPrices(ArraySeq("ALPH", "EMPTY"), "chf").rightValue
+      val prices = marketService.getPrices(ArraySeq("OXM", "EMPTY"), "chf").rightValue
 
       prices.length is 2
       prices(1) is None
@@ -127,7 +127,7 @@ class MarketServiceSpec extends OxygeniumFutureSpec {
     val mobulaPort             = SocketUtil.temporaryLocalPort(SocketUtil.Both)
     val tokenListPort          = SocketUtil.temporaryLocalPort(SocketUtil.Both)
 
-    val alph = "ALPH"
+    val alph = "OXM"
     val usdt = "USDT"
     val weth = "WETH"
 
@@ -162,7 +162,7 @@ object MarketServiceSpec {
   val usdtPrice = 1.0012412
 
   val symbolNames = ListMap(
-    "ALPH" -> "oxygenium",
+    "OXM" -> "oxygenium",
     "USDC" -> "usd-coin",
     "USDT" -> "tether",
     "WBTC" -> "wrapped-bitcoin",
@@ -317,7 +317,7 @@ object MarketServiceSpec {
       "tokens": [
         {
           "id": "0000000000000000000000000000000000000000000000000000000000000000",
-          "symbol": "ALPH"
+          "symbol": "OXM"
         },
         {
           "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",

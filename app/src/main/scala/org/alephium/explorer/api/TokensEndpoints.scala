@@ -100,7 +100,7 @@ trait TokensEndpoints extends BaseEndpoint with QueryParams {
       .in("alph")
       .in(pagination)
       .out(jsonBody[ArraySeq[HolderInfo]])
-      .description("Get a sorted list of top addresses by ALPH balance. Updates once per day.")
+      .description("Get a sorted list of top addresses by OXM balance. Updates once per day.")
 
   val getTokenHolders: BaseEndpoint[(TokenId, Pagination), ArraySeq[HolderInfo]] =
     tokensEndpoint.get

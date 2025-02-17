@@ -32,7 +32,7 @@ import org.oxygenium.explorer.GenCoreUtil._
 import org.oxygenium.explorer.api.model.Height
 import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.service.BlockFlowClient
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{Address, BlockHash, ChainIndex, GroupIndex, TransactionId}
 import org.oxygenium.util.{AVector, TimeStamp}
 
@@ -321,7 +321,7 @@ object GenDBModel {
         .map(p => entry.deps.replace(Generators.parentIndex(chainIndex.to), p.hash))
         .getOrElse(AVector.empty)
       val height    = parent.map(_.height.value + 1).getOrElse(0)
-      val timestamp = parent.map(_.timestamp.plusHoursUnsafe(1)).getOrElse(ALPH.GenesisTimestamp)
+      val timestamp = parent.map(_.timestamp.plusHoursUnsafe(1)).getOrElse(OXM.GenesisTimestamp)
       BlockFlowClient.blockProtocolToEntity(
         entry
           .copy(

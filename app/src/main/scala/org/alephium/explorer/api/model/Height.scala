@@ -19,7 +19,7 @@ package org.oxygenium.explorer.api.model
 import upickle.core.Abort
 
 import org.oxygenium.json.Json._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 
 final class Height(val value: Int) extends AnyVal {
   override def toString(): String = value.toString
@@ -34,7 +34,7 @@ object Height {
       Right(Height.unsafe(value))
     }
 
-  val genesis: Height = Height.unsafe(ALPH.GenesisHeight)
+  val genesis: Height = Height.unsafe(OXM.GenesisHeight)
 
   @SuppressWarnings(Array("org.wartremover.warts.Throw"))
   implicit val readWriter: ReadWriter[Height] =

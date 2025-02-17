@@ -39,7 +39,7 @@ import org.oxygenium.explorer.persistence.schema.CustomGetResult._
 import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.util.Scheduler
 import org.oxygenium.explorer.util.SlickUtil._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 /*
@@ -80,7 +80,7 @@ case object TokenSupplyService extends TokenSupplyService with StrictLogging {
     Source.fromResource("reserved_addresses")(Codec.UTF8).getLines().mkString
 
   private val launchDay =
-    Instant.ofEpochMilli(ALPH.LaunchTimestamp.millis).truncatedTo(ChronoUnit.DAYS)
+    Instant.ofEpochMilli(OXM.LaunchTimestamp.millis).truncatedTo(ChronoUnit.DAYS)
 
   def start(scheduleTime: LocalTime)(implicit
       executionContext: ExecutionContext,
@@ -128,7 +128,7 @@ case object TokenSupplyService extends TokenSupplyService with StrictLogging {
         entity.circulating,
         entity.reserved,
         entity.locked,
-        ALPH.MaxALPHValue
+        OXM.MaxOXMValue
       )
     })
   }
@@ -151,7 +151,7 @@ case object TokenSupplyService extends TokenSupplyService with StrictLogging {
         entity.circulating,
         entity.reserved,
         entity.locked,
-        ALPH.MaxALPHValue
+        OXM.MaxOXMValue
       )
     })
 
@@ -293,9 +293,9 @@ case object TokenSupplyService extends TokenSupplyService with StrictLogging {
       dc: DatabaseConfig[PostgresProfile]
   ): Future[TimeStamp] =
     run(for {
-      (total, circulating, reserved, locked) <- computeTokenSupply(ALPH.LaunchTimestamp)
-      _ <- insert(TokenSupplyEntity(ALPH.LaunchTimestamp, total, circulating, reserved, locked))
-    } yield ALPH.LaunchTimestamp)
+      (total, circulating, reserved, locked) <- computeTokenSupply(OXM.LaunchTimestamp)
+      _ <- insert(TokenSupplyEntity(OXM.LaunchTimestamp, total, circulating, reserved, locked))
+    } yield OXM.LaunchTimestamp)
 
   private def insert(tokenSupply: TokenSupplyEntity) =
     TokenSupplySchema.table.insertOrUpdate(tokenSupply)

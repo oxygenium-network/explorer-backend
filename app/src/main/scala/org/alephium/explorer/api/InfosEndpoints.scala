@@ -54,25 +54,25 @@ trait InfosEndpoints extends BaseEndpoint with QueryParams {
     supplyEndpoint.get
       .in("circulating-alph")
       .out(plainBody[BigDecimal])
-      .description("Get the ALPH circulating supply")
+      .description("Get the OXM circulating supply")
 
   val getTotalSupply: BaseEndpoint[Unit, BigDecimal] =
     supplyEndpoint.get
       .in("total-alph")
       .out(plainBody[BigDecimal])
-      .description("Get the ALPH total supply")
+      .description("Get the OXM total supply")
 
   val getReservedSupply: BaseEndpoint[Unit, BigDecimal] =
     supplyEndpoint.get
       .in("reserved-alph")
       .out(plainBody[BigDecimal])
-      .description("Get the ALPH reserved supply")
+      .description("Get the OXM reserved supply")
 
   val getLockedSupply: BaseEndpoint[Unit, BigDecimal] =
     supplyEndpoint.get
       .in("locked-alph")
       .out(plainBody[BigDecimal])
-      .description("Get the ALPH locked supply")
+      .description("Get the OXM locked supply")
 
   val getHeights: BaseEndpoint[Unit, ArraySeq[PerChainHeight]] =
     infosEndpoint.get

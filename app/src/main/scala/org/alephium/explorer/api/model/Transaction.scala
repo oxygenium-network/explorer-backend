@@ -28,7 +28,7 @@ import org.oxygenium.api.UtilJson._
 import org.oxygenium.explorer.api.Json._
 import org.oxygenium.explorer.util.UtxoUtil
 import org.oxygenium.json.Json._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{BlockHash, TransactionId}
 import org.oxygenium.protocol.model.Address
 import org.oxygenium.util.{TimeStamp, U256}
@@ -60,7 +60,7 @@ final case class Transaction(
     val amount      = deltaAmount.map(_.toString).getOrElse("")
     val amountHint = deltaAmount
       .map(delta =>
-        new java.math.BigDecimal(delta).divide(new java.math.BigDecimal(ALPH.oneAlph.v))
+        new java.math.BigDecimal(delta).divide(new java.math.BigDecimal(OXM.oneAlph.v))
       )
       .map(_.toString)
       .getOrElse("")

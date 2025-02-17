@@ -37,7 +37,7 @@ import org.oxygenium.explorer.persistence.dao.{MempoolDao, TransactionDao}
 import org.oxygenium.explorer.persistence.queries.InputQueries
 import org.oxygenium.explorer.persistence.queries.TransactionQueries._
 import org.oxygenium.explorer.util.TimeUtil
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{Address, TransactionId}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
@@ -368,13 +368,13 @@ object TransactionService extends TransactionService {
       TimeStamp.unsafe(
         Instant
           .ofEpochMilli(
-            if (from.isBefore(ALPH.LaunchTimestamp)) ALPH.LaunchTimestamp.millis else from.millis
+            if (from.isBefore(OXM.LaunchTimestamp)) OXM.LaunchTimestamp.millis else from.millis
           )
           .truncatedTo(intervalType.chronoUnit)
           .toEpochMilli
       )
 
-    val first = (ALPH.GenesisTimestamp, fromTruncated.minusUnsafe(Duration.ofMillisUnsafe(1)))
+    val first = (OXM.GenesisTimestamp, fromTruncated.minusUnsafe(Duration.ofMillisUnsafe(1)))
     first +: TimeUtil.buildTimestampRange(
       fromTruncated,
       to,

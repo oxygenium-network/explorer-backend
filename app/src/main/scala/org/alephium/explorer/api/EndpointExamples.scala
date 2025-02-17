@@ -25,7 +25,7 @@ import org.oxygenium.api.EndpointsExamples
 import org.oxygenium.api.model.{Amount, ValBool}
 import org.oxygenium.explorer.api.model._
 import org.oxygenium.explorer.persistence.queries.ExplainResult
-import org.oxygenium.protocol.{ALPH, PublicKey}
+import org.oxygenium.protocol.{OXM, PublicKey}
 import org.oxygenium.protocol.mining.HashRate
 import org.oxygenium.protocol.model.{Address, BlockHash, ContractId, GroupIndex, TokenId}
 import org.oxygenium.util.{Hex, U256}
@@ -37,7 +37,7 @@ import org.oxygenium.util.{Hex, U256}
 object EndpointExamples extends EndpointsExamples {
 
   private def alph(value: Int): Amount =
-    Amount(ALPH.oneAlph.mulUnsafe(U256.unsafe(value)))
+    Amount(OXM.oneAlph.mulUnsafe(U256.unsafe(value)))
 
   private val blockHash: BlockHash =
     BlockHash
@@ -308,11 +308,11 @@ object EndpointExamples extends EndpointsExamples {
   private val tokenSupply =
     TokenSupply(
       timestamp = ts,
-      total = ALPH.MaxALPHValue.divUnsafe(U256.Billion),
-      circulating = ALPH.MaxALPHValue.divUnsafe(U256.Billion).divUnsafe(U256.Two),
+      total = OXM.MaxOXMValue.divUnsafe(U256.Billion),
+      circulating = OXM.MaxOXMValue.divUnsafe(U256.Billion).divUnsafe(U256.Two),
       reserved = U256.Ten,
       locked = U256.Ten,
-      maximum = ALPH.MaxALPHValue
+      maximum = OXM.MaxOXMValue
     )
 
   private val perChainHeight =
@@ -372,7 +372,7 @@ object EndpointExamples extends EndpointsExamples {
     simpleExample(ArraySeq(token))
 
   implicit val symbolExample: List[Example[ArraySeq[String]]] =
-    simpleExample(ArraySeq("ALPH", "USDCeth", "WBTC", "WETH", "DAI", "AYIN"))
+    simpleExample(ArraySeq("OXM", "USDCeth", "WBTC", "WETH", "DAI", "AYIN"))
 
   implicit val listAddressesExample: List[Example[ArraySeq[Address]]] =
     simpleExample(ArraySeq(address1))
@@ -493,7 +493,7 @@ object EndpointExamples extends EndpointsExamples {
     simpleExample(NFTMetadata(token, "token://uri", contract, U256.One))
 
   implicit val pricesExample: List[Example[ArraySeq[Price]]] =
-    simpleExample(ArraySeq(Price("ALPH", 0.01, 100)))
+    simpleExample(ArraySeq(Price("OXM", 0.01, 100)))
 
   implicit val exchangeRatesExample: List[Example[ArraySeq[ExchangeRate]]] =
     simpleExample(ArraySeq(ExchangeRate("chf", "Swiss Franc", "Fr.", 0.01)))

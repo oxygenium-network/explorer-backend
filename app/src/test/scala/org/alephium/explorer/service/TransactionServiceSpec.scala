@@ -40,7 +40,7 @@ import org.oxygenium.explorer.persistence.dao.{BlockDao, MempoolDao}
 import org.oxygenium.explorer.persistence.model._
 import org.oxygenium.explorer.persistence.queries.InputUpdateQueries
 import org.oxygenium.json.Json._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.protocol.model.{BlockHash, ChainIndex, GroupIndex}
 import org.oxygenium.util.{Duration, TimeStamp, U256}
 
@@ -85,7 +85,7 @@ class TransactionServiceSpec extends OxygeniumActorSpecLike with DatabaseFixture
 
   "handle huge alph number" in new Fixture {
 
-    val amount = ALPH.MaxALPHValue.mulUnsafe(ALPH.MaxALPHValue)
+    val amount = OXM.MaxOXMValue.mulUnsafe(OXM.MaxOXMValue)
 
     val block = blockEntityGen(chainIndex)
       .map { block =>

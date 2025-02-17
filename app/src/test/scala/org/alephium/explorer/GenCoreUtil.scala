@@ -18,7 +18,7 @@ package org.oxygenium.explorer
 
 import org.scalacheck.Gen
 
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util.{Number, TimeStamp, U256}
 
 /** Generators for types supplied by Core `org.oxygenium.util` package */
@@ -30,5 +30,5 @@ object GenCoreUtil {
   val u256Gen: Gen[U256] = Gen.posNum[Long].map(U256.unsafe)
   val timestampGen: Gen[TimeStamp] =
     Gen.choose[Long](0, timestampMaxValue.millis).map(TimeStamp.unsafe)
-  val amountGen: Gen[U256] = Gen.choose(1000L, Number.quadrillion).map(ALPH.nanoAlph)
+  val amountGen: Gen[U256] = Gen.choose(1000L, Number.quadrillion).map(OXM.nanoAlph)
 }

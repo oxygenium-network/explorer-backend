@@ -34,7 +34,7 @@ import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
 import org.oxygenium.explorer.util.Scheduler
 import org.oxygenium.explorer.util.SlickUtil._
 import org.oxygenium.explorer.util.TimeUtil._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util.{Duration, TimeStamp}
 
 case object HashrateService extends StrictLogging {
@@ -109,7 +109,7 @@ case object HashrateService extends StrictLogging {
       computeStepBack: TimeStamp => TimeStamp
   )(implicit ec: ExecutionContext): DBActionR[TimeStamp] = {
     findLatestHashrate(intervalType).map(
-      _.map(timestamp => computeStepBack(timestamp)).getOrElse(ALPH.LaunchTimestamp)
+      _.map(timestamp => computeStepBack(timestamp)).getOrElse(OXM.LaunchTimestamp)
     )
   }
 

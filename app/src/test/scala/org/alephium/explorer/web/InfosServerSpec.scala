@@ -30,7 +30,7 @@ import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache, TransactionCach
 import org.oxygenium.explorer.config.BootMode
 import org.oxygenium.explorer.persistence.{Database, DatabaseFixtureForAll, Migrations}
 import org.oxygenium.explorer.service._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util.TimeStamp
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
@@ -41,11 +41,11 @@ class InfosServerSpec()
 
   val tokenSupply = TokenSupply(
     TimeStamp.zero,
-    ALPH.alph(1),
-    ALPH.alph(2),
-    ALPH.alph(3),
-    ALPH.alph(4),
-    ALPH.alph(5)
+    OXM.alph(1),
+    OXM.alph(2),
+    OXM.alph(3),
+    OXM.alph(4),
+    OXM.alph(5)
   )
 
   val tokenSupplyService = new TokenSupplyService {

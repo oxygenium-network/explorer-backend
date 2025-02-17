@@ -35,7 +35,7 @@ import org.oxygenium.explorer.persistence.model.AppState
 import org.oxygenium.explorer.persistence.queries.AppStateQueries
 import org.oxygenium.explorer.persistence.schema.CustomGetResult._
 import org.oxygenium.explorer.service._
-import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.OXM
 import org.oxygenium.util.{TimeStamp, U256}
 
 class InfosServer(
@@ -65,28 +65,28 @@ class InfosServer(
           getLatestTokenSupply()
           .map { supply =>
             val circulating = supply.map(_.circulating).getOrElse(U256.Zero)
-            toALPH(circulating)
+            toOXM(circulating)
           }
       }) ,
       route(getTotalSupply.serverLogicSuccess[Future] { _ =>
           getLatestTokenSupply()
           .map { supply =>
             val total = supply.map(_.total).getOrElse(U256.Zero)
-            toALPH(total)
+            toOXM(total)
           }
       }) ,
       route(getReservedSupply.serverLogicSuccess[Future] { _ =>
           getLatestTokenSupply()
           .map { supply =>
             val reserved = supply.map(_.reserved).getOrElse(U256.Zero)
-            toALPH(reserved)
+            toOXM(reserved)
           }
       }) ,
       route(getLockedSupply.serverLogicSuccess[Future] { _ =>
           getLatestTokenSupply()
           .map { supply =>
             val locked = supply.map(_.locked).getOrElse(U256.Zero)
-            toALPH(locked)
+            toOXM(locked)
           }
       }) ,
       route(getHeights.serverLogicSuccess[Future]{ _ =>
@@ -130,8 +130,8 @@ class InfosServer(
       }
   }
 
-  private def toALPH(u256: U256): BigDecimal =
-    new BigDecimal(u256.v).divide(new BigDecimal(ALPH.oneAlph.v))
+  private def toOXM(u256: U256): BigDecimal =
+    new BigDecimal(u256.v).divide(new BigDecimal(OXM.oneAlph.v))
 
   private val latestTokenSupplyCache: AsyncReloadingCache[Option[TokenSupply]] =
     AsyncReloadingCache[Option[TokenSupply]](None, 1.minutes) { _ =>
