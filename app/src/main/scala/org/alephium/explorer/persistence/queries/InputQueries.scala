@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.ExecutionContext
@@ -24,14 +24,14 @@ import slick.dbio.DBIOAction
 import slick.jdbc._
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.queries.result.{InputsFromTxQR, InputsQR}
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.SlickExplainUtil._
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.protocol.model.{Address, BlockHash, TransactionId}
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.queries.result.{InputsFromTxQR, InputsQR}
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.SlickExplainUtil._
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
 
 object InputQueries {
 

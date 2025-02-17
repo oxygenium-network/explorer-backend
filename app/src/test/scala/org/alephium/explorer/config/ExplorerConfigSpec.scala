@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.config
+package org.oxygenium.explorer.config
 
 import scala.concurrent.duration._
 import scala.util.{Success, Try}
@@ -25,19 +25,19 @@ import org.scalacheck.{Arbitrary, Gen}
 import org.scalatest.TryValues._
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-import org.alephium.api.model.ApiKey
-import org.alephium.explorer.AlephiumSpec
-import org.alephium.explorer.GenCommon._
-import org.alephium.explorer.config.ExplorerConfig._
-import org.alephium.explorer.error.ExplorerError._
-import org.alephium.protocol.model.NetworkId
+import org.oxygenium.api.model.ApiKey
+import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.GenCommon._
+import org.oxygenium.explorer.config.ExplorerConfig._
+import org.oxygenium.explorer.error.ExplorerError._
+import org.oxygenium.protocol.model.NetworkId
 
 class ExplorerConfigSpec extends AlephiumSpec with ScalaCheckDrivenPropertyChecks {
 
   "ficus" should {
     "load config" in {
       val typesafeConfig = ConfigFactory.load()
-      Try(typesafeConfig.as[ExplorerConfig]("alephium")) is a[Success[ExplorerConfig]]
+      Try(typesafeConfig.as[ExplorerConfig]("oxygenium")) is a[Success[ExplorerConfig]]
     }
   }
 

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.Future
@@ -27,11 +27,11 @@ import org.scalatest.TryValues._
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.error.ExplorerError._
-import org.alephium.explorer.service.BlockFlowClient
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.error.ExplorerError._
+import org.oxygenium.explorer.service.BlockFlowClient
 
 /** Temporary placeholder. These tests should be merged into ApplicationSpec */
 class SyncServicesSpec

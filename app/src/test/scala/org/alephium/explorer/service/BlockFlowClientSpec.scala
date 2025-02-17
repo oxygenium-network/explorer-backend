@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.net.InetAddress
 
@@ -29,21 +29,21 @@ import org.scalatest.concurrent.{IntegrationPatience, ScalaFutures}
 import sttp.model.Uri
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
-import org.alephium.api
-import org.alephium.api.model
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.api.model.{FungibleTokenMetadata, NFTCollectionMetadata, NFTMetadata}
-import org.alephium.explorer.error.ExplorerError
-import org.alephium.explorer.persistence.DatabaseFixtureForAll
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.web.Server
-import org.alephium.protocol.config.GroupConfig
-import org.alephium.protocol.model.{CliqueId, ContractId, GroupIndex, NetworkId}
-import org.alephium.util.AVector
+import org.oxygenium.api
+import org.oxygenium.api.model
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.api.model.{FungibleTokenMetadata, NFTCollectionMetadata, NFTMetadata}
+import org.oxygenium.explorer.error.ExplorerError
+import org.oxygenium.explorer.persistence.DatabaseFixtureForAll
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.web.Server
+import org.oxygenium.protocol.config.GroupConfig
+import org.oxygenium.protocol.model.{CliqueId, ContractId, GroupIndex, NetworkId}
+import org.oxygenium.util.AVector
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
 class BlockFlowClientSpec extends AlephiumFutureSpec with DatabaseFixtureForAll {

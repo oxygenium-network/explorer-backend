@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,22 +14,22 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import scala.collection.immutable.ArraySeq
 
 import akka.util.ByteString
 import sttp.tapir.Schema
 
-import org.alephium.api.TapirSchemas._
-import org.alephium.api.UtilJson._
-import org.alephium.explorer.api.Json._
-import org.alephium.explorer.api.Schemas.configuration
-import org.alephium.json.Json._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{Address, TransactionId}
-import org.alephium.util.{TimeStamp, U256}
-import org.alephium.util.AVector
+import org.oxygenium.api.TapirSchemas._
+import org.oxygenium.api.UtilJson._
+import org.oxygenium.explorer.api.Json._
+import org.oxygenium.explorer.api.Schemas.configuration
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{Address, TransactionId}
+import org.oxygenium.util.{TimeStamp, U256}
+import org.oxygenium.util.AVector
 
 sealed trait Output {
   def hint: Int
@@ -71,14 +71,14 @@ object Output {
 
   def toFixedAssetOutput(
       output: Output
-  ): Option[org.alephium.api.model.FixedAssetOutput] = {
+  ): Option[org.oxygenium.api.model.FixedAssetOutput] = {
     output match {
       case asset: AssetOutput if asset.fixedOutput =>
         asset.address match {
           case assetAddress: Address.Asset =>
-            val amount = org.alephium.api.model.Amount(asset.attoAlphAmount)
+            val amount = org.oxygenium.api.model.Amount(asset.attoAlphAmount)
             Some(
-              org.alephium.api.model.FixedAssetOutput(
+              org.oxygenium.api.model.FixedAssetOutput(
                 asset.hint,
                 asset.key,
                 amount,
@@ -96,14 +96,14 @@ object Output {
     }
   }
 
-  def toProtocol(output: Output): Option[org.alephium.api.model.Output] =
+  def toProtocol(output: Output): Option[org.oxygenium.api.model.Output] =
     (output, output.address) match {
       case (asset: AssetOutput, assetAddress: Address.Asset) =>
         Some(
-          org.alephium.api.model.AssetOutput(
+          org.oxygenium.api.model.AssetOutput(
             output.hint,
             output.key,
-            org.alephium.api.model.Amount(output.attoAlphAmount),
+            org.oxygenium.api.model.Amount(output.attoAlphAmount),
             assetAddress,
             tokens =
               output.tokens.map(t => AVector.from(t.map(_.toProtocol()))).getOrElse(AVector.empty),
@@ -113,10 +113,10 @@ object Output {
         )
       case (_: ContractOutput, contractAddress: Address.Contract) =>
         Some(
-          org.alephium.api.model.ContractOutput(
+          org.oxygenium.api.model.ContractOutput(
             output.hint,
             output.key,
-            org.alephium.api.model.Amount(output.attoAlphAmount),
+            org.oxygenium.api.model.Amount(output.attoAlphAmount),
             contractAddress,
             tokens = output.tokens
               .map(tokens => AVector.from(tokens.map(_.toProtocol())))

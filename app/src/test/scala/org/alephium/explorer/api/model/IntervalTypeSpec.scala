@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import scala.concurrent.Future
 
 import org.scalacheck.Gen
 
-import org.alephium.api.ApiError
-import org.alephium.api.model.TimeInterval
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.GenApiModel.intervalTypeGen
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.api.ApiError
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.GenApiModel.intervalTypeGen
+import org.oxygenium.util.{Duration, TimeStamp}
 
 class IntervalTypeSpec() extends AlephiumFutureSpec {
   "IntervalType" should {

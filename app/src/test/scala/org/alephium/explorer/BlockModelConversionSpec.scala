@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 
-import org.alephium.explorer.AlephiumSpec
-import org.alephium.explorer.ConfigDefaults.groupSetting
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.service.BlockFlowClient
+import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.ConfigDefaults.groupSetting
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.service.BlockFlowClient
 
 class BlockModelConversionSpec() extends AlephiumSpec {
 
@@ -39,7 +39,7 @@ class BlockModelConversionSpec() extends AlephiumSpec {
 
   trait Fixture {
 
-    def blockEntityToProtocol(blockEntity: BlockEntity): org.alephium.api.model.BlockEntry = {
+    def blockEntityToProtocol(blockEntity: BlockEntity): org.oxygenium.api.model.BlockEntry = {
 
       val transactions = transactionsApiFromBlockEntity(blockEntity)
 

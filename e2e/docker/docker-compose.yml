@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  alephium:
-    image: alephium/alephium:v3.8.8
+  oxygenium:
+    image: oxygenium/oxygenium:v3.8.8
     restart: unless-stopped
     ports:
       - 19973:19973/tcp
@@ -16,7 +16,7 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
-      - ./devnet.conf:/alephium-home/.alephium/user.conf
+      - ./devnet.conf:/oxygenium-home/.oxygenium/user.conf
     healthcheck:
       test: curl --fail http://127.0.0.1:22973/wallets || exit 1
       interval: 3s

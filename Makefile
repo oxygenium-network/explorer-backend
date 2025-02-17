@@ -26,7 +26,7 @@ run:
 	sbt app/run
 
 update-openapi:
-	sbt "tools/runMain org.alephium.tools.OpenApiUpdate"
+	sbt "tools/runMain org.oxygenium.tools.OpenApiUpdate"
 
 benchmark-run:
 	sbt "benchmark/jmh:run"
@@ -41,7 +41,7 @@ create-db:
 
 restore-db:
 	#Make sure to define ALEPHIUM_NETWORK to "mainnet" or "testnet"
-	curl $(shell curl -L -s "https://s3.eu-central-1.amazonaws.com/archives.alephium.org/archives/${ALEPHIUM_NETWORK}/explorer-db/_latest.txt") -L ${url} | \
+	curl $(shell curl -L -s "https://s3.eu-central-1.amazonaws.com/archives.oxygenium.org/archives/${ALEPHIUM_NETWORK}/explorer-db/_latest.txt") -L ${url} | \
 	gunzip -c | \
 	psql \
 		-h $(or $(DB_HOST), localhost) \

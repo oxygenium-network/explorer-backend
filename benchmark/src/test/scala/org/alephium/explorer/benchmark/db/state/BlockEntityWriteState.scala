@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db.state
+package org.oxygenium.explorer.benchmark.db.state
 
 import scala.concurrent.{Await, ExecutionContext, ExecutionContextExecutor}
 
@@ -22,13 +22,13 @@ import org.openjdk.jmh.annotations.{Scope, State}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
-import org.alephium.explorer.benchmark.db.BenchmarkSettings._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence.DBInitializer
-import org.alephium.explorer.persistence.model.BlockEntity
-import org.alephium.util.Duration
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
+import org.oxygenium.explorer.benchmark.db.BenchmarkSettings._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence.DBInitializer
+import org.oxygenium.explorer.persistence.model.BlockEntity
+import org.oxygenium.util.Duration
 
 /** JMH state for benchmarking block creation.
   */

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api
+package org.oxygenium.explorer.api
 
 import scala.collection.immutable.ArraySeq
 
@@ -25,13 +25,13 @@ import sttp.tapir._
 import sttp.tapir.generic.auto._
 import sttp.tapir.server.vertx.streams.VertxStreams
 
-import org.alephium.api.Endpoints.jsonBody
-import org.alephium.api.model.TimeInterval
-import org.alephium.explorer.api.EndpointExamples._
-import org.alephium.explorer.api.model._
-import org.alephium.protocol.PublicKey
-import org.alephium.protocol.model.{Address, TokenId}
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.api.Endpoints.jsonBody
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.explorer.api.EndpointExamples._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.protocol.PublicKey
+import org.oxygenium.protocol.model.{Address, TokenId}
+import org.oxygenium.util.{Duration, TimeStamp}
 
 // scalastyle:off magic.number
 trait AddressesEndpoints extends BaseEndpoint with QueryParams {

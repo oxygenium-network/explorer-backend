@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -32,13 +32,13 @@ object Version {
 }
 
 object Dependencies {
-  lazy val alephiumCrypto   = "org.alephium" %% "alephium-crypto"   % Version.common
-  lazy val alephiumProtocol = "org.alephium" %% "alephium-protocol" % Version.common
-  lazy val alephiumUtil     = "org.alephium" %% "alephium-util"     % Version.common
-  lazy val alephiumApi      = "org.alephium" %% "alephium-api"      % Version.common
-  lazy val alephiumJson     = "org.alephium" %% "alephium-json"     % Version.common
-  lazy val alephiumHttp     = "org.alephium" %% "alephium-http"     % Version.common
-  lazy val alephiumConf     = "org.alephium" %% "alephium-conf"     % Version.common
+  lazy val oxygeniumCrypto   = "org.oxygenium" %% "oxygenium-crypto"   % Version.common
+  lazy val oxygeniumProtocol = "org.oxygenium" %% "oxygenium-protocol" % Version.common
+  lazy val oxygeniumUtil     = "org.oxygenium" %% "oxygenium-util"     % Version.common
+  lazy val oxygeniumApi      = "org.oxygenium" %% "oxygenium-api"      % Version.common
+  lazy val oxygeniumJson     = "org.oxygenium" %% "oxygenium-json"     % Version.common
+  lazy val oxygeniumHttp     = "org.oxygenium" %% "oxygenium-http"     % Version.common
+  lazy val oxygeniumConf     = "org.oxygenium" %% "oxygenium-conf"     % Version.common
 
   lazy val vertx       = "io.vertx" % "vertx-core"     % Version.vertx
   lazy val vertxRxJava = "io.vertx" % "vertx-rx-java3" % Version.vertx

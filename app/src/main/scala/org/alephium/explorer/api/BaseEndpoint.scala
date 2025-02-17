@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api
+package org.oxygenium.explorer.api
 
 import scala.collection.immutable.ArraySeq
 
@@ -26,8 +26,8 @@ import sttp.tapir.generic.Configuration
 import sttp.tapir.generic.auto._
 import sttp.tapir.server.vertx.streams.VertxStreams
 
-import org.alephium.api._
-import org.alephium.json.Json.ReadWriter
+import org.oxygenium.api._
+import org.oxygenium.json.Json.ReadWriter
 
 trait BaseEndpoint extends ErrorExamples with TapirCodecs with TapirSchemasLike with StrictLogging {
   import Endpoints._
@@ -57,7 +57,7 @@ trait BaseEndpoint extends ErrorExamples with TapirCodecs with TapirSchemasLike 
       rw: ReadWriter[ArraySeq[T]],
       schema: Schema[ArraySeq[T]]
   ): EndpointIO.Body[String, ArraySeq[T]] =
-    org.alephium.api.Endpoints
+    org.oxygenium.api.Endpoints
       .jsonBody[ArraySeq[T]]
       .validate(Validator.maxSize(maxSize))
       .description(s"List of $tpe, max items: $maxSize")

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,19 +14,19 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.schema
+package org.oxygenium.explorer.persistence.schema
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.{AlephiumFutureSpec, GenDBModel}
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.queries.OutputQueries
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.persistence.schema.TimeStampTableFixture._
-import org.alephium.protocol.ALPH
-import org.alephium.util._
+import org.oxygenium.explorer.{AlephiumFutureSpec, GenDBModel}
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.queries.OutputQueries
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.persistence.schema.TimeStampTableFixture._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.util._
 
 class CustomJdbcTypesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 

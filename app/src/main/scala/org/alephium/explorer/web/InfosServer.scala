@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import java.math.BigDecimal
 
@@ -26,17 +26,17 @@ import io.vertx.ext.web._
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.{BuildInfo, GroupSetting}
-import org.alephium.explorer.api.InfosEndpoints
-import org.alephium.explorer.api.model.{ExplorerInfo, TokenSupply}
-import org.alephium.explorer.cache.{AsyncReloadingCache, BlockCache, TransactionCache}
-import org.alephium.explorer.persistence.DBRunner
-import org.alephium.explorer.persistence.model.AppState
-import org.alephium.explorer.persistence.queries.AppStateQueries
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.service._
-import org.alephium.protocol.ALPH
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.explorer.{BuildInfo, GroupSetting}
+import org.oxygenium.explorer.api.InfosEndpoints
+import org.oxygenium.explorer.api.model.{ExplorerInfo, TokenSupply}
+import org.oxygenium.explorer.cache.{AsyncReloadingCache, BlockCache, TransactionCache}
+import org.oxygenium.explorer.persistence.DBRunner
+import org.oxygenium.explorer.persistence.model.AppState
+import org.oxygenium.explorer.persistence.queries.AppStateQueries
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.service._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.util.{TimeStamp, U256}
 
 class InfosServer(
     tokenSupplyService: TokenSupplyService,

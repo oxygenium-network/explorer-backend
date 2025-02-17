@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.cache
+package org.oxygenium.explorer.cache
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -26,14 +26,14 @@ import io.prometheus.metrics.core.metrics.Gauge
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.model.{AppState, LatestBlock}
-import org.alephium.explorer.persistence.queries.{AppStateQueries, BlockQueries}
-import org.alephium.explorer.persistence.schema.CustomGetResult.lastFinalizedInputTimeGetResult
-import org.alephium.protocol.config.GroupConfig
-import org.alephium.protocol.model.ChainIndex
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.model.{AppState, LatestBlock}
+import org.oxygenium.explorer.persistence.queries.{AppStateQueries, BlockQueries}
+import org.oxygenium.explorer.persistence.schema.CustomGetResult.lastFinalizedInputTimeGetResult
+import org.oxygenium.protocol.config.GroupConfig
+import org.oxygenium.protocol.model.ChainIndex
+import org.oxygenium.util.{Duration, TimeStamp}
 
 object BlockCache {
 
@@ -69,7 +69,7 @@ object BlockCache {
      * all chain-indexes after a single run of sync so `.get` would
      * never fail after first few seconds after boot-up.
      *
-     * @see Comments in PR <a href="https://github.com/alephium/explorer-backend/pull/393">#393</a>
+     * @see Comments in PR <a href="https://github.com/oxygenium/explorer-backend/pull/393">#393</a>
      */
     @SuppressWarnings(Array("org.wartremover.warts.OptionPartial"))
     val latestBlockAsyncLoader: AsyncCacheLoader[ChainIndex, LatestBlock] = { case (key, _) =>

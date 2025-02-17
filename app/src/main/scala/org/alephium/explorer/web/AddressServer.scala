@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -28,19 +28,19 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.StatusCode
 
-import org.alephium.api.ApiError
-import org.alephium.api.model.TimeInterval
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.api.AddressesEndpoints
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.BlockCache
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.service.{TokenService, TransactionService}
-import org.alephium.protocol.PublicKey
-import org.alephium.protocol.model.Address
-import org.alephium.protocol.vm.{LockupScript, UnlockScript}
-import org.alephium.serde._
-import org.alephium.util.Duration
+import org.oxygenium.api.ApiError
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.api.AddressesEndpoints
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.BlockCache
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.service.{TokenService, TransactionService}
+import org.oxygenium.protocol.PublicKey
+import org.oxygenium.protocol.model.Address
+import org.oxygenium.protocol.vm.{LockupScript, UnlockScript}
+import org.oxygenium.serde._
+import org.oxygenium.util.Duration
 
 class AddressServer(
     transactionService: TransactionService,

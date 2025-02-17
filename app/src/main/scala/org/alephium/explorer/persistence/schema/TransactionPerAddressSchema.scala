@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,15 +14,15 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.schema
+package org.oxygenium.explorer.persistence.schema
 
 import slick.jdbc.PostgresProfile.api._
 import slick.lifted.{Index, PrimaryKey, ProvenShape}
 
-import org.alephium.explorer.persistence.model.TransactionPerAddressEntity
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.protocol.model.{Address, BlockHash, TransactionId}
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.persistence.model.TransactionPerAddressEntity
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
+import org.oxygenium.util.TimeStamp
 
 object TransactionPerAddressSchema
     extends SchemaMainChain[TransactionPerAddressEntity]("transaction_per_addresses") {

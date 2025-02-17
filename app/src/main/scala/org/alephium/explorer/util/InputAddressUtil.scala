@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,24 +14,24 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.util
+package org.oxygenium.explorer.util
 
 import scala.collection.immutable.ArraySeq
 
 import com.typesafe.scalalogging.StrictLogging
 
-import org.alephium.api
-import org.alephium.explorer.AnyOps
-import org.alephium.protocol
-import org.alephium.protocol.model.Address
-import org.alephium.serde._
+import org.oxygenium.api
+import org.oxygenium.explorer.AnyOps
+import org.oxygenium.protocol
+import org.oxygenium.protocol.model.Address
+import org.oxygenium.serde._
 
 object InputAddressUtil extends StrictLogging {
   private val sameAsPrevious = serialize(
     protocol.vm.UnlockScript.SameAsPrevious: protocol.vm.UnlockScript
   )
   /*
-   * Extract address from an [[org.alephium.api.model.AssetInput]]
+   * Extract address from an [[org.oxygenium.api.model.AssetInput]]
    * Addresses can only be extracted from P2PKH and P2SH.
    * We can't find back the address from a P2MPKH
    */

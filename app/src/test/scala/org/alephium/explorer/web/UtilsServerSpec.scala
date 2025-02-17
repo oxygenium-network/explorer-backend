@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,21 +14,21 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import org.scalamock.scalatest.MockFactory
 import sttp.model.StatusCode
 
-import org.alephium.api.ApiError
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults.groupSetting
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.model.LogbackValue
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache, TransactionCache}
-import org.alephium.explorer.config.BootMode
-import org.alephium.explorer.persistence.{Database, DatabaseFixtureForAll}
-import org.alephium.explorer.service._
-import org.alephium.json.Json
+import org.oxygenium.api.ApiError
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults.groupSetting
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.model.LogbackValue
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache, TransactionCache}
+import org.oxygenium.explorer.config.BootMode
+import org.oxygenium.explorer.persistence.{Database, DatabaseFixtureForAll}
+import org.oxygenium.explorer.service._
+import org.oxygenium.json.Json
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
 class UtilsServerSpec()

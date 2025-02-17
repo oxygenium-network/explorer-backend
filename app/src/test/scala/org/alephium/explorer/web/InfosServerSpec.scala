@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -22,16 +22,16 @@ import scala.concurrent.{ExecutionContext, Future}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache, TransactionCache}
-import org.alephium.explorer.config.BootMode
-import org.alephium.explorer.persistence.{Database, DatabaseFixtureForAll, Migrations}
-import org.alephium.explorer.service._
-import org.alephium.protocol.ALPH
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache, TransactionCache}
+import org.oxygenium.explorer.config.BootMode
+import org.oxygenium.explorer.persistence.{Database, DatabaseFixtureForAll, Migrations}
+import org.oxygenium.explorer.service._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.util.TimeStamp
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
 class InfosServerSpec()

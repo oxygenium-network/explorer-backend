@@ -93,7 +93,7 @@ val inliningOptions =
   Seq(
     "-opt-warnings",
     "-opt:l:inline",
-    "-opt-inline-from:org.alephium.explorer.**"
+    "-opt-inline-from:org.oxygenium.explorer.**"
     // Uncomment to debug inlining
     /*
     "-Yopt-log-inline",
@@ -103,7 +103,7 @@ val inliningOptions =
 
 val commonSettings = Seq(
   name         := "explorer-backend",
-  organization := "org.alephium",
+  organization := "org.oxygenium",
   scalaVersion := "2.13.14",
   scalacOptions ++= Seq(
     "-deprecation",
@@ -163,14 +163,14 @@ lazy val app = mainProject("app")
   .enablePlugins(BuildInfoPlugin)
   .settings(
     libraryDependencies ++= Seq(
-      alephiumUtil,
-      alephiumProtocol,
-      alephiumApi,
-      alephiumCrypto,
-      alephiumJson,
+      oxygeniumUtil,
+      oxygeniumProtocol,
+      oxygeniumApi,
+      oxygeniumCrypto,
+      oxygeniumJson,
       rxJava,
-      alephiumHttp,
-      alephiumConf,
+      oxygeniumHttp,
+      oxygeniumConf,
       tapirCore,
       tapirServer,
       tapirVertx,
@@ -202,7 +202,7 @@ lazy val app = mainProject("app")
     )
   )
   .settings(
-    assembly / mainClass       := Some("org.alephium.explorer.Main"),
+    assembly / mainClass       := Some("org.oxygenium.explorer.Main"),
     assembly / assemblyJarName := s"explorer-backend-${version.value}.jar",
     assembly / test            := {},
     docker / dockerfile := {
@@ -218,7 +218,7 @@ lazy val app = mainProject("app")
       }
     },
     docker / imageNames := {
-      val baseImageName = "alephium/dev-explorer-backend"
+      val baseImageName = "oxygenium/dev-explorer-backend"
       val versionTag    = version.value.replace('+', '_')
       Seq(
         ImageName(baseImageName + ":" + versionTag),
@@ -233,7 +233,7 @@ lazy val app = mainProject("app")
       BuildInfoKey("branch"         -> git.gitCurrentBranch.value),
       BuildInfoKey("releaseVersion" -> version.value)
     ),
-    buildInfoPackage          := "org.alephium.explorer",
+    buildInfoPackage          := "org.oxygenium.explorer",
     buildInfoUsePackageAsPath := true,
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", "io.netty.versions.properties", xs @ _*) =>
@@ -262,7 +262,7 @@ lazy val app = mainProject("app")
 
 lazy val tools = mainProject("tools")
   .dependsOn(app)
-  .settings(libraryDependencies ++= Seq(alephiumProtocol, alephiumApi, alephiumCrypto, logback))
+  .settings(libraryDependencies ++= Seq(oxygeniumProtocol, oxygeniumApi, oxygeniumCrypto, logback))
 
 lazy val benchmark = mainProject("benchmark")
   .enablePlugins(JmhPlugin)

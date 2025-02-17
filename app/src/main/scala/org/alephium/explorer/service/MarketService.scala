@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.util.concurrent.atomic.AtomicBoolean
 
@@ -27,14 +27,14 @@ import sttp.client3._
 import sttp.client3.asynchttpclient.future.AsyncHttpClientFutureBackend
 import sttp.model.{Method, StatusCode, Uri}
 
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache._
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.util.Scheduler
-import org.alephium.json.Json._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{Address, ContractId}
-import org.alephium.util.{discard, Duration, Hex, Math, Service, TimeStamp}
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache._
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{Address, ContractId}
+import org.oxygenium.util.{discard, Duration, Hex, Math, Service, TimeStamp}
 
 trait MarketService {
   def getPrices(
@@ -203,7 +203,7 @@ object MarketService extends StrictLogging {
           logger.debug(s"Query mobula `/market/multi-data`, nb of attempts $retried")
           val assets      = tokenListToAddresses(tokens)
           val assetsStr   = assets.map { _.toBase58 }.mkString(",")
-          val blockchains = assets.map { _ => "alephium" }.mkString(",")
+          val blockchains = assets.map { _ => "oxygenium" }.mkString(",")
           request(
             uri"$mobulaBaseUri/market/multi-data?assets=${assetsStr}&blockchains=${blockchains}"
           ) { response =>

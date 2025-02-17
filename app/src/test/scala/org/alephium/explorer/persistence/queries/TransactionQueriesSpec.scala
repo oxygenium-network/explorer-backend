@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import scala.collection.immutable.ArraySeq
 import scala.util.Random
@@ -22,23 +22,23 @@ import scala.util.Random
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.{AlephiumFutureSpec, TestQueries}
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.GenCoreUtil._
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.Generators._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.queries.result._
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.service.FinalizerService
-import org.alephium.explorer.util.SlickExplainUtil._
-import org.alephium.protocol.{ALPH, Hash}
-import org.alephium.protocol.model.{Address, GroupIndex, TransactionId}
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.explorer.{AlephiumFutureSpec, TestQueries}
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.GenCoreUtil._
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.Generators._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.queries.result._
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.service.FinalizerService
+import org.oxygenium.explorer.util.SlickExplainUtil._
+import org.oxygenium.protocol.{ALPH, Hash}
+import org.oxygenium.protocol.model.{Address, GroupIndex, TransactionId}
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 class TransactionQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 
@@ -293,7 +293,7 @@ class TransactionQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForE
     }
   }
 
-  // https://github.com/alephium/explorer-backend/issues/174
+  // https://github.com/oxygenium/explorer-backend/issues/174
   "return an empty list when not transactions are found - Isssue 174" in new Fixture {
     run(
       TransactionQueries.getTransactionsByAddress(address, Pagination.unsafe(1, 10))

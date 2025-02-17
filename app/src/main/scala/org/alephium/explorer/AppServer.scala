@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.ExecutionContext
@@ -23,10 +23,10 @@ import io.vertx.ext.web._
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.cache.{BlockCache, MetricCache, TransactionCache}
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.service._
-import org.alephium.explorer.web._
+import org.oxygenium.explorer.cache.{BlockCache, MetricCache, TransactionCache}
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.service._
+import org.oxygenium.explorer.web._
 
 // scalastyle:off magic.number parameter.number method.length
 object AppServer {

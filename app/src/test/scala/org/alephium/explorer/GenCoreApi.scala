@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import java.math.BigInteger
 
@@ -24,18 +24,18 @@ import akka.util.ByteString
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 
-import org.alephium.api.model._
-import org.alephium.explorer.GenApiModel.{addressGen, bytesGen, stdInterfaceIdGen}
-import org.alephium.explorer.GenCommon.{genInetAddress, genPortNum}
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.GenCoreUtil._
-import org.alephium.explorer.Generators._
-import org.alephium.explorer.api.model.{Height, StdInterfaceId}
-import org.alephium.explorer.persistence.model.ContractEntity
-import org.alephium.explorer.service.BlockFlowClient
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model
-import org.alephium.protocol.model.{
+import org.oxygenium.api.model._
+import org.oxygenium.explorer.GenApiModel.{addressGen, bytesGen, stdInterfaceIdGen}
+import org.oxygenium.explorer.GenCommon.{genInetAddress, genPortNum}
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.GenCoreUtil._
+import org.oxygenium.explorer.Generators._
+import org.oxygenium.explorer.api.model.{Height, StdInterfaceId}
+import org.oxygenium.explorer.persistence.model.ContractEntity
+import org.oxygenium.explorer.service.BlockFlowClient
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model
+import org.oxygenium.protocol.model.{
   Address,
   ChainIndex,
   CliqueId,
@@ -44,13 +44,13 @@ import org.alephium.protocol.model.{
   NetworkId,
   Target
 }
-import org.alephium.serde._
-import org.alephium.util.{AVector, Duration, Hex, I256, TimeStamp, U256}
+import org.oxygenium.serde._
+import org.oxygenium.util.{AVector, Duration, Hex, I256, TimeStamp, U256}
 
-/** Generators for types supplied by Core `org.alephium.api` package */
+/** Generators for types supplied by Core `org.oxygenium.api` package */
 @SuppressWarnings(Array("org.wartremover.warts.DefaultArguments"))
 object GenCoreApi {
-  // From `alephium` repo
+  // From `oxygenium` repo
   val numZerosAtLeastInHash = 37
   val target = Target.unsafe(
     BigInteger.ONE.shiftLeft(256 - numZerosAtLeastInHash).subtract(BigInteger.ONE)

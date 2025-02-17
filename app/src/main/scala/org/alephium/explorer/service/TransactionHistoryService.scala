@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -25,19 +25,19 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.{PositionedParameters, PostgresProfile, SetParameter, SQLActionBuilder}
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.queries.QuerySplitter
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.explorer.util.TimeUtil._
-import org.alephium.protocol.ALPH
-import org.alephium.protocol.model.GroupIndex
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.queries.QuerySplitter
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.explorer.util.TimeUtil._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.model.GroupIndex
+import org.oxygenium.util.{Duration, TimeStamp}
 
 case object TransactionHistoryService extends StrictLogging {
 

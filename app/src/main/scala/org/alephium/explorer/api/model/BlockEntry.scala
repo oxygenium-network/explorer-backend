@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import java.math.BigInteger
 
@@ -22,14 +22,14 @@ import scala.collection.immutable.ArraySeq
 
 import akka.util.ByteString
 
-import org.alephium.api.UtilJson._
-import org.alephium.explorer.api.Codecs._
-import org.alephium.explorer.api.Json.groupIndexReadWriter
-import org.alephium.explorer.service.FlowEntity
-import org.alephium.json.Json._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{BlockHash, GroupIndex}
-import org.alephium.util.{AVector, TimeStamp}
+import org.oxygenium.api.UtilJson._
+import org.oxygenium.explorer.api.Codecs._
+import org.oxygenium.explorer.api.Json.groupIndexReadWriter
+import org.oxygenium.explorer.service.FlowEntity
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{BlockHash, GroupIndex}
+import org.oxygenium.util.{AVector, TimeStamp}
 
 final case class BlockEntry(
     hash: BlockHash,
@@ -52,8 +52,8 @@ final case class BlockEntry(
 
   def toProtocol(
       transactions: ArraySeq[Transaction]
-  ): org.alephium.api.model.BlockEntry = {
-    org.alephium.api.model.BlockEntry(
+  ): org.oxygenium.api.model.BlockEntry = {
+    org.oxygenium.api.model.BlockEntry(
       hash,
       timestamp,
       chainFrom.value,

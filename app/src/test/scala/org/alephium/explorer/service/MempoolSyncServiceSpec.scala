@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.Future
@@ -23,13 +23,13 @@ import scala.concurrent.duration._
 import org.scalacheck.Gen
 import sttp.model.Uri
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.GenApiModel.mempooltransactionGen
-import org.alephium.explorer.api.model.MempoolTransaction
-import org.alephium.explorer.persistence.DatabaseFixtureForEach
-import org.alephium.explorer.persistence.dao.MempoolDao
-import org.alephium.explorer.util.Scheduler
-import org.alephium.explorer.util.TestUtils._
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.GenApiModel.mempooltransactionGen
+import org.oxygenium.explorer.api.model.MempoolTransaction
+import org.oxygenium.explorer.persistence.DatabaseFixtureForEach
+import org.oxygenium.explorer.persistence.dao.MempoolDao
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.explorer.util.TestUtils._
 
 class MempoolSyncServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach {
 

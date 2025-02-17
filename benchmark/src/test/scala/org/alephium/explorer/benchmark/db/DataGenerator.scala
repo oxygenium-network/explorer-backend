@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db
+package org.oxygenium.explorer.benchmark.db
 
 import java.math.BigInteger
 
@@ -23,12 +23,12 @@ import scala.util.Random
 
 import akka.util.ByteString
 
-import org.alephium.explorer.GenApiModel
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.model._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{Address, BlockHash, GroupIndex, TransactionId}
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.explorer.GenApiModel
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{Address, BlockHash, GroupIndex, TransactionId}
+import org.oxygenium.util.{TimeStamp, U256}
 
 /** Data generators for JMH benchmarks.
   *

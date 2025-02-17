@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,19 +14,19 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.model.{BlockHeader, InputEntity, LatestBlock}
-import org.alephium.explorer.persistence.model.AppState.LastFinalizedInputTime
-import org.alephium.explorer.persistence.queries.{AppStateQueries, BlockQueries, InputQueries}
-import org.alephium.explorer.persistence.schema.LatestBlockSchema
-import org.alephium.protocol.model.GroupIndex
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.model.{BlockHeader, InputEntity, LatestBlock}
+import org.oxygenium.explorer.persistence.model.AppState.LastFinalizedInputTime
+import org.oxygenium.explorer.persistence.queries.{AppStateQueries, BlockQueries, InputQueries}
+import org.oxygenium.explorer.persistence.schema.LatestBlockSchema
+import org.oxygenium.protocol.model.GroupIndex
+import org.oxygenium.util.{Duration, TimeStamp}
 
 class FinalizerServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 

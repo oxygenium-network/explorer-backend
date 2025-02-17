@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -13,7 +13,7 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
-package org.alephium.explorer.util
+package org.oxygenium.explorer.util
 
 import java.time._
 import java.util.concurrent.ConcurrentLinkedDeque
@@ -27,8 +27,8 @@ import org.scalacheck.Gen
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.util.TestUtils._
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.util.TestUtils._
 
 class SchedulerSpec extends AlephiumFutureSpec with ScalaCheckDrivenPropertyChecks with Matchers {
 
@@ -65,7 +65,7 @@ class SchedulerSpec extends AlephiumFutureSpec with ScalaCheckDrivenPropertyChec
             .toMinutes is 10
         }
 
-        /** <a href="https://github.com/alephium/explorer-backend/issues/335">#335</a>: The
+        /** <a href="https://github.com/oxygenium/explorer-backend/issues/335">#335</a>: The
           * following test is invalid for timezones in daylight savings.
           *
           * Restricting this test to run for known timezones only (Sydney & Switzerland).
@@ -99,7 +99,7 @@ class SchedulerSpec extends AlephiumFutureSpec with ScalaCheckDrivenPropertyChec
             .toHours is 23
         }
 
-        /** <a href="https://github.com/alephium/explorer-backend/issues/335">#335</a>: The
+        /** <a href="https://github.com/oxygenium/explorer-backend/issues/335">#335</a>: The
           * following test is invalid for timezones in daylight savings.
           *
           * Restricting this test to run for known timezones only (Sydney & Switzerland).

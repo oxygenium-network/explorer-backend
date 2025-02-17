@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,22 +14,22 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import scala.reflect.ClassTag
 
 import slick.jdbc.GetResult
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.GenCoreProtocol.hashGen
-import org.alephium.explorer.GenCoreUtil._
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.model.{AppState, AppStateKey}
-import org.alephium.explorer.persistence.schema.AppStateSchema
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.serde._
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.GenCoreProtocol.hashGen
+import org.oxygenium.explorer.GenCoreUtil._
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.model.{AppState, AppStateKey}
+import org.oxygenium.explorer.persistence.schema.AppStateSchema
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.serde._
 
 class AppStateQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 

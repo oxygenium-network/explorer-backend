@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.math.BigInteger
 
@@ -22,21 +22,21 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.api.model
-import org.alephium.explorer.AlephiumActorSpecLike
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.dao._
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.protocol.model.{Address, ChainIndex, GroupIndex}
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.api.model
+import org.oxygenium.explorer.AlephiumActorSpecLike
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.dao._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex}
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 class HolderServiceSpec extends AlephiumActorSpecLike with DatabaseFixtureForEach {
 

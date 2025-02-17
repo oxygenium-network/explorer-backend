@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,14 +14,14 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.model
+package org.oxygenium.explorer.persistence.model
 
 import scala.collection.immutable.ArraySeq
 
-import org.alephium.api.model.Val
-import org.alephium.explorer.api.model.Event
-import org.alephium.protocol.model.{Address, BlockHash, TransactionId}
-import org.alephium.util.TimeStamp
+import org.oxygenium.api.model.Val
+import org.oxygenium.explorer.api.model.Event
+import org.oxygenium.protocol.model.{Address, BlockHash, TransactionId}
+import org.oxygenium.util.TimeStamp
 
 @SuppressWarnings(
   Array("org.wartremover.warts.ArrayEquals")

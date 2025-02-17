@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -24,12 +24,12 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.StatusCode
 
-import org.alephium.api.ApiError
-import org.alephium.api.model.TimeInterval
-import org.alephium.explorer.api.ChartsEndpoints
-import org.alephium.explorer.api.model.{IntervalType, TimedCount}
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.service.{HashrateService, TransactionHistoryService}
+import org.oxygenium.api.ApiError
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.explorer.api.ChartsEndpoints
+import org.oxygenium.explorer.api.model.{IntervalType, TimedCount}
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.service.{HashrateService, TransactionHistoryService}
 
 class ChartsServer(
     maxTimeInterval: ExplorerConfig.MaxTimeInterval

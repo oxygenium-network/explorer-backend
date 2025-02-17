@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -26,18 +26,18 @@ import slick.dbio.DBIOAction
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.foldFutures
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.model.AppState.LastFinalizedInputTime
-import org.alephium.explorer.persistence.queries.AppStateQueries
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.{Scheduler, TimeUtil}
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{BlockHash, TransactionId}
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.foldFutures
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.model.AppState.LastFinalizedInputTime
+import org.oxygenium.explorer.persistence.queries.AppStateQueries
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.{Scheduler, TimeUtil}
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{BlockHash, TransactionId}
+import org.oxygenium.util.{Duration, TimeStamp}
 
 /*
  * Syncing mempool

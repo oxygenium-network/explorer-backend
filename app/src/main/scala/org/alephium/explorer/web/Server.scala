@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.Future
@@ -26,9 +26,9 @@ import sttp.tapir.server.model.ValuedEndpointOutput
 import sttp.tapir.server.vertx.{VertxFutureServerInterpreter, VertxFutureServerOptions}
 import sttp.tapir.statusCode
 
-import org.alephium.api.{ApiError, DecodeFailureHandler}
-import org.alephium.api.{alphJsonBody => jsonBody}
-import org.alephium.explorer.Metrics
+import org.oxygenium.api.{ApiError, DecodeFailureHandler}
+import org.oxygenium.api.{alphJsonBody => jsonBody}
+import org.oxygenium.explorer.Metrics
 
 trait Server extends DecodeFailureHandler with VertxFutureServerInterpreter {
 

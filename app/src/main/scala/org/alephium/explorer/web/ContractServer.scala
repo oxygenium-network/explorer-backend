@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.annotation.tailrec
 import scala.collection.immutable.ArraySeq
@@ -24,15 +24,15 @@ import io.vertx.ext.web._
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.api.ApiError
-import org.alephium.explorer.api.ContractsEndpoints
-import org.alephium.explorer.api.model.{ContractLiveness, ContractParent, SubContracts}
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.model.ContractEntity
-import org.alephium.explorer.persistence.queries.BlockQueries.getMainChain
-import org.alephium.explorer.persistence.queries.ContractQueries._
-import org.alephium.protocol.model.Address
-import org.alephium.util.TimeStamp
+import org.oxygenium.api.ApiError
+import org.oxygenium.explorer.api.ContractsEndpoints
+import org.oxygenium.explorer.api.model.{ContractLiveness, ContractParent, SubContracts}
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.model.ContractEntity
+import org.oxygenium.explorer.persistence.queries.BlockQueries.getMainChain
+import org.oxygenium.explorer.persistence.queries.ContractQueries._
+import org.oxygenium.protocol.model.Address
+import org.oxygenium.util.TimeStamp
 
 class ContractServer(implicit
     val executionContext: ExecutionContext,

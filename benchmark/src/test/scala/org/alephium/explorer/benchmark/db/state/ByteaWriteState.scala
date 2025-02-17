@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db.state
+package org.oxygenium.explorer.benchmark.db.state
 
 import org.openjdk.jmh.annotations.{Scope, State}
 
-import org.alephium.explorer.benchmark.db.{DBConnectionPool, DBExecutor}
-import org.alephium.explorer.benchmark.db.BenchmarkSettings._
-import org.alephium.explorer.benchmark.db.table.TableByteSchema
-import org.alephium.protocol.Hash
+import org.oxygenium.explorer.benchmark.db.{DBConnectionPool, DBExecutor}
+import org.oxygenium.explorer.benchmark.db.BenchmarkSettings._
+import org.oxygenium.explorer.benchmark.db.table.TableByteSchema
+import org.oxygenium.protocol.Hash
 
 /** JMH state for benchmarking writes to
-  * [[org.alephium.explorer.benchmark.db.table.TableByteSchema]].
+  * [[org.oxygenium.explorer.benchmark.db.table.TableByteSchema]].
   */
 @State(Scope.Thread)
 @SuppressWarnings(Array("org.wartremover.warts.Overloading"))

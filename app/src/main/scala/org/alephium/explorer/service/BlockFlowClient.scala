@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -15,7 +15,7 @@
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
 //scalastyle:off file.size.limit
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.math.BigInteger
 import java.net.InetAddress
@@ -27,9 +27,9 @@ import akka.util.ByteString
 import com.typesafe.scalalogging.StrictLogging
 import sttp.model.Uri
 
-import org.alephium.api
-import org.alephium.api.{ApiModelCodec, Endpoints}
-import org.alephium.api.model.{
+import org.oxygenium.api
+import org.oxygenium.api.{ApiModelCodec, Endpoints}
+import org.oxygenium.api.model.{
   CallContract,
   CallContractFailed,
   CallContractResult,
@@ -41,17 +41,17 @@ import org.alephium.api.model.{
   MultipleCallContractResult,
   SelfClique
 }
-import org.alephium.explorer.{Consensus, GroupSetting}
-import org.alephium.explorer.RichAVector._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.error.ExplorerError
-import org.alephium.explorer.error.ExplorerError._
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.util.InputAddressUtil
-import org.alephium.http.EndpointSender
-import org.alephium.protocol.config.GroupConfig
-import org.alephium.protocol.mining.HashRate
-import org.alephium.protocol.model.{
+import org.oxygenium.explorer.{Consensus, GroupSetting}
+import org.oxygenium.explorer.RichAVector._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.error.ExplorerError
+import org.oxygenium.explorer.error.ExplorerError._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.util.InputAddressUtil
+import org.oxygenium.http.EndpointSender
+import org.oxygenium.protocol.config.GroupConfig
+import org.oxygenium.protocol.mining.HashRate
+import org.oxygenium.protocol.model.{
   Address,
   BlockHash,
   ChainIndex,
@@ -61,7 +61,7 @@ import org.alephium.protocol.model.{
   TokenId,
   TransactionId
 }
-import org.alephium.util.{AVector, Hex, Service, TimeStamp, U256}
+import org.oxygenium.util.{AVector, Hex, Service, TimeStamp, U256}
 
 trait BlockFlowClient extends Service {
   def fetchBlock(fromGroup: GroupIndex, hash: BlockHash): Future[BlockEntity]
@@ -548,7 +548,7 @@ object BlockFlowClient extends StrictLogging {
     val inputs       = blockProtocolToInputEntities(block)
     val outputs      = blockProtocolToOutputEntities(block)
     // As defined in
-    // https://github.com/alephium/alephium/blob/1e359e155b37c2afda6011cdc319d54ae8e4c059/protocol/src/main/scala/org/alephium/protocol/model/Block.scala#L35
+    // https://github.com/oxygenium/oxygenium/blob/1e359e155b37c2afda6011cdc319d54ae8e4c059/protocol/src/main/scala/org/oxygenium/protocol/model/Block.scala#L35
     // Genesis blocks don't have any transactions
     val coinbaseTxId =
       if (block.height == Height.genesis.value) null else block.transactions.last.unsigned.txId

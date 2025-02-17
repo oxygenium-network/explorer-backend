@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,15 +14,15 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 
-import org.alephium.explorer.GenCommon._
-import org.alephium.protocol.{ALPH, Hash, PrivateKey, PublicKey, SignatureSchema}
-import org.alephium.protocol.model._
-import org.alephium.protocol.vm.{
+import org.oxygenium.explorer.GenCommon._
+import org.oxygenium.protocol.{ALPH, Hash, PrivateKey, PublicKey, SignatureSchema}
+import org.oxygenium.protocol.model._
+import org.oxygenium.protocol.vm.{
   Instr,
   LockupScript,
   Method,
@@ -31,9 +31,9 @@ import org.alephium.protocol.vm.{
   StatelessScript,
   UnlockScript
 }
-import org.alephium.util.AVector
+import org.oxygenium.util.AVector
 
-/** Generators for types supplied by Core `org.alephium.protocol` package */
+/** Generators for types supplied by Core `org.oxygenium.protocol` package */
 object GenCoreProtocol {
 
   val hashGen: Gen[Hash]                     = Gen.const(()).map(_ => Hash.generate)

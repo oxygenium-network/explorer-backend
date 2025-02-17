@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.time.{Instant, LocalTime, ZonedDateTime, ZoneOffset}
 
@@ -26,17 +26,17 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.model.AppState._
-import org.alephium.explorer.persistence.queries.AppStateQueries
-import org.alephium.explorer.persistence.queries.InfoQueries
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.protocol.model.TokenId
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.model.AppState._
+import org.oxygenium.explorer.persistence.queries.AppStateQueries
+import org.oxygenium.explorer.persistence.queries.InfoQueries
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.protocol.model.TokenId
+import org.oxygenium.util.TimeStamp
 
 trait HolderService {
   def getAlphHolders(pagination: Pagination)(implicit

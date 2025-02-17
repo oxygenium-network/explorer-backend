@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.math.BigInteger
 import java.time.Instant
@@ -30,16 +30,16 @@ import io.vertx.core.buffer.Buffer
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.TransactionCache
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.dao.{MempoolDao, TransactionDao}
-import org.alephium.explorer.persistence.queries.InputQueries
-import org.alephium.explorer.persistence.queries.TransactionQueries._
-import org.alephium.explorer.util.TimeUtil
-import org.alephium.protocol.ALPH
-import org.alephium.protocol.model.{Address, TransactionId}
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.TransactionCache
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.dao.{MempoolDao, TransactionDao}
+import org.oxygenium.explorer.persistence.queries.InputQueries
+import org.oxygenium.explorer.persistence.queries.TransactionQueries._
+import org.oxygenium.explorer.util.TimeUtil
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.model.{Address, TransactionId}
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 trait TransactionService {
 

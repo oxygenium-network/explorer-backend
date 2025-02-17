@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import scala.collection.immutable.ArraySeq
 import scala.collection.mutable.ListBuffer
@@ -25,19 +25,19 @@ import slick.dbio.DBIOAction
 import slick.jdbc.{PositionedParameters, SetParameter, SQLActionBuilder}
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.queries.InputQueries.insertInputs
-import org.alephium.explorer.persistence.queries.OutputQueries.insertOutputs
-import org.alephium.explorer.persistence.queries.TransactionQueries._
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.SlickExplainUtil._
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.protocol.model.{BlockHash, GroupIndex}
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.queries.InputQueries.insertInputs
+import org.oxygenium.explorer.persistence.queries.OutputQueries.insertOutputs
+import org.oxygenium.explorer.persistence.queries.TransactionQueries._
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.SlickExplainUtil._
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.protocol.model.{BlockHash, GroupIndex}
+import org.oxygenium.util.TimeStamp
 
 object BlockQueries extends StrictLogging {
 
@@ -152,7 +152,7 @@ object BlockQueries extends StrictLogging {
       headers <- getHeadersAtHeightQuery(fromGroup, toGroup, height)
     } yield headers.map(_.toApi())
 
-  /** Order by query for [[org.alephium.explorer.persistence.schema.BlockHeaderSchema.table]]
+  /** Order by query for [[org.oxygenium.explorer.persistence.schema.BlockHeaderSchema.table]]
     */
   private def orderBy(reverse: Boolean): String =
     if (reverse) {
@@ -169,7 +169,7 @@ object BlockQueries extends StrictLogging {
   private val LIST_BLOCKS_ORDER_BY_FORWARD: String =
     orderBy(reverse = false)
 
-  /** Fetches all main_chain [[org.alephium.explorer.persistence.schema.BlockHeaderSchema.table]]
+  /** Fetches all main_chain [[org.oxygenium.explorer.persistence.schema.BlockHeaderSchema.table]]
     * rows
     */
   def listMainChainHeadersWithTxnNumber(

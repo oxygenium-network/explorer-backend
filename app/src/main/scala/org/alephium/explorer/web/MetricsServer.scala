@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import java.io.StringWriter
 
@@ -28,10 +28,10 @@ import io.prometheus.metrics.core.metrics.Gauge
 import io.vertx.ext.web._
 import sttp.tapir.server.metrics.prometheus.PrometheusMetrics.prometheusRegistryCodec
 
-import org.alephium.explorer.Metrics
-import org.alephium.explorer.api.MetricsEndpoints
-import org.alephium.explorer.cache.MetricCache
-import org.alephium.util.discard
+import org.oxygenium.explorer.Metrics
+import org.oxygenium.explorer.api.MetricsEndpoints
+import org.oxygenium.explorer.cache.MetricCache
+import org.oxygenium.util.discard
 
 class MetricsServer(cache: MetricCache)(implicit
     val executionContext: ExecutionContext

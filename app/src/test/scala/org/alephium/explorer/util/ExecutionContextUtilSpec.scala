@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.util
+package org.oxygenium.explorer.util
 
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -22,8 +22,8 @@ import scala.concurrent.ExecutionContext
 
 import org.scalatest.concurrent.Eventually
 
-import org.alephium.explorer.AlephiumSpec
-import org.alephium.explorer.error.ExplorerError._
+import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.error.ExplorerError._
 
 @SuppressWarnings(Array("org.wartremover.warts.ThreadSleep"))
 class ExecutionContextSpec extends AlephiumSpec with Eventually {

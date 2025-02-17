@@ -2,7 +2,7 @@
 
 Alephium's explorer backend is an indexer that provides a RESTful API to query the Alephium blockchain.
 
-It serves https://explorer.alephium.org/ as well as our wallets.
+It serves https://explorer.oxygenium.org/ as well as our wallets.
 
 
 ## Prerequisites
@@ -56,7 +56,7 @@ The resulting assembly file will appear in `app/target/scala-2.13/` directory.
 
 #### 3.2 Run the released jar
 
-Download the lastest jar in our [release page](https://github.com/alephium/explorer-backend/releases/latest)
+Download the lastest jar in our [release page](https://github.com/oxygenium/explorer-backend/releases/latest)
 
 Run it with:
 
@@ -66,16 +66,16 @@ java -jar explorer-backend-x.x.x.jar
 
 ### 4. Configuration
 
-Configuration file at [`/app/src/main/resources/application.conf`](https://github.com/alephium/explorer-backend/blob/master/app/src/main/resources/application.conf) can be customized using environment variables
+Configuration file at [`/app/src/main/resources/application.conf`](https://github.com/oxygenium/explorer-backend/blob/master/app/src/main/resources/application.conf) can be customized using environment variables
 
 Everything can be overridden in two ways:
 
 #### `user.conf` file
 
-You can change the config in the `~/.alephium-explorer-backend/user.conf` file. e.g:
+You can change the config in the `~/.oxygenium-explorer-backend/user.conf` file. e.g:
 
 ```conf
-alephium {
+oxygenium {
   explorer {
       port = 9191 //Change default 9090 port
   }
@@ -84,7 +84,7 @@ alephium {
 
 #### Environment variables
 
-Every value has a corresponding environment variable, you can find all of them in the [application.conf](https://github.com/alephium/explorer-backend/blob/master/app/src/main/resources/application.conf).  e.g:
+Every value has a corresponding environment variable, you can find all of them in the [application.conf](https://github.com/oxygenium/explorer-backend/blob/master/app/src/main/resources/application.conf).  e.g:
 
 ```shell
 export EXPLORER_PORT=9191
@@ -94,17 +94,17 @@ export EXPLORER_PORT=9191
 
 Syncing all data from scratch can take a while, you can choose to start from a snapshot instead.
 
-Alephium [archives repository](https://archives.alephium.org) contains the snapshots for explorer backend database.
+Alephium [archives repository](https://archives.oxygenium.org) contains the snapshots for explorer backend database.
 The snapshot can be loaded in the postgresql database of the explorer-backend at the first run, using the command below.
 
 * Make sure to use the network you want to load the snapshot for, and the correct database name and user.
 * The database must be created before running the command and must be empty.
 
 ```shell
-alephium_network=mainnet
+oxygenium_network=mainnet
 pg_user=postgres
 database=explorer
-curl -L $(curl -L -s https://archives.alephium.org/archives/${alephium_network}/explorer-db/_latest.txt) | gunzip -c | psql -U $pg_user -d $database
+curl -L $(curl -L -s https://archives.oxygenium.org/archives/${oxygenium_network}/explorer-db/_latest.txt) | gunzip -c | psql -U $pg_user -d $database
 ```
 
 ### Querying hashes
@@ -133,10 +133,10 @@ export DB_NAME = "testnet"
 
 #### Using `user.conf` file
 
-The same way it's done in our full node, you can override the [application.conf](/app/src/main/resources/application.conf) file by creating a `user.conf` file in the `EXPLORER_HOME` folder, which default to `~/.alephium-explorer-backend`.
+The same way it's done in our full node, you can override the [application.conf](/app/src/main/resources/application.conf) file by creating a `user.conf` file in the `EXPLORER_HOME` folder, which default to `~/.oxygenium-explorer-backend`.
 
 ```conf
-alephium.blockflow.network-id = 1
+oxygenium.blockflow.network-id = 1
 db.db.name = "testnet"
 ```
 
@@ -145,7 +145,7 @@ db.db.name = "testnet"
 ### 1. Create benchmark database
 
 The benchmark database (set
-via [dbName](/benchmark/src/main/scala/org/alephium/explorer/benchmark/db/BenchmarkSettings.scala)) should exist:
+via [dbName](/benchmark/src/main/scala/org/oxygenium/explorer/benchmark/db/BenchmarkSettings.scala)) should exist:
 
 ```sql
 CREATE DATABASE benchmarks;
@@ -154,7 +154,7 @@ CREATE DATABASE benchmarks;
 ### 2. Set benchmark duration
 
 Update the `time` value in the following annotation
-in [DBBenchmark](/benchmark/src/main/scala/org/alephium/explorer/benchmark/db/DBBenchmark.scala) to set the benchmark
+in [DBBenchmark](/benchmark/src/main/scala/org/oxygenium/explorer/benchmark/db/DBBenchmark.scala) to set the benchmark
 run duration:
 
 ```scala

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import org.scalacheck.Gen
 
-import org.alephium.explorer.{AlephiumActorSpecLike, HttpServerFixture}
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.DatabaseFixtureForAll
-import org.alephium.explorer.persistence.dao.MempoolDao
+import org.oxygenium.explorer.{AlephiumActorSpecLike, HttpServerFixture}
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.DatabaseFixtureForAll
+import org.oxygenium.explorer.persistence.dao.MempoolDao
 
 @SuppressWarnings(Array("org.wartremover.warts.ThreadSleep", "org.wartremover.warts.Var"))
 class MempoolServerSpec()

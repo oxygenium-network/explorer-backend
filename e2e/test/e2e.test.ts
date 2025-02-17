@@ -1,6 +1,6 @@
-import { ExplorerProvider, NodeProvider, ONE_ALPH } from '@alephium/web3'
-import { PrivateKeyWallet } from '@alephium/web3-wallet'
-import { getSigner, testPrivateKeyWallet } from '@alephium/web3-test'
+import { ExplorerProvider, NodeProvider, ONE_ALPH } from '@oxygenium/web3'
+import { PrivateKeyWallet } from '@oxygenium/web3-wallet'
+import { getSigner, testPrivateKeyWallet } from '@oxygenium/web3-test'
 import  configuration  from './config'
 import  { eventually }  from './utils'
 

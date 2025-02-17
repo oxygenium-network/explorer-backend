@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.time.Instant
 
@@ -22,18 +22,18 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.{AlephiumFutureSpec, GroupSetting}
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.dao.BlockDao
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.protocol.ALPH
-import org.alephium.protocol.model.{Address, ChainIndex, GroupIndex}
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.explorer.{AlephiumFutureSpec, GroupSetting}
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.dao.BlockDao
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex}
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
 class TokenSupplyServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {

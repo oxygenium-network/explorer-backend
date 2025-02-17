@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.cache
+package org.oxygenium.explorer.cache
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
 import scala.concurrent.duration._
 
-import org.alephium.explorer.persistence.Database
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.queries.{EventQueries, TokenQueries}
-import org.alephium.util.Service
+import org.oxygenium.explorer.persistence.Database
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.queries.{EventQueries, TokenQueries}
+import org.oxygenium.util.Service
 
 class MetricCache(database: Database, reloadPeriod: FiniteDuration)(implicit
     val executionContext: ExecutionContext

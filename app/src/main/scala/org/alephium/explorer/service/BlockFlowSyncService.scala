@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.util.concurrent.atomic.AtomicBoolean
 
@@ -28,17 +28,17 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.Uri
 
-import org.alephium.explorer.{foldFutures, GroupSetting}
-import org.alephium.explorer.api.model.Height
-import org.alephium.explorer.cache.BlockCache
-import org.alephium.explorer.error.ExplorerError.BlocksInDifferentChains
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.dao.BlockDao
-import org.alephium.explorer.persistence.model.{BlockEntity, BlockEntityWithEvents, EventEntity}
-import org.alephium.explorer.persistence.queries.{BlockQueries, InputUpdateQueries}
-import org.alephium.explorer.util.{Scheduler, TimeUtil}
-import org.alephium.protocol.model.{BlockHash, ChainIndex, GroupIndex}
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.{foldFutures, GroupSetting}
+import org.oxygenium.explorer.api.model.Height
+import org.oxygenium.explorer.cache.BlockCache
+import org.oxygenium.explorer.error.ExplorerError.BlocksInDifferentChains
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.dao.BlockDao
+import org.oxygenium.explorer.persistence.model.{BlockEntity, BlockEntityWithEvents, EventEntity}
+import org.oxygenium.explorer.persistence.queries.{BlockQueries, InputUpdateQueries}
+import org.oxygenium.explorer.util.{Scheduler, TimeUtil}
+import org.oxygenium.protocol.model.{BlockHash, ChainIndex, GroupIndex}
+import org.oxygenium.util.{Duration, TimeStamp}
 
 /*
  * Syncing main chains blocks

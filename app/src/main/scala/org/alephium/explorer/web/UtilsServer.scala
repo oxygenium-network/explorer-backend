@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -27,13 +27,13 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.StatusCode
 
-import org.alephium.api.ApiError
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.api.UtilsEndpoints
-import org.alephium.explorer.api.model.LogbackValue
-import org.alephium.explorer.cache.BlockCache
-import org.alephium.explorer.service.{BlockFlowClient, IndexChecker, SanityChecker}
-import org.alephium.util.discard
+import org.oxygenium.api.ApiError
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.api.UtilsEndpoints
+import org.oxygenium.explorer.api.model.LogbackValue
+import org.oxygenium.explorer.cache.BlockCache
+import org.oxygenium.explorer.service.{BlockFlowClient, IndexChecker, SanityChecker}
+import org.oxygenium.util.discard
 
 class UtilsServer()(implicit
     val executionContext: ExecutionContext,

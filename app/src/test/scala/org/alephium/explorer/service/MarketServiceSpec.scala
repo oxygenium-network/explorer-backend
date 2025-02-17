@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.net.InetAddress
 
@@ -30,12 +30,12 @@ import sttp.tapir._
 import sttp.tapir.CodecFormat.TextPlain
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
-import org.alephium.api.{alphJsonBody => jsonBody}
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.api.BaseEndpoint
-import org.alephium.explorer.config.ExplorerConfig
-import org.alephium.explorer.web.Server
-import org.alephium.json.Json._
+import org.oxygenium.api.{alphJsonBody => jsonBody}
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.api.BaseEndpoint
+import org.oxygenium.explorer.config.ExplorerConfig
+import org.oxygenium.explorer.web.Server
+import org.oxygenium.json.Json._
 
 class MarketServiceSpec extends AlephiumFutureSpec {
   import MarketServiceSpec._
@@ -162,7 +162,7 @@ object MarketServiceSpec {
   val usdtPrice = 1.0012412
 
   val symbolNames = ListMap(
-    "ALPH" -> "alephium",
+    "ALPH" -> "oxygenium",
     "USDC" -> "usd-coin",
     "USDT" -> "tether",
     "WBTC" -> "wrapped-bitcoin",

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.util.concurrent.atomic.AtomicBoolean
 
@@ -24,24 +24,24 @@ import scala.concurrent.duration._
 
 import sttp.model.Uri
 
-import org.alephium.api.model.{ChainInfo, ChainParams, HashesAtHeight, SelfClique}
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel.chainIndexes
-import org.alephium.explorer.GenCoreUtil.timestampMaxValue
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.Generators._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache._
-import org.alephium.explorer.config.BootMode
-import org.alephium.explorer.error.ExplorerError
-import org.alephium.explorer.persistence.{Database, DatabaseFixtureForAll}
-import org.alephium.explorer.persistence.dao.BlockDao
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.explorer.util.TestUtils._
-import org.alephium.protocol.model.{BlockHash, ChainIndex, CliqueId, GroupIndex, NetworkId}
-import org.alephium.util.{AVector, Duration, Hex, TimeStamp}
+import org.oxygenium.api.model.{ChainInfo, ChainParams, HashesAtHeight, SelfClique}
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel.chainIndexes
+import org.oxygenium.explorer.GenCoreUtil.timestampMaxValue
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.Generators._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache._
+import org.oxygenium.explorer.config.BootMode
+import org.oxygenium.explorer.error.ExplorerError
+import org.oxygenium.explorer.persistence.{Database, DatabaseFixtureForAll}
+import org.oxygenium.explorer.persistence.dao.BlockDao
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.explorer.util.TestUtils._
+import org.oxygenium.protocol.model.{BlockHash, ChainIndex, CliqueId, GroupIndex, NetworkId}
+import org.oxygenium.util.{AVector, Duration, Hex, TimeStamp}
 
 @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.DefaultArguments"))
 class BlockFlowSyncServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForAll {

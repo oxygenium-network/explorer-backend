@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence
+package org.oxygenium.explorer.persistence
 
 import scala.jdk.CollectionConverters._
 
@@ -23,8 +23,8 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.AlephiumFutures
-import org.alephium.explorer.util.TestUtils._
+import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.explorer.util.TestUtils._
 
 /** Implements functions for managing test database connections.
   */

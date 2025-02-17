@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,20 +14,20 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db.state
+package org.oxygenium.explorer.benchmark.db.state
 
 import scala.collection.immutable.ArraySeq
 
 import org.openjdk.jmh.annotations.{Scope, State}
 
-import org.alephium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
-import org.alephium.explorer.benchmark.db.BenchmarkSettings._
-import org.alephium.explorer.benchmark.db.state.ListBlocksReadStateSettings._
-import org.alephium.explorer.persistence.schema.TransactionPerAddressSchema
-import org.alephium.protocol.model.Address
+import org.oxygenium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
+import org.oxygenium.explorer.benchmark.db.BenchmarkSettings._
+import org.oxygenium.explorer.benchmark.db.state.ListBlocksReadStateSettings._
+import org.oxygenium.explorer.persistence.schema.TransactionPerAddressSchema
+import org.oxygenium.protocol.model.Address
 
 /** JMH state for benchmarking via
-  * [[org.alephium.explorer.persistence.queries.TransactionQueries.areAddressesActiveAction]]
+  * [[org.oxygenium.explorer.persistence.queries.TransactionQueries.areAddressesActiveAction]]
   */
 class AreAddressesActiveReadState(val db: DBExecutor)
     extends ReadBenchmarkState[ArraySeq[Address]](testDataCount = maxPages, db = db) {

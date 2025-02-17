@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.schema
+package org.oxygenium.explorer.persistence.schema
 
 import scala.collection.immutable.ArraySeq
 
@@ -22,10 +22,10 @@ import akka.util.ByteString
 import slick.jdbc.PostgresProfile.api._
 import slick.lifted.{Index, PrimaryKey, ProvenShape}
 
-import org.alephium.explorer.persistence.model.TransactionEntity
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.protocol.model.{BlockHash, GroupIndex, TransactionId}
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.explorer.persistence.model.TransactionEntity
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.protocol.model.{BlockHash, GroupIndex, TransactionId}
+import org.oxygenium.util.{TimeStamp, U256}
 
 object TransactionSchema extends SchemaMainChain[TransactionEntity]("transactions") {
 

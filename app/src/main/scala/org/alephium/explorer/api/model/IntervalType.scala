@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import java.time.temporal.ChronoUnit
 
@@ -24,10 +24,10 @@ import scala.concurrent.{ExecutionContext, Future}
 import sttp.model.StatusCode
 import upickle.core.Abort
 
-import org.alephium.api.ApiError
-import org.alephium.api.model.TimeInterval
-import org.alephium.json.Json._
-import org.alephium.util.Duration
+import org.oxygenium.api.ApiError
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.json.Json._
+import org.oxygenium.util.Duration
 
 sealed trait IntervalType {
   def value: Int

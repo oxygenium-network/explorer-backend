@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -23,15 +23,15 @@ import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 import sttp.model.StatusCode
 
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
-import org.alephium.explorer.service.{EmptyTokenService, EmptyTransactionService}
-import org.alephium.protocol.model.Address
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
+import org.oxygenium.explorer.service.{EmptyTokenService, EmptyTransactionService}
+import org.oxygenium.protocol.model.Address
+import org.oxygenium.util.{TimeStamp, U256}
 
 class StatementTimeoutSpec()
     extends AlephiumActorSpecLike

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -15,7 +15,7 @@
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
 //scalastyle:off file.size.limit
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import java.net.InetAddress
 
@@ -40,27 +40,27 @@ import sttp.tapir._
 import sttp.tapir.generic.auto._
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
-import org.alephium.api.{model, ApiError, ApiModelCodec}
-import org.alephium.api.{alphJsonBody => jsonBody}
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.Generators._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.config.{BootMode, ExplorerConfig}
-import org.alephium.explorer.persistence.DatabaseFixture
-import org.alephium.explorer.persistence.DatabaseFixtureForAll
-import org.alephium.explorer.persistence.model.BlockEntity
-import org.alephium.explorer.service.{BlockFlowClient, MarketServiceSpec}
-import org.alephium.explorer.util.TestUtils._
-import org.alephium.explorer.web._
-import org.alephium.json.Json._
-import org.alephium.protocol.config.GroupConfig
-import org.alephium.protocol.model.{Address, BlockHash, CliqueId, GroupIndex, NetworkId}
-import org.alephium.util.{AVector, Duration, Hex, TimeStamp, U256}
+import org.oxygenium.api.{model, ApiError, ApiModelCodec}
+import org.oxygenium.api.{alphJsonBody => jsonBody}
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.Generators._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.config.{BootMode, ExplorerConfig}
+import org.oxygenium.explorer.persistence.DatabaseFixture
+import org.oxygenium.explorer.persistence.DatabaseFixtureForAll
+import org.oxygenium.explorer.persistence.model.BlockEntity
+import org.oxygenium.explorer.service.{BlockFlowClient, MarketServiceSpec}
+import org.oxygenium.explorer.util.TestUtils._
+import org.oxygenium.explorer.web._
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.config.GroupConfig
+import org.oxygenium.protocol.model.{Address, BlockHash, CliqueId, GroupIndex, NetworkId}
+import org.oxygenium.util.{AVector, Duration, Hex, TimeStamp, U256}
 
 trait ExplorerSpec
     extends AlephiumActorSpecLike
@@ -139,14 +139,14 @@ trait ExplorerSpec
       DatabaseFixture.createDatabaseConfig(dbName)
     val explorerPort = SocketUtil.temporaryLocalPort(SocketUtil.Both)
     val configValues: Map[String, Any] = Map(
-      ("alephium.explorer.boot-mode", bootMode.productPrefix),
-      ("alephium.explorer.port", explorerPort),
-      ("alephium.explorer.market.coingecko-uri", coingeckoUri),
-      ("alephium.explorer.market.mobula-uri", mobulaUri),
-      ("alephium.explorer.market.token-list-uri", tokenListUri),
-      ("alephium.blockflow.port", blockFlowPort),
-      ("alephium.blockflow.network-id", networkId.id),
-      ("alephium.blockflow.group-num", groupSetting.groupNum)
+      ("oxygenium.explorer.boot-mode", bootMode.productPrefix),
+      ("oxygenium.explorer.port", explorerPort),
+      ("oxygenium.explorer.market.coingecko-uri", coingeckoUri),
+      ("oxygenium.explorer.market.mobula-uri", mobulaUri),
+      ("oxygenium.explorer.market.token-list-uri", tokenListUri),
+      ("oxygenium.blockflow.port", blockFlowPort),
+      ("oxygenium.blockflow.network-id", networkId.id),
+      ("oxygenium.blockflow.group-num", groupSetting.groupNum)
     )
     @SuppressWarnings(Array("org.wartremover.warts.AnyVal"))
     implicit val explorerConfig: ExplorerConfig = ExplorerConfig.load(

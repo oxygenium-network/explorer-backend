@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -22,11 +22,11 @@ import scala.concurrent.{ExecutionContext, Future}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.api.model.Pagination
-import org.alephium.explorer.persistence.DBActionR
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.queries._
-import org.alephium.explorer.util.SlickUtil._
+import org.oxygenium.explorer.api.model.Pagination
+import org.oxygenium.explorer.persistence.DBActionR
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.queries._
+import org.oxygenium.explorer.util.SlickUtil._
 
 // scalastyle:off magic.number
 object IndexChecker {

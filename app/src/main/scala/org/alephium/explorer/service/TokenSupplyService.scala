@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.time.{Instant, LocalTime, ZonedDateTime, ZoneOffset}
 import java.time.temporal.ChronoUnit
@@ -29,18 +29,18 @@ import slick.dbio.DBIOAction
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.{foldFutures, GroupSetting}
-import org.alephium.explorer.api.model.{Pagination, TokenSupply}
-import org.alephium.explorer.persistence._
-import org.alephium.explorer.persistence.DBRunner._
-import org.alephium.explorer.persistence.model.TokenSupplyEntity
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.explorer.util.SlickUtil._
-import org.alephium.protocol.ALPH
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.explorer.{foldFutures, GroupSetting}
+import org.oxygenium.explorer.api.model.{Pagination, TokenSupply}
+import org.oxygenium.explorer.persistence._
+import org.oxygenium.explorer.persistence.DBRunner._
+import org.oxygenium.explorer.persistence.model.TokenSupplyEntity
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.explorer.util.SlickUtil._
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 /*
  * Token supply service.

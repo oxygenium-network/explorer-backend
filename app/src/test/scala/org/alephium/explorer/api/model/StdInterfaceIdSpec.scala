@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,13 +14,13 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import org.scalacheck.Gen
 
-import org.alephium.explorer.AlephiumSpec
-import org.alephium.explorer.GenApiModel.stdInterfaceIdGen
-import org.alephium.explorer.GenCoreProtocol.hashGen
+import org.oxygenium.explorer.AlephiumSpec
+import org.oxygenium.explorer.GenApiModel.stdInterfaceIdGen
+import org.oxygenium.explorer.GenCoreProtocol.hashGen
 
 class StdInterfaceIdSpec() extends AlephiumSpec {
 

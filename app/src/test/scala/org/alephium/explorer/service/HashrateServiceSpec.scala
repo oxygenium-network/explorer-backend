@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.service
+package org.oxygenium.explorer.service
 
 import java.time.Instant
 
@@ -22,14 +22,14 @@ import scala.collection.immutable.ArraySeq
 
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.ConfigDefaults.groupSetting
-import org.alephium.explorer.GenDBModel.blockHeaderWithHashrate
-import org.alephium.explorer.api.model.{Hashrate, IntervalType}
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.queries.HashrateQueries._
-import org.alephium.explorer.persistence.schema.BlockHeaderSchema
-import org.alephium.util._
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.ConfigDefaults.groupSetting
+import org.oxygenium.explorer.GenDBModel.blockHeaderWithHashrate
+import org.oxygenium.explorer.api.model.{Hashrate, IntervalType}
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.queries.HashrateQueries._
+import org.oxygenium.explorer.persistence.schema.BlockHeaderSchema
+import org.oxygenium.util._
 
 class HashrateServiceSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import java.math.BigInteger
 
@@ -31,27 +31,27 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.{Header, StatusCode}
 
-import org.alephium.api.ApiError
-import org.alephium.api.model.TimeInterval
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.Json._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence.DatabaseFixtureForAll
-import org.alephium.explorer.service.{
+import org.oxygenium.api.ApiError
+import org.oxygenium.api.model.TimeInterval
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.Json._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence.DatabaseFixtureForAll
+import org.oxygenium.explorer.service.{
   EmptyTokenService,
   EmptyTransactionService,
   TransactionService
 }
-import org.alephium.protocol.PublicKey
-import org.alephium.protocol.model.{Address, TokenId}
-import org.alephium.protocol.vm.{LockupScript, UnlockScript}
-import org.alephium.serde._
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.protocol.PublicKey
+import org.oxygenium.protocol.model.{Address, TokenId}
+import org.oxygenium.protocol.vm.{LockupScript, UnlockScript}
+import org.oxygenium.serde._
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 @SuppressWarnings(
   Array(

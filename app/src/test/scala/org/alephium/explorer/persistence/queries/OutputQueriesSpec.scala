@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,21 +14,21 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.queries.OutputQueries._
-import org.alephium.explorer.persistence.queries.result.{OutputsFromTxQR, OutputsQR}
-import org.alephium.explorer.persistence.schema.CustomSetParameter._
-import org.alephium.explorer.persistence.schema.OutputSchema
-import org.alephium.explorer.util.SlickExplainUtil._
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.queries.OutputQueries._
+import org.oxygenium.explorer.persistence.queries.result.{OutputsFromTxQR, OutputsQR}
+import org.oxygenium.explorer.persistence.schema.CustomSetParameter._
+import org.oxygenium.explorer.persistence.schema.OutputSchema
+import org.oxygenium.explorer.util.SlickExplainUtil._
+import org.oxygenium.util.TimeStamp
 
 class OutputQueriesSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with DBRunner {
 

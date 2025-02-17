@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db
+package org.oxygenium.explorer.benchmark.db
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -25,7 +25,7 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import slick.lifted.AbstractTable
 
-import org.alephium.explorer.persistence.DBAction
+import org.oxygenium.explorer.persistence.DBAction
 
 object DBExecutor extends StrictLogging {
 
@@ -80,7 +80,7 @@ object DBExecutor extends StrictLogging {
   *   Target database config
   *
   * @note
-  *   Similar to [[org.alephium.explorer.persistence.DBRunner]] but provides blocking execution. To
+  *   Similar to [[org.oxygenium.explorer.persistence.DBRunner]] but provides blocking execution. To
   *   avoid naming conflicts it's named [[DBExecutor]] instead of `DBRunner`.
   */
 class DBExecutor private (val config: DatabaseConfig[PostgresProfile]) extends StrictLogging {

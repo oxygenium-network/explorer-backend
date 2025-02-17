@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.schema
+package org.oxygenium.explorer.persistence.schema
 
 import java.math.BigInteger
 
@@ -25,12 +25,12 @@ import slick.jdbc.PostgresProfile.api._
 import slick.lifted.{Index, ProvenShape}
 import slick.sql.SqlAction
 
-import org.alephium.explorer.api.model.{GhostUncle, Height}
-import org.alephium.explorer.persistence.model.BlockHeader
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{BlockHash, GroupIndex}
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.api.model.{GhostUncle, Height}
+import org.oxygenium.explorer.persistence.model.BlockHeader
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{BlockHash, GroupIndex}
+import org.oxygenium.util.TimeStamp
 
 object BlockHeaderSchema extends SchemaMainChain[BlockHeader]("block_headers") {
 
@@ -87,7 +87,7 @@ object BlockHeaderSchema extends SchemaMainChain[BlockHeader]("block_headers") {
     * results.
     *
     * @see
-    *   PR <a href="https://github.com/alephium/explorer-backend/pull/112">#112</a>.
+    *   PR <a href="https://github.com/oxygenium/explorer-backend/pull/112">#112</a>.
     */
   private def fullIndex(): SqlAction[Int, NoStream, Effect] =
     sqlu"""

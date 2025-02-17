@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.dao
+package org.oxygenium.explorer.persistence.dao
 
 import scala.io.{Codec, Source}
 import scala.util.Random
@@ -23,24 +23,24 @@ import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.api.{model, ApiModelCodec}
-import org.alephium.explorer.AlephiumFutureSpec
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.api.model.Pagination
-import org.alephium.explorer.cache.{BlockCache, TestBlockCache}
-import org.alephium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.queries.InputUpdateQueries
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.persistence.schema.CustomJdbcTypes._
-import org.alephium.explorer.service.BlockFlowClient
-import org.alephium.explorer.util.TestUtils._
-import org.alephium.json.Json._
-import org.alephium.protocol.model.{BlockHash, ChainIndex, GroupIndex}
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.api.{model, ApiModelCodec}
+import org.oxygenium.explorer.AlephiumFutureSpec
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.api.model.Pagination
+import org.oxygenium.explorer.cache.{BlockCache, TestBlockCache}
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForEach, DBRunner}
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.queries.InputUpdateQueries
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
+import org.oxygenium.explorer.service.BlockFlowClient
+import org.oxygenium.explorer.util.TestUtils._
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.model.{BlockHash, ChainIndex, GroupIndex}
+import org.oxygenium.util.{Duration, TimeStamp}
 
 @SuppressWarnings(
   Array(
@@ -271,7 +271,7 @@ class BlockDaoSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with D
     val blockEntities: Seq[BlockEntity] = blockEntitiesPerChain.flatten
 
     /** Convert input-output to
-      * [[org.alephium.explorer.persistence.model.TransactionPerAddressEntity]]
+      * [[org.oxygenium.explorer.persistence.model.TransactionPerAddressEntity]]
       */
     def toTransactionPerAddressEntity(
         input: InputEntity,
@@ -288,7 +288,7 @@ class BlockDaoSpec extends AlephiumFutureSpec with DatabaseFixtureForEach with D
       )
 
     /** Convert multiple input-outputs to
-      * [[org.alephium.explorer.persistence.model.TransactionPerAddressEntity]]
+      * [[org.oxygenium.explorer.persistence.model.TransactionPerAddressEntity]]
       */
     def toTransactionPerAddressEntities(
         inputOutputs: Iterable[(InputEntity, OutputEntity)]

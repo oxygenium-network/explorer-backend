@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent._
@@ -29,8 +29,8 @@ import sttp.client3.asynchttpclient.future.AsyncHttpClientFutureBackend
 import sttp.model.{Method, Uri}
 import sttp.tapir.server.vertx.VertxFutureServerInterpreter._
 
-import org.alephium.explorer.AlephiumFutures
-import org.alephium.json.Json._
+import org.oxygenium.explorer.AlephiumFutures
+import org.oxygenium.json.Json._
 
 object HttpFixture {
   implicit class RichResponse[T](val response: Response[T]) extends AnyVal {

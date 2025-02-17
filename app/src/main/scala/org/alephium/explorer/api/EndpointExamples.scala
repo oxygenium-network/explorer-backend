@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,21 +14,21 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api
+package org.oxygenium.explorer.api
 
 import scala.collection.immutable.ArraySeq
 
 import akka.util.ByteString
 import sttp.tapir.EndpointIO.Example
 
-import org.alephium.api.EndpointsExamples
-import org.alephium.api.model.{Amount, ValBool}
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.queries.ExplainResult
-import org.alephium.protocol.{ALPH, PublicKey}
-import org.alephium.protocol.mining.HashRate
-import org.alephium.protocol.model.{Address, BlockHash, ContractId, GroupIndex, TokenId}
-import org.alephium.util.{Hex, U256}
+import org.oxygenium.api.EndpointsExamples
+import org.oxygenium.api.model.{Amount, ValBool}
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.queries.ExplainResult
+import org.oxygenium.protocol.{ALPH, PublicKey}
+import org.oxygenium.protocol.mining.HashRate
+import org.oxygenium.protocol.model.{Address, BlockHash, ContractId, GroupIndex, TokenId}
+import org.oxygenium.util.{Hex, U256}
 
 /** Contains OpenAPI Examples.
   */
@@ -159,8 +159,8 @@ object EndpointExamples extends EndpointsExamples {
       version = version,
       networkId = networkId,
       scriptOpt = None,
-      gasAmount = org.alephium.protocol.model.minimalGas.value,
-      gasPrice = org.alephium.protocol.model.nonCoinbaseMinGasPrice.value,
+      gasAmount = org.oxygenium.protocol.model.minimalGas.value,
+      gasPrice = org.oxygenium.protocol.model.nonCoinbaseMinGasPrice.value,
       scriptExecutionOk = true,
       inputSignatures = ArraySeq(hash.bytes),
       scriptSignatures = ArraySeq(hash.bytes),
@@ -177,8 +177,8 @@ object EndpointExamples extends EndpointsExamples {
       version = version,
       networkId = networkId,
       scriptOpt = None,
-      gasAmount = org.alephium.protocol.model.minimalGas.value,
-      gasPrice = org.alephium.protocol.model.nonCoinbaseMinGasPrice.value,
+      gasAmount = org.oxygenium.protocol.model.minimalGas.value,
+      gasPrice = org.oxygenium.protocol.model.nonCoinbaseMinGasPrice.value,
       scriptExecutionOk = true,
       inputSignatures = ArraySeq(hash.bytes),
       scriptSignatures = ArraySeq(hash.bytes),
@@ -192,8 +192,8 @@ object EndpointExamples extends EndpointsExamples {
       chainTo = groupIndex2,
       inputs = ArraySeq(input),
       outputs = ArraySeq(outputAsset, outputContract),
-      gasAmount = org.alephium.protocol.model.minimalGas.value,
-      gasPrice = org.alephium.protocol.model.nonCoinbaseMinGasPrice.value,
+      gasAmount = org.oxygenium.protocol.model.minimalGas.value,
+      gasPrice = org.oxygenium.protocol.model.nonCoinbaseMinGasPrice.value,
       lastSeen = ts
     )
 
@@ -204,8 +204,8 @@ object EndpointExamples extends EndpointsExamples {
       chainTo = groupIndex2,
       inputs = ArraySeq(input),
       outputs = ArraySeq(outputAsset, outputContract),
-      gasAmount = org.alephium.protocol.model.minimalGas.value,
-      gasPrice = org.alephium.protocol.model.nonCoinbaseMinGasPrice.value,
+      gasAmount = org.oxygenium.protocol.model.minimalGas.value,
+      gasPrice = org.oxygenium.protocol.model.nonCoinbaseMinGasPrice.value,
       lastSeen = ts
     )
 

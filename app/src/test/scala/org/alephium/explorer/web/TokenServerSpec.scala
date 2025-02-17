@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -23,14 +23,14 @@ import org.scalacheck.Gen
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.DatabaseFixtureForAll
-import org.alephium.explorer.service._
-import org.alephium.protocol.model.TokenId
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.DatabaseFixtureForAll
+import org.oxygenium.explorer.service._
+import org.oxygenium.protocol.model.TokenId
 
 @SuppressWarnings(Array("org.wartremover.warts.Var"))
 class TokenServerSpec()

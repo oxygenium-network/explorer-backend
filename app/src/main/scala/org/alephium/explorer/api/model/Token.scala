@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,20 +14,20 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api.model
+package org.oxygenium.explorer.api.model
 
 import sttp.tapir.Schema
 
-import org.alephium.api.TapirSchemas._
-import org.alephium.explorer.api.Json._
-import org.alephium.explorer.api.Schemas._
-import org.alephium.json.Json._
-import org.alephium.protocol.model.TokenId
-import org.alephium.serde._
-import org.alephium.util.U256
+import org.oxygenium.api.TapirSchemas._
+import org.oxygenium.explorer.api.Json._
+import org.oxygenium.explorer.api.Schemas._
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.model.TokenId
+import org.oxygenium.serde._
+import org.oxygenium.util.U256
 
 final case class Token(id: TokenId, amount: U256) {
-  def toProtocol(): org.alephium.api.model.Token = org.alephium.api.model.Token(id, amount)
+  def toProtocol(): org.oxygenium.api.model.Token = org.oxygenium.api.model.Token(id, amount)
 }
 
 object Token {

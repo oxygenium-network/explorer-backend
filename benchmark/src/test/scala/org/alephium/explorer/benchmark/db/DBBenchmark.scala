@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db
+package org.oxygenium.explorer.benchmark.db
 
 import java.util.concurrent.TimeUnit
 
@@ -25,23 +25,23 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.api.model.{IntervalType, Pagination}
-import org.alephium.explorer.benchmark.db.BenchmarkSettings._
-import org.alephium.explorer.benchmark.db.state._
-import org.alephium.explorer.cache.BlockCache
-import org.alephium.explorer.persistence.dao.{BlockDao, TransactionDao}
-import org.alephium.explorer.persistence.queries.InputQueries._
-import org.alephium.explorer.persistence.queries.OutputQueries._
-import org.alephium.explorer.persistence.queries.TransactionQueries
-import org.alephium.explorer.persistence.schema.BlockHeaderSchema
-import org.alephium.explorer.service.TransactionService
-import org.alephium.protocol.model.Address
-import org.alephium.util.{Duration, TimeStamp}
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.api.model.{IntervalType, Pagination}
+import org.oxygenium.explorer.benchmark.db.BenchmarkSettings._
+import org.oxygenium.explorer.benchmark.db.state._
+import org.oxygenium.explorer.cache.BlockCache
+import org.oxygenium.explorer.persistence.dao.{BlockDao, TransactionDao}
+import org.oxygenium.explorer.persistence.queries.InputQueries._
+import org.oxygenium.explorer.persistence.queries.OutputQueries._
+import org.oxygenium.explorer.persistence.queries.TransactionQueries
+import org.oxygenium.explorer.persistence.schema.BlockHeaderSchema
+import org.oxygenium.explorer.service.TransactionService
+import org.oxygenium.protocol.model.Address
+import org.oxygenium.util.{Duration, TimeStamp}
 
 /** Implements all JMH functions executing benchmarks on Postgres.
   *
-  * Prerequisite: Database set by [[org.alephium.explorer.benchmark.db.BenchmarkSettings.dbName]]
+  * Prerequisite: Database set by [[org.oxygenium.explorer.benchmark.db.BenchmarkSettings.dbName]]
   * should exists.
   */
 @Fork(value = 1, warmups = 0)
@@ -58,7 +58,7 @@ import org.alephium.util.{Duration, TimeStamp}
 class DBBenchmark {
 
   /** Benchmarks writes to `varchar` column type in
-    * [[org.alephium.explorer.benchmark.db.table.TableVarcharSchema]]
+    * [[org.oxygenium.explorer.benchmark.db.table.TableVarcharSchema]]
     *
     * @param state
     *   State of current iteration
@@ -69,7 +69,7 @@ class DBBenchmark {
   }
 
   /** Benchmarks writes to `bytea` column type in
-    * [[org.alephium.explorer.benchmark.db.table.TableByteSchema]]
+    * [[org.oxygenium.explorer.benchmark.db.table.TableByteSchema]]
     *
     * @param state
     *   State of current iteration
@@ -80,7 +80,7 @@ class DBBenchmark {
   }
 
   /** Benchmarks reads to `varchar` column type in
-    * [[org.alephium.explorer.benchmark.db.table.TableVarcharSchema]].
+    * [[org.oxygenium.explorer.benchmark.db.table.TableVarcharSchema]].
     *
     * @param state
     *   State of current iteration
@@ -92,7 +92,7 @@ class DBBenchmark {
   }
 
   /** Benchmarks reads to `bytea` column type in
-    * [[org.alephium.explorer.benchmark.db.table.TableByteSchema]].
+    * [[org.oxygenium.explorer.benchmark.db.table.TableByteSchema]].
     *
     * @param state
     *   State of current iteration

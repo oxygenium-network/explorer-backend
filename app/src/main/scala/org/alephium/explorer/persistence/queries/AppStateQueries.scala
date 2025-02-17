@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import scala.concurrent.ExecutionContext
 import scala.reflect.ClassTag
@@ -22,11 +22,11 @@ import scala.reflect.ClassTag
 import slick.jdbc.GetResult
 import slick.jdbc.PostgresProfile.api._
 
-import org.alephium.explorer.persistence.{DBActionR, DBActionW}
-import org.alephium.explorer.persistence.model.{AppState, AppStateKey}
-import org.alephium.explorer.persistence.schema.AppStateSchema
+import org.oxygenium.explorer.persistence.{DBActionR, DBActionW}
+import org.oxygenium.explorer.persistence.model.{AppState, AppStateKey}
+import org.oxygenium.explorer.persistence.schema.AppStateSchema
 
-/** Queries for table [[org.alephium.explorer.persistence.schema.AppStateSchema.table]] */
+/** Queries for table [[org.oxygenium.explorer.persistence.schema.AppStateSchema.table]] */
 object AppStateQueries {
 
   @inline def insert(appState: AppState): DBActionW[Int] =

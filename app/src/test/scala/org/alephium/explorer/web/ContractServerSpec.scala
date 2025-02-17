@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,22 +14,22 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.web
+package org.oxygenium.explorer.web
 
 import scala.collection.immutable.ArraySeq
 
-import org.alephium.api.ApiError.{BadRequest, NotFound}
-import org.alephium.api.model.ValAddress
-import org.alephium.explorer._
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.GenCoreUtil.timestampGen
-import org.alephium.explorer.GenDBModel._
-import org.alephium.explorer.HttpFixture._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
-import org.alephium.explorer.persistence.queries.BlockQueries
-import org.alephium.explorer.persistence.queries.ContractQueries
+import org.oxygenium.api.ApiError.{BadRequest, NotFound}
+import org.oxygenium.api.model.ValAddress
+import org.oxygenium.explorer._
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.GenCoreUtil.timestampGen
+import org.oxygenium.explorer.GenDBModel._
+import org.oxygenium.explorer.HttpFixture._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.{DatabaseFixtureForAll, DBRunner}
+import org.oxygenium.explorer.persistence.queries.BlockQueries
+import org.oxygenium.explorer.persistence.queries.ContractQueries
 
 @SuppressWarnings(
   Array(

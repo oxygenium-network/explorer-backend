@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.api
+package org.oxygenium.explorer.api
 
 import scala.collection.immutable.ArraySeq
 
 import sttp.tapir._
 import sttp.tapir.generic.auto._
 
-import org.alephium.api.Endpoints.jsonBody
-import org.alephium.explorer.api.EndpointExamples._
-import org.alephium.explorer.api.model._
+import org.oxygenium.api.Endpoints.jsonBody
+import org.oxygenium.explorer.api.EndpointExamples._
+import org.oxygenium.explorer.api.model._
 
 // scalastyle:off magic.number
 trait MarketEndpoints extends BaseEndpoint with QueryParams {

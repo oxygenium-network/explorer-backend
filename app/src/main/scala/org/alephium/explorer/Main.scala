@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.concurrent.{Await, ExecutionContext}
 import scala.concurrent.duration._
@@ -25,9 +25,9 @@ import io.prometheus.client.hotspot.DefaultExports
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.config._
-import org.alephium.explorer.util.ExecutionContextUtil
-import org.alephium.util.discard
+import org.oxygenium.explorer.config._
+import org.oxygenium.explorer.util.ExecutionContextUtil
+import org.oxygenium.util.discard
 
 object Main extends StrictLogging {
   def main(args: Array[String]): Unit = {

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import java.math.BigInteger
 
@@ -24,14 +24,14 @@ import akka.util.ByteString
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 
-import org.alephium.explorer.ConfigDefaults._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.GenCoreUtil._
-import org.alephium.explorer.api.model._
-import org.alephium.protocol.model.{Address, ChainIndex, GroupIndex, TokenId, TxOutputRef}
+import org.oxygenium.explorer.ConfigDefaults._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.GenCoreUtil._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.protocol.model.{Address, ChainIndex, GroupIndex, TokenId, TxOutputRef}
 
-/** Generators for types supplied by `org.alephium.explorer.api.model` package */
+/** Generators for types supplied by `org.oxygenium.explorer.api.model` package */
 object GenApiModel extends ImplicitConversions {
 
   def tokenIdGen(implicit gs: GroupSetting): Gen[TokenId] = for {

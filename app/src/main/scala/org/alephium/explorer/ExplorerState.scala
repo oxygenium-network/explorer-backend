@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -23,18 +23,18 @@ import com.typesafe.scalalogging.StrictLogging
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.cache.{BlockCache, MetricCache, TransactionCache}
-import org.alephium.explorer.config.{BootMode, ExplorerConfig}
-import org.alephium.explorer.persistence.Database
-import org.alephium.explorer.service._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.util.Service
+import org.oxygenium.explorer.cache.{BlockCache, MetricCache, TransactionCache}
+import org.oxygenium.explorer.config.{BootMode, ExplorerConfig}
+import org.oxygenium.explorer.persistence.Database
+import org.oxygenium.explorer.service._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.util.Service
 
 /** Boot-up states for Explorer: Explorer can be started in the following three states
   *
-  *   - ReadOnly: [[org.alephium.explorer.ExplorerState.ReadOnly]]
-  *   - ReadWrite: [[org.alephium.explorer.ExplorerState.ReadWrite]]
-  *   - WriteOnly: [[org.alephium.explorer.ExplorerState.WriteOnly]]
+  *   - ReadOnly: [[org.oxygenium.explorer.ExplorerState.ReadOnly]]
+  *   - ReadWrite: [[org.oxygenium.explorer.ExplorerState.ReadWrite]]
+  *   - WriteOnly: [[org.oxygenium.explorer.ExplorerState.WriteOnly]]
   */
 sealed trait ExplorerState extends Service with StrictLogging {
   implicit def config: ExplorerConfig

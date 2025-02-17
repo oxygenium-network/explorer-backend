@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.schema
+package org.oxygenium.explorer.persistence.schema
 
 import java.math.BigInteger
 
@@ -23,15 +23,15 @@ import scala.collection.immutable.ArraySeq
 import akka.util.ByteString
 import slick.jdbc.{PositionedParameters, SetParameter}
 
-import org.alephium.api.model.Val
-import org.alephium.explorer.api.Json._
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.model.{InterfaceIdEntity, OutputEntity}
-import org.alephium.json.Json._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model._
-import org.alephium.serde._
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.api.model.Val
+import org.oxygenium.explorer.api.Json._
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.model.{InterfaceIdEntity, OutputEntity}
+import org.oxygenium.json.Json._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model._
+import org.oxygenium.serde._
+import org.oxygenium.util.{TimeStamp, U256}
 
 /** [[slick.jdbc.SetParameter]] implicits for setting values in SQL queries */
 object CustomSetParameter {

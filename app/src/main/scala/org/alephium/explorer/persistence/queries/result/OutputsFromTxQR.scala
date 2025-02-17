@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,19 +14,19 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries.result
+package org.oxygenium.explorer.persistence.queries.result
 
 import scala.collection.immutable.ArraySeq
 
 import akka.util.ByteString
 import slick.jdbc.{GetResult, PositionedResult}
 
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.persistence.model.{OutputEntity, OutputEntityLike}
-import org.alephium.explorer.persistence.schema.CustomGetResult._
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{Address, TransactionId}
-import org.alephium.util.{TimeStamp, U256}
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.persistence.model.{OutputEntity, OutputEntityLike}
+import org.oxygenium.explorer.persistence.schema.CustomGetResult._
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{Address, TransactionId}
+import org.oxygenium.util.{TimeStamp, U256}
 
 object OutputsFromTxQR {
 
@@ -51,7 +51,7 @@ object OutputsFromTxQR {
       )
 }
 
-/** Query result for [[org.alephium.explorer.persistence.queries.OutputQueries.outputsFromTxs]] */
+/** Query result for [[org.oxygenium.explorer.persistence.queries.OutputQueries.outputsFromTxs]] */
 final case class OutputsFromTxQR(
     txHash: TransactionId,
     outputOrder: Int,

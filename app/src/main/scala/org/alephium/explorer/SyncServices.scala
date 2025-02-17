@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import java.time.LocalTime
 
@@ -28,14 +28,14 @@ import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 import sttp.model.Uri
 
-import org.alephium.api.model.{ChainParams, PeerAddress}
-import org.alephium.explorer.RichAVector._
-import org.alephium.explorer.cache.BlockCache
-import org.alephium.explorer.config.{BootMode, ExplorerConfig}
-import org.alephium.explorer.error.ExplorerError._
-import org.alephium.explorer.service._
-import org.alephium.explorer.util.Scheduler
-import org.alephium.protocol.model.NetworkId
+import org.oxygenium.api.model.{ChainParams, PeerAddress}
+import org.oxygenium.explorer.RichAVector._
+import org.oxygenium.explorer.cache.BlockCache
+import org.oxygenium.explorer.config.{BootMode, ExplorerConfig}
+import org.oxygenium.explorer.error.ExplorerError._
+import org.oxygenium.explorer.service._
+import org.oxygenium.explorer.util.Scheduler
+import org.oxygenium.protocol.model.NetworkId
 
 /** Implements function for Sync Services boot-up sequence */
 @SuppressWarnings(Array("org.wartremover.warts.Overloading"))

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,11 +14,11 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.queries
+package org.oxygenium.explorer.persistence.queries
 
 import org.scalacheck.Gen
 
-import org.alephium.explorer.AlephiumSpec
+import org.oxygenium.explorer.AlephiumSpec
 
 class QuerySplitterSpec extends AlephiumSpec {
 
@@ -164,7 +164,7 @@ class QuerySplitterSpec extends AlephiumSpec {
   "Test following PR review comment in #162: See link below" in {
 
     /** Test following <a
-      * href="https://github.com/alephium/explorer-backend/pull/162#discussion_r826874299">comment</a>.
+      * href="https://github.com/oxygenium/explorer-backend/pull/162#discussion_r826874299">comment</a>.
       *
       * Let's say the limit of parameters (i.e. ?) is N, and each query has M parameters, then each
       * insertion can insert upto N/M rows. If N = 200 and M=10, then each batch can insert at most

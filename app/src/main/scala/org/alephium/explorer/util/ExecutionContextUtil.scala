@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.util
+package org.oxygenium.explorer.util
 
 import java.util.concurrent.Executor
 
@@ -22,7 +22,7 @@ import scala.concurrent.ExecutionContext
 
 import com.typesafe.scalalogging.StrictLogging
 
-import org.alephium.explorer.error._
+import org.oxygenium.explorer.error._
 
 object ExecutionContextUtil extends StrictLogging {
 

@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.config
+package org.oxygenium.explorer.config
 
 import java.io.File
 import java.net.InetAddress
@@ -33,12 +33,12 @@ import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 import net.ceedubs.ficus.readers.ValueReader
 import sttp.model.Uri
 
-import org.alephium.api.model.ApiKey
-import org.alephium.conf._
-import org.alephium.explorer.error.ExplorerError._
-import org.alephium.explorer.util.FileUtil
-import org.alephium.protocol.model.NetworkId
-import org.alephium.util
+import org.oxygenium.api.model.ApiKey
+import org.oxygenium.conf._
+import org.oxygenium.explorer.error.ExplorerError._
+import org.oxygenium.explorer.util.FileUtil
+import org.oxygenium.protocol.model.NetworkId
+import org.oxygenium.util
 
 @SuppressWarnings(Array("org.wartremover.warts.TryPartial"))
 object ExplorerConfig {
@@ -215,7 +215,7 @@ object ExplorerConfig {
     }
 
   def load(config: Config): ExplorerConfig =
-    config.as[ExplorerConfig]("alephium")
+    config.as[ExplorerConfig]("oxygenium")
 
   final private case class BlockFlow(
       groupNum: Int,

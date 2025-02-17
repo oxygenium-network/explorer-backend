@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.benchmark.db.state
+package org.oxygenium.explorer.benchmark.db.state
 
 import java.math.BigInteger
 
@@ -27,19 +27,19 @@ import org.openjdk.jmh.annotations.{Scope, State}
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.crypto.Blake2b
-import org.alephium.explorer.GroupSetting
-import org.alephium.explorer.api.model._
-import org.alephium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
-import org.alephium.explorer.benchmark.db.BenchmarkSettings._
-import org.alephium.explorer.persistence.dao.BlockDao
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.persistence.queries.InputUpdateQueries
-import org.alephium.explorer.persistence.schema._
-import org.alephium.explorer.service.FinalizerService
-import org.alephium.protocol.{ALPH, Hash}
-import org.alephium.protocol.model.{Address, BlockHash, GroupIndex, TransactionId}
-import org.alephium.util.{Duration, TimeStamp, U256}
+import org.oxygenium.crypto.Blake2b
+import org.oxygenium.explorer.GroupSetting
+import org.oxygenium.explorer.api.model._
+import org.oxygenium.explorer.benchmark.db.{DataGenerator, DBConnectionPool, DBExecutor}
+import org.oxygenium.explorer.benchmark.db.BenchmarkSettings._
+import org.oxygenium.explorer.persistence.dao.BlockDao
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.persistence.queries.InputUpdateQueries
+import org.oxygenium.explorer.persistence.schema._
+import org.oxygenium.explorer.service.FinalizerService
+import org.oxygenium.protocol.{ALPH, Hash}
+import org.oxygenium.protocol.model.{Address, BlockHash, GroupIndex, TransactionId}
+import org.oxygenium.util.{Duration, TimeStamp, U256}
 
 class Queries(val config: DatabaseConfig[PostgresProfile])(implicit
     val executionContext: ExecutionContext

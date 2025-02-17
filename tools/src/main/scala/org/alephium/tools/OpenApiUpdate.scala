@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,14 +14,14 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.tools
+package org.oxygenium.tools
 
 import com.typesafe.config.ConfigFactory
 
-import org.alephium.api.OpenAPIWriters.openApiJson
-import org.alephium.explorer.config._
-import org.alephium.explorer.docs.Documentation
-import org.alephium.util.{discard, Duration}
+import org.oxygenium.api.OpenAPIWriters.openApiJson
+import org.oxygenium.explorer.config._
+import org.oxygenium.explorer.docs.Documentation
+import org.oxygenium.util.{discard, Duration}
 
 object OpenApiUpdate {
   def main(args: Array[String]): Unit = {

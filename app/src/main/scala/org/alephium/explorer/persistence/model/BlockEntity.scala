@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence.model
+package org.oxygenium.explorer.persistence.model
 
 import java.math.BigInteger
 
@@ -22,11 +22,11 @@ import scala.collection.immutable.ArraySeq
 
 import akka.util.ByteString
 
-import org.alephium.explorer.api.model.{GhostUncle, Height}
-import org.alephium.explorer.service.FlowEntity
-import org.alephium.protocol.Hash
-import org.alephium.protocol.model.{BlockHash, GroupIndex}
-import org.alephium.util.TimeStamp
+import org.oxygenium.explorer.api.model.{GhostUncle, Height}
+import org.oxygenium.explorer.service.FlowEntity
+import org.oxygenium.protocol.Hash
+import org.oxygenium.protocol.model.{BlockHash, GroupIndex}
+import org.oxygenium.util.TimeStamp
 
 final case class BlockEntity(
     hash: BlockHash,

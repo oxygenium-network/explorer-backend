@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -13,7 +13,7 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
-package org.alephium.explorer
+package org.oxygenium.explorer
 
 import java.math.BigInteger
 
@@ -23,20 +23,20 @@ import akka.util.ByteString
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalacheck.Arbitrary.arbitrary
 
-import org.alephium.api.model.{Val, ValAddress, ValByteVec}
-import org.alephium.explorer.ConfigDefaults.groupSetting
-import org.alephium.explorer.GenApiModel._
-import org.alephium.explorer.GenCoreApi._
-import org.alephium.explorer.GenCoreProtocol._
-import org.alephium.explorer.GenCoreUtil._
-import org.alephium.explorer.api.model.Height
-import org.alephium.explorer.persistence.model._
-import org.alephium.explorer.service.BlockFlowClient
-import org.alephium.protocol.ALPH
-import org.alephium.protocol.model.{Address, BlockHash, ChainIndex, GroupIndex, TransactionId}
-import org.alephium.util.{AVector, TimeStamp}
+import org.oxygenium.api.model.{Val, ValAddress, ValByteVec}
+import org.oxygenium.explorer.ConfigDefaults.groupSetting
+import org.oxygenium.explorer.GenApiModel._
+import org.oxygenium.explorer.GenCoreApi._
+import org.oxygenium.explorer.GenCoreProtocol._
+import org.oxygenium.explorer.GenCoreUtil._
+import org.oxygenium.explorer.api.model.Height
+import org.oxygenium.explorer.persistence.model._
+import org.oxygenium.explorer.service.BlockFlowClient
+import org.oxygenium.protocol.ALPH
+import org.oxygenium.protocol.model.{Address, BlockHash, ChainIndex, GroupIndex, TransactionId}
+import org.oxygenium.util.{AVector, TimeStamp}
 
-/** Test-data generators for types in package [[org.alephium.explorer.persistence.model]] */
+/** Test-data generators for types in package [[org.oxygenium.explorer.persistence.model]] */
 @SuppressWarnings(Array("org.wartremover.warts.DefaultArguments"))
 // scalastyle:off number.of.methods
 object GenDBModel {
@@ -165,8 +165,8 @@ object GenDBModel {
       uinputOrder
     )
 
-  /** Generates and [[org.alephium.explorer.persistence.model.InputEntity]] for the given
-    * [[org.alephium.explorer.persistence.model.OutputEntity]] generator
+  /** Generates and [[org.oxygenium.explorer.persistence.model.InputEntity]] for the given
+    * [[org.oxygenium.explorer.persistence.model.OutputEntity]] generator
     */
   def genInputOutput(
       outputGen: Gen[OutputEntity] = outputEntityGen

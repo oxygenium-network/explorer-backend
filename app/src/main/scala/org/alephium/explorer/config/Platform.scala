@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.config
+package org.oxygenium.explorer.config
 
 import java.nio.file.{Path, Paths}
 
-import org.alephium.explorer.util.FileUtil
-import org.alephium.util.Files
+import org.oxygenium.explorer.util.FileUtil
+import org.oxygenium.util.Files
 
 object Platform {
 
-  val defaultHome: String = ".alephium-explorer-backend"
+  val defaultHome: String = ".oxygenium-explorer-backend"
 
   def getRootPath(): Path = {
     val rootPath =

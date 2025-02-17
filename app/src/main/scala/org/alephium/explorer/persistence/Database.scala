@@ -1,5 +1,5 @@
 // Copyright 2018 The Alephium Authors
-// This file is part of the alephium project.
+// This file is part of the oxygenium project.
 //
 // The library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the library. If not, see <http://www.gnu.org/licenses/>.
 
-package org.alephium.explorer.persistence
+package org.oxygenium.explorer.persistence
 
 import scala.collection.immutable.ArraySeq
 import scala.concurrent.{ExecutionContext, Future}
@@ -23,10 +23,10 @@ import scala.util._
 import slick.basic.DatabaseConfig
 import slick.jdbc.PostgresProfile
 
-import org.alephium.explorer.config.BootMode
-import org.alephium.explorer.persistence.dao.HealthCheckDao
-import org.alephium.explorer.util.FutureUtil._
-import org.alephium.util.Service
+import org.oxygenium.explorer.config.BootMode
+import org.oxygenium.explorer.persistence.dao.HealthCheckDao
+import org.oxygenium.explorer.util.FutureUtil._
+import org.oxygenium.util.Service
 
 class Database(bootMode: BootMode)(implicit
     val executionContext: ExecutionContext,
