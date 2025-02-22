@@ -27,7 +27,7 @@ import org.oxygenium.protocol.model.{Address, TokenId}
 import org.oxygenium.util.U256
 
 object InfoQueries {
-  def getAlphHoldersAction(pagination: Pagination): DBActionSR[(Address, U256)] =
+  def getOxmHoldersAction(pagination: Pagination): DBActionSR[(Address, U256)] =
     sql"""
       SELECT
         address,

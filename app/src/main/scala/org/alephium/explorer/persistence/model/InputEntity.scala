@@ -41,7 +41,7 @@ trait InputEntityLike {
       unlockScript = unlockScript,
       txHashRef = outputRefTxHash,
       address = outputRefAddress,
-      attoAlphAmount = outputRefAmount,
+      attoOxmAmount = outputRefAmount,
       tokens = outputRefTokens,
       contractInput = contractInput
     )

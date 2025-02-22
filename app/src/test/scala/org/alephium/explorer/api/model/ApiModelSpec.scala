@@ -91,7 +91,7 @@ class ApiModelSpec() extends OxygeniumSpec {
             OutputRef(1, Hash.generate),
             unlockScript = None,
             address = Some(address),
-            attoAlphAmount = Some(OXM.alph(10)),
+            attoOxmAmount = Some(OXM.alph(10)),
             tokens = None,
             contractInput = false
           )
@@ -100,7 +100,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = OXM.alph(8),
+            attoOxmAmount = OXM.alph(8),
             address = Address.fromBase58("14PqtYSSbwpUi2RJKUvv9yUwGafd6yHbEcke7ionuiE7w").get,
             tokens = None,
             lockTime = None,
@@ -111,7 +111,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = OXM.alph(8),
+            attoOxmAmount = OXM.alph(8),
             address = Address.fromBase58("22fnZLkZJUSyhXgboirmJktWkEBRk1pV8L6gfpc53hvVM").get,
             tokens = None,
             lockTime = None,
@@ -122,7 +122,7 @@ class ApiModelSpec() extends OxygeniumSpec {
           AssetOutput(
             hint = 0,
             key = Hash.generate,
-            attoAlphAmount = OXM.alph(8),
+            attoOxmAmount = OXM.alph(8),
             address,
             tokens = None,
             lockTime = None,
@@ -203,7 +203,7 @@ class ApiModelSpec() extends OxygeniumSpec {
            |  "type": "AssetOutput",
            |  "hint": ${output.hint},
            |  "key": "${output.key.toHexString}",
-           |  "attoAlphAmount": "${output.attoAlphAmount}",
+           |  "attoOxmAmount": "${output.attoOxmAmount}",
            |  "address": "${output.address}"
            |  ${output.tokens.map(tokens => s""","tokens": ${write(tokens)}""").getOrElse("")}
            |  ${output.lockTime
@@ -229,7 +229,7 @@ class ApiModelSpec() extends OxygeniumSpec {
            |  "type": "ContractOutput",
            |  "hint": ${output.hint},
            |  "key": "${output.key.toHexString}",
-           |  "attoAlphAmount": "${output.attoAlphAmount}",
+           |  "attoOxmAmount": "${output.attoOxmAmount}",
            |  "address": "${output.address}"
            |  ${output.tokens.map(tokens => s""","tokens": ${write(tokens)}""").getOrElse("")}
            |  ${output.spent
@@ -254,8 +254,8 @@ class ApiModelSpec() extends OxygeniumSpec {
             .map(txHashRef => s""","txHashRef": "${txHashRef.toHexString}"""")
             .getOrElse("")}
            |  ${input.address.map(address => s""","address": "${address}"""").getOrElse("")}
-           |  ${input.attoAlphAmount
-            .map(attoAlphAmount => s""","attoAlphAmount": "${attoAlphAmount}"""")
+           |  ${input.attoOxmAmount
+            .map(attoOxmAmount => s""","attoOxmAmount": "${attoOxmAmount}"""")
             .getOrElse("")}
            |  ${input.tokens
             .map(tokens => s""","tokens": ${write(tokens)}""")

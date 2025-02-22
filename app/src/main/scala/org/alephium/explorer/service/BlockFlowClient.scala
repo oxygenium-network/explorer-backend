@@ -733,7 +733,7 @@ object BlockFlowClient extends StrictLogging {
     AssetOutput(
       output.hint,
       output.key,
-      output.attoAlphAmount.value,
+      output.attoOxmAmount.value,
       output.address,
       protocolTokensToTokens(output.tokens),
       lockTime,
@@ -797,7 +797,7 @@ object BlockFlowClient extends StrictLogging {
       outputType,
       output.hint,
       output.key,
-      output.attoAlphAmount.value,
+      output.attoOxmAmount.value,
       output.address,
       tokens,
       mainChain,

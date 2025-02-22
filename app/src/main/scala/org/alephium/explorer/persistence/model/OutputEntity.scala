@@ -44,7 +44,7 @@ trait OutputEntityLike {
         AssetOutput(
           hint = hint,
           key = key,
-          attoAlphAmount = amount,
+          attoOxmAmount = amount,
           address = address,
           tokens = tokens,
           lockTime = lockTime,
@@ -57,7 +57,7 @@ trait OutputEntityLike {
         ContractOutput(
           hint = hint,
           key = key,
-          attoAlphAmount = amount,
+          attoOxmAmount = amount,
           address = address,
           tokens = tokens,
           spent = spentFinalized,

@@ -320,7 +320,7 @@ trait ExplorerSpec
             .map(
               _.outputs
                 .filter(_.address == address)
-                .map(_.attoAlphAmount)
+                .map(_.attoOxmAmount)
                 .fold(U256.Zero)(_ addUnsafe _)
             )
             .fold(U256.Zero)(_ addUnsafe _)
@@ -329,7 +329,7 @@ trait ExplorerSpec
             .map(
               _.inputs
                 .filter(in => in.address == Some(address))
-                .map(_.attoAlphAmount.getOrElse(U256.Zero))
+                .map(_.attoOxmAmount.getOrElse(U256.Zero))
                 .fold(U256.Zero)(_ addUnsafe _)
             )
             .fold(U256.Zero)(_ addUnsafe _)

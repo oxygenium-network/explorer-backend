@@ -34,7 +34,7 @@ import org.oxygenium.util.AVector
 sealed trait Output {
   def hint: Int
   def key: Hash
-  def attoAlphAmount: U256
+  def attoOxmAmount: U256
   def address: Address
   def tokens: Option[ArraySeq[Token]]
   def spent: Option[TransactionId]
@@ -46,7 +46,7 @@ sealed trait Output {
 final case class AssetOutput(
     hint: Int,
     key: Hash,
-    attoAlphAmount: U256,
+    attoOxmAmount: U256,
     address: Address,
     tokens: Option[ArraySeq[Token]] = None,
     lockTime: Option[TimeStamp] = None,
@@ -60,7 +60,7 @@ final case class AssetOutput(
 final case class ContractOutput(
     hint: Int,
     key: Hash,
-    attoAlphAmount: U256,
+    attoOxmAmount: U256,
     address: Address,
     tokens: Option[ArraySeq[Token]] = None,
     spent: Option[TransactionId] = None,
@@ -76,7 +76,7 @@ object Output {
       case asset: AssetOutput if asset.fixedOutput =>
         asset.address match {
           case assetAddress: Address.Asset =>
-            val amount = org.oxygenium.api.model.Amount(asset.attoAlphAmount)
+            val amount = org.oxygenium.api.model.Amount(asset.attoOxmAmount)
             Some(
               org.oxygenium.api.model.FixedAssetOutput(
                 asset.hint,
@@ -103,7 +103,7 @@ object Output {
           org.oxygenium.api.model.AssetOutput(
             output.hint,
             output.key,
-            org.oxygenium.api.model.Amount(output.attoAlphAmount),
+            org.oxygenium.api.model.Amount(output.attoOxmAmount),
             assetAddress,
             tokens =
               output.tokens.map(t => AVector.from(t.map(_.toProtocol()))).getOrElse(AVector.empty),
@@ -116,7 +116,7 @@ object Output {
           org.oxygenium.api.model.ContractOutput(
             output.hint,
             output.key,
-            org.oxygenium.api.model.Amount(output.attoAlphAmount),
+            org.oxygenium.api.model.Amount(output.attoOxmAmount),
             contractAddress,
             tokens = output.tokens
               .map(tokens => AVector.from(tokens.map(_.toProtocol())))

@@ -82,7 +82,7 @@ trait Documentation
         getLockedSupply,
         getTotalTransactions,
         getAverageBlockTime,
-        getAlphHolders,
+        getOxmHolders,
         getTokenHolders,
         getHashrates,
         getAllChainsTxCount,

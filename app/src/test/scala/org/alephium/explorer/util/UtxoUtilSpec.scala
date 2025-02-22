@@ -34,7 +34,7 @@ class UtxoUtilSpec extends OxygeniumSpec {
         forAll(addressGen, Gen.listOf(inputGen)) { case (address, inputs) =>
           val addressInputs = inputs.map(_.copy(address = Some(address)))
           val amount = inputs.foldLeft(Option(U256.Zero)) { case (acc, in) =>
-            acc.flatMap(_.add(in.attoAlphAmount.getOrElse(U256.Zero)))
+            acc.flatMap(_.add(in.attoOxmAmount.getOrElse(U256.Zero)))
           }
 
           UtxoUtil.amountForAddressInInputs(address, addressInputs) is amount
@@ -47,7 +47,7 @@ class UtxoUtilSpec extends OxygeniumSpec {
 
           val amount =
             addressesInputs.filter(_.address == Some(address)).foldLeft(Option(U256.Zero)) {
-              case (acc, in) => acc.flatMap(_.add(in.attoAlphAmount.getOrElse(U256.Zero)))
+              case (acc, in) => acc.flatMap(_.add(in.attoOxmAmount.getOrElse(U256.Zero)))
             }
 
           UtxoUtil.amountForAddressInInputs(address, addressesInputs) is amount
@@ -77,7 +77,7 @@ class UtxoUtilSpec extends OxygeniumSpec {
           }
 
           val amount = addressesOutputs.filter(_.address == address).foldLeft(Option(U256.Zero)) {
-            case (acc, in) => acc.flatMap(_.add(in.attoAlphAmount))
+            case (acc, in) => acc.flatMap(_.add(in.attoOxmAmount))
           }
 
           UtxoUtil.amountForAddressInOutputs(address, addressesOutputs) is amount
@@ -107,12 +107,12 @@ class UtxoUtilSpec extends OxygeniumSpec {
           }
           val inputAmount = inputs
             .foldLeft(Option(U256.Zero)) { case (acc, in) =>
-              acc.flatMap(_.add(in.attoAlphAmount.getOrElse(U256.Zero)))
+              acc.flatMap(_.add(in.attoOxmAmount.getOrElse(U256.Zero)))
             }
             .get
           val outputAmount = outputs
             .foldLeft(Option(U256.Zero)) { case (acc, in) =>
-              acc.flatMap(_.add(in.attoAlphAmount))
+              acc.flatMap(_.add(in.attoOxmAmount))
             }
             .get
 

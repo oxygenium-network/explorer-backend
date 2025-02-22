@@ -39,7 +39,7 @@ import org.oxygenium.protocol.model.TokenId
 import org.oxygenium.util.TimeStamp
 
 trait HolderService {
-  def getAlphHolders(pagination: Pagination)(implicit
+  def getOxmHolders(pagination: Pagination)(implicit
       ec: ExecutionContext,
       dc: DatabaseConfig[PostgresProfile]
   ): Future[ArraySeq[HolderInfo]]
@@ -51,11 +51,11 @@ trait HolderService {
 
 case object HolderService extends HolderService with StrictLogging {
 
-  def getAlphHolders(pagination: Pagination)(implicit
+  def getOxmHolders(pagination: Pagination)(implicit
       ec: ExecutionContext,
       dc: DatabaseConfig[PostgresProfile]
   ): Future[ArraySeq[HolderInfo]] = {
-    run(InfoQueries.getAlphHoldersAction(pagination)).map(_.map { case (address, balance) =>
+    run(InfoQueries.getOxmHoldersAction(pagination)).map(_.map { case (address, balance) =>
       HolderInfo(address, balance)
     })
   }
@@ -125,7 +125,7 @@ case object HolderService extends HolderService with StrictLogging {
       dc: DatabaseConfig[PostgresProfile]
   ): Future[Unit] = {
     run(for {
-      _ <- insertInitialAlphHolders(lastFinalizedInputTime)
+      _ <- insertInitialOxmHolders(lastFinalizedInputTime)
       _ <- insertInitialTokenHolders(lastFinalizedInputTime)
       _ <- AppStateQueries.insertOrUpdate(LastHoldersUpdate(lastFinalizedInputTime))
     } yield ())
@@ -136,13 +136,13 @@ case object HolderService extends HolderService with StrictLogging {
       dc: DatabaseConfig[PostgresProfile]
   ): Future[Unit] = run(
     for {
-      _ <- updateAlphHolders(lastRichListUpdate, lastFinalizedInputTime)
+      _ <- updateOxmHolders(lastRichListUpdate, lastFinalizedInputTime)
       _ <- updateTokenHolders(lastRichListUpdate, lastFinalizedInputTime)
       _ <- AppStateQueries.insertOrUpdate(LastHoldersUpdate(lastFinalizedInputTime))
     } yield ()
   )
 
-  def insertInitialAlphHolders(time: TimeStamp): DBActionW[Int] =
+  def insertInitialOxmHolders(time: TimeStamp): DBActionW[Int] =
     sqlu"""
     INSERT INTO alph_holders (address, balance)
     SELECT outputs.address,
@@ -155,7 +155,7 @@ case object HolderService extends HolderService with StrictLogging {
     GROUP BY outputs.address
   """
 
-  def updateAlphHolders(from: TimeStamp, to: TimeStamp): DBActionW[Int] =
+  def updateOxmHolders(from: TimeStamp, to: TimeStamp): DBActionW[Int] =
     sqlu"""
     WITH
     inflow AS (

@@ -35,7 +35,7 @@ final case class Input(
     unlockScript: Option[ByteString] = None,
     txHashRef: Option[TransactionId] = None,
     address: Option[Address] = None,
-    attoAlphAmount: Option[U256] = None,
+    attoOxmAmount: Option[U256] = None,
     tokens: Option[ArraySeq[Token]] = None,
     contractInput: Boolean
 ) {

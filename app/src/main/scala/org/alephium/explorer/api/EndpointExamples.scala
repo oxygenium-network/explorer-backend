@@ -37,7 +37,7 @@ import org.oxygenium.util.{Hex, U256}
 object EndpointExamples extends EndpointsExamples {
 
   private def alph(value: Int): Amount =
-    Amount(OXM.oneAlph.mulUnsafe(U256.unsafe(value)))
+    Amount(OXM.oneOxm.mulUnsafe(U256.unsafe(value)))
 
   private val blockHash: BlockHash =
     BlockHash
@@ -88,7 +88,7 @@ object EndpointExamples extends EndpointsExamples {
       unlockScript = Some(unlockScript),
       txHashRef = Some(txId),
       address = Some(address1),
-      attoAlphAmount = Some(U256.Two),
+      attoOxmAmount = Some(U256.Two),
       tokens = Some(tokens),
       contractInput = false
     )
@@ -97,7 +97,7 @@ object EndpointExamples extends EndpointsExamples {
     AssetOutput(
       hint = 1,
       key = hash,
-      attoAlphAmount = U256.Two,
+      attoOxmAmount = U256.Two,
       address = address1,
       tokens = Some(tokens),
       lockTime = Some(ts),
@@ -109,7 +109,7 @@ object EndpointExamples extends EndpointsExamples {
     ContractOutput(
       hint = 1,
       key = hash,
-      attoAlphAmount = U256.Two,
+      attoOxmAmount = U256.Two,
       address = address1,
       tokens = Some(tokens),
       fixedOutput = false

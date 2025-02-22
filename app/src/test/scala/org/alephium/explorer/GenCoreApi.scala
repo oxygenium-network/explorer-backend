@@ -309,7 +309,7 @@ object GenCoreApi {
   def unsignedTxGen(
       outputRefs: AVector[FixedAssetOutput]
   )(implicit groupSetting: GroupSetting): Gen[UnsignedTx] = {
-    val totalAmount = outputRefs.map(_.attoAlphAmount.value).fold(U256.Zero)(_ addUnsafe _)
+    val totalAmount = outputRefs.map(_.attoOxmAmount.value).fold(U256.Zero)(_ addUnsafe _)
     val addresses   = outputRefs.map(_.address).toSeq.distinct
     for {
       unsigned <- unsignedTxGen
@@ -442,8 +442,8 @@ object GenCoreApi {
 
   val assetStateGen: Gen[AssetState] =
     for {
-      attoAlphAmount <- amountGen
-    } yield AssetState(attoAlphAmount, None)
+      attoOxmAmount <- amountGen
+    } yield AssetState(attoOxmAmount, None)
 
   def contractStateGen(implicit groupSetting: GroupSetting): Gen[ContractState] =
     for {

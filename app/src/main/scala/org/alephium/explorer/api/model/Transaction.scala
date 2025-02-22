@@ -60,7 +60,7 @@ final case class Transaction(
     val amount      = deltaAmount.map(_.toString).getOrElse("")
     val amountHint = deltaAmount
       .map(delta =>
-        new java.math.BigDecimal(delta).divide(new java.math.BigDecimal(OXM.oneAlph.v))
+        new java.math.BigDecimal(delta).divide(new java.math.BigDecimal(OXM.oneOxm.v))
       )
       .map(_.toString)
       .getOrElse("")

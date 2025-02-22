@@ -24,9 +24,9 @@ import org.oxygenium.explorer.persistence.schema.CustomJdbcTypes._
 import org.oxygenium.protocol.model.Address
 import org.oxygenium.util.U256
 
-object AlphHolderSchema extends SchemaMainChain[HolderEntity]("alph_holders") {
+object OxmHolderSchema extends SchemaMainChain[HolderEntity]("alph_holders") {
 
-  class AlphHolders(tag: Tag) extends Table[HolderEntity](tag, name) {
+  class OxmHolders(tag: Tag) extends Table[HolderEntity](tag, name) {
     def address: Rep[Address] = column[Address]("address", O.PrimaryKey)
     def balance: Rep[U256] =
       column[U256]("balance", O.SqlType("DECIMAL(80,0)")) // U256.MaxValue has 78 digits
@@ -39,5 +39,5 @@ object AlphHolderSchema extends SchemaMainChain[HolderEntity]("alph_holders") {
         .<>((HolderEntity.apply _).tupled, HolderEntity.unapply)
   }
 
-  val table: TableQuery[AlphHolders] = TableQuery[AlphHolders]
+  val table: TableQuery[OxmHolders] = TableQuery[OxmHolders]
 }

@@ -60,7 +60,7 @@ object DBInitializer extends StrictLogging {
       TokenInfoSchema.table,
       TransactionHistorySchema.table,
       EventSchema.table,
-      AlphHolderSchema.table,
+      OxmHolderSchema.table,
       TokenHolderSchema.table,
       ContractSchema.table,
       AppStateSchema.table,

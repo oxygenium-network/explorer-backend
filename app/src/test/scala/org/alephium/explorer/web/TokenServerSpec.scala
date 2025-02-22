@@ -42,7 +42,7 @@ class TokenServerSpec()
   val holdertokens = ArraySeq.from(Gen.listOf(holderInfoGen).sample.get)
 
   val holderService = new EmptyHolderService {
-    override def getAlphHolders(pagination: Pagination)(implicit
+    override def getOxmHolders(pagination: Pagination)(implicit
         ec: ExecutionContext,
         dc: DatabaseConfig[PostgresProfile]
     ): Future[ArraySeq[HolderInfo]] = Future.successful(holdertokens)

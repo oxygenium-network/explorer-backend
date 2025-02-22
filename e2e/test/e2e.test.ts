@@ -37,7 +37,7 @@ describe('e2e', function () {
       signerAddress: wallet.account.address,
       destinations: [{
         address: destinationWallet.account.address,
-        attoAlphAmount: ONE_OXM
+        attoOxmAmount: ONE_OXM
       }]
     })
 

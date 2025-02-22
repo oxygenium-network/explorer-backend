@@ -67,7 +67,7 @@ object MempoolTransactionEntity {
           utx.hash,
           output.hint,
           output.key,
-          output.attoAlphAmount,
+          output.attoOxmAmount,
           output.address,
           output.tokens,
           lockTime,

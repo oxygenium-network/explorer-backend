@@ -106,7 +106,7 @@ class TransactionServiceSpec extends OxygeniumActorSpecLike with DatabaseFixture
       BlockDao
         .getTransactions(block.hash, Pagination.unsafe(1, 1000))
         .futureValue
-        .flatMap(_.outputs.map(_.attoAlphAmount))
+        .flatMap(_.outputs.map(_.attoOxmAmount))
         .head
     fetchedAmout is amount
   }

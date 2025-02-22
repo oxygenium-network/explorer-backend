@@ -131,7 +131,7 @@ class InfosServer(
   }
 
   private def toOXM(u256: U256): BigDecimal =
-    new BigDecimal(u256.v).divide(new BigDecimal(OXM.oneAlph.v))
+    new BigDecimal(u256.v).divide(new BigDecimal(OXM.oneOxm.v))
 
   private val latestTokenSupplyCache: AsyncReloadingCache[Option[TokenSupply]] =
     AsyncReloadingCache[Option[TokenSupply]](None, 1.minutes) { _ =>

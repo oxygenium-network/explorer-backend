@@ -60,8 +60,8 @@ class TokenServer(tokenService: TokenService, holderService: HolderService)(impl
         val contracts = addresses.collect { case address: Address.Contract => address }
         tokenService.listNFTCollectionMetadata(contracts)
       }),
-      route(getAlphHolders.serverLogicSuccess[Future] { pagination =>
-        holderService.getAlphHolders(pagination)
+      route(getOxmHolders.serverLogicSuccess[Future] { pagination =>
+        holderService.getOxmHolders(pagination)
       }),
       route(getTokenHolders.serverLogicSuccess[Future] { case (tokenId, pagination) =>
         holderService.getTokenHolders(tokenId, pagination)

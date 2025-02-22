@@ -152,7 +152,7 @@ object GenApiModel extends ImplicitConversions {
       inputs <- Gen.listOfN(
         3,
         inputGen.map(
-          _.copy(attoAlphAmount = None, txHashRef = None, tokens = None, contractInput = false)
+          _.copy(attoOxmAmount = None, txHashRef = None, tokens = None, contractInput = false)
         )
       )
       outputs   <- Gen.listOfN(3, assetOutputGen.map(_.copy(spent = None, fixedOutput = true)))

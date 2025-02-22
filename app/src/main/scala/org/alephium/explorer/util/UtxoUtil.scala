@@ -28,7 +28,7 @@ object UtxoUtil {
   def amountForAddressInInputs(address: Address, inputs: ArraySeq[Input]): Option[U256] = {
     inputs
       .filter(_.address == Some(address))
-      .map(_.attoAlphAmount)
+      .map(_.attoOxmAmount)
       .collect { case Some(amount) => amount }
       .foldLeft(Option(U256.Zero)) { case (acc, amount) => acc.flatMap(_.add(amount)) }
   }
@@ -36,7 +36,7 @@ object UtxoUtil {
   def amountForAddressInOutputs(address: Address, outputs: ArraySeq[Output]): Option[U256] = {
     outputs
       .filter(_.address == address)
-      .map(_.attoAlphAmount)
+      .map(_.attoOxmAmount)
       .foldLeft(Option(U256.Zero)) { case (acc, amount) => acc.flatMap(_.add(amount)) }
   }
 

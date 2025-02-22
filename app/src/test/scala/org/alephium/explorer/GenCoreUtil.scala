@@ -30,5 +30,5 @@ object GenCoreUtil {
   val u256Gen: Gen[U256] = Gen.posNum[Long].map(U256.unsafe)
   val timestampGen: Gen[TimeStamp] =
     Gen.choose[Long](0, timestampMaxValue.millis).map(TimeStamp.unsafe)
-  val amountGen: Gen[U256] = Gen.choose(1000L, Number.quadrillion).map(OXM.nanoAlph)
+  val amountGen: Gen[U256] = Gen.choose(1000L, Number.quadrillion).map(OXM.nanoOxm)
 }

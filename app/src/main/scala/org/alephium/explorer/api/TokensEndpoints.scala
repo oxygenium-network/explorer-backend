@@ -94,7 +94,7 @@ trait TokensEndpoints extends BaseEndpoint with QueryParams {
         "Return metadata for the given nft collection addresses, if metadata doesn't exist or address isn't a nft collection, it won't be in the output list"
       )
 
-  val getAlphHolders: BaseEndpoint[Pagination, ArraySeq[HolderInfo]] =
+  val getOxmHolders: BaseEndpoint[Pagination, ArraySeq[HolderInfo]] =
     tokensEndpoint.get
       .in("holders")
       .in("alph")

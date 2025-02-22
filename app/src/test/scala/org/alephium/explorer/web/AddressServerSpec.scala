@@ -80,7 +80,7 @@ class AddressServerSpec()
   val amountHistory = transactions
     .flatMap { tx =>
       tx.outputs.map { output =>
-        (output.attoAlphAmount.v, tx.timestamp)
+        (output.attoOxmAmount.v, tx.timestamp)
       }
     }
     .sortBy(_._2)

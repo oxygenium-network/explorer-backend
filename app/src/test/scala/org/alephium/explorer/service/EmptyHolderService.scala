@@ -27,7 +27,7 @@ import org.oxygenium.protocol.model.TokenId
 
 trait EmptyHolderService extends HolderService {
 
-  def getAlphHolders(pagination: Pagination)(implicit
+  def getOxmHolders(pagination: Pagination)(implicit
       ec: ExecutionContext,
       dc: DatabaseConfig[PostgresProfile]
   ): Future[ArraySeq[HolderInfo]] = Future.successful(ArraySeq.empty)
