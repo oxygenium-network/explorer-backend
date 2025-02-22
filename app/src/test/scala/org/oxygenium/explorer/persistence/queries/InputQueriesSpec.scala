@@ -54,7 +54,7 @@ class InputQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureForEach w
       /** Following two test insert larger queries to test maximum number of parameters allowed by
         * Postgres per query i.e. [[Short.MaxValue]].
         *
-        * See <a href="https://github.com/oxygenium/explorer-backend/issues/160">#160</a>
+        * See <a href="https://github.com/oxygenium-network/explorer-backend/issues/160">#160</a>
         */
       info(s"Large: Test with fixed '${Short.MaxValue}' data size")
       Gen

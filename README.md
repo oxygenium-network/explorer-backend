@@ -56,7 +56,7 @@ The resulting assembly file will appear in `app/target/scala-2.13/` directory.
 
 #### 3.2 Run the released jar
 
-Download the lastest jar in our [release page](https://github.com/oxygenium/explorer-backend/releases/latest)
+Download the lastest jar in our [release page](https://github.com/oxygenium-network/explorer-backend/releases/latest)
 
 Run it with:
 
@@ -66,7 +66,7 @@ java -jar explorer-backend-x.x.x.jar
 
 ### 4. Configuration
 
-Configuration file at [`/app/src/main/resources/application.conf`](https://github.com/oxygenium/explorer-backend/blob/master/app/src/main/resources/application.conf) can be customized using environment variables
+Configuration file at [`/app/src/main/resources/application.conf`](https://github.com/oxygenium-network/explorer-backend/blob/master/app/src/main/resources/application.conf) can be customized using environment variables
 
 Everything can be overridden in two ways:
 
@@ -84,7 +84,7 @@ oxygenium {
 
 #### Environment variables
 
-Every value has a corresponding environment variable, you can find all of them in the [application.conf](https://github.com/oxygenium/explorer-backend/blob/master/app/src/main/resources/application.conf).  e.g:
+Every value has a corresponding environment variable, you can find all of them in the [application.conf](https://github.com/oxygenium-network/explorer-backend/blob/master/app/src/main/resources/application.conf).  e.g:
 
 ```shell
 export EXPLORER_PORT=9191

@@ -87,7 +87,7 @@ object BlockHeaderSchema extends SchemaMainChain[BlockHeader]("block_headers") {
     * results.
     *
     * @see
-    *   PR <a href="https://github.com/oxygenium/explorer-backend/pull/112">#112</a>.
+    *   PR <a href="https://github.com/oxygenium-network/explorer-backend/pull/112">#112</a>.
     */
   private def fullIndex(): SqlAction[Int, NoStream, Effect] =
     sqlu"""

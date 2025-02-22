@@ -164,7 +164,7 @@ class QuerySplitterSpec extends OxygeniumSpec {
   "Test following PR review comment in #162: See link below" in {
 
     /** Test following <a
-      * href="https://github.com/oxygenium/explorer-backend/pull/162#discussion_r826874299">comment</a>.
+      * href="https://github.com/oxygenium-network/explorer-backend/pull/162#discussion_r826874299">comment</a>.
       *
       * Let's say the limit of parameters (i.e. ?) is N, and each query has M parameters, then each
       * insertion can insert upto N/M rows. If N = 200 and M=10, then each batch can insert at most

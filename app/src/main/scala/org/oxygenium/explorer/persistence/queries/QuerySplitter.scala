@@ -29,7 +29,7 @@ object QuerySplitter {
     *
     * @note
     *   This value cannot be > [[scala.Short.MaxValue]]. See issue <a
-    *   href="https://github.com/oxygenium/explorer-backend/issues/160">#160</a>.
+    *   href="https://github.com/oxygenium-network/explorer-backend/issues/160">#160</a>.
     *
     * TODO: This should be passed as a configuration instead of hardcoding it and should be passed
     * as parameter to the function using this value.

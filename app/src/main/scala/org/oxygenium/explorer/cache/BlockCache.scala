@@ -69,7 +69,7 @@ object BlockCache {
      * all chain-indexes after a single run of sync so `.get` would
      * never fail after first few seconds after boot-up.
      *
-     * @see Comments in PR <a href="https://github.com/oxygenium/explorer-backend/pull/393">#393</a>
+     * @see Comments in PR <a href="https://github.com/oxygenium-network/explorer-backend/pull/393">#393</a>
      */
     @SuppressWarnings(Array("org.wartremover.warts.OptionPartial"))
     val latestBlockAsyncLoader: AsyncCacheLoader[ChainIndex, LatestBlock] = { case (key, _) =>

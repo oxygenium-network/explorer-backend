@@ -2,7 +2,7 @@ FROM eclipse-temurin:17-jre
 
 ARG RELEASE=0.0.0
 
-RUN curl -L https://github.com/oxygenium/explorer-backend/releases/download/v${RELEASE}/explorer-backend-${RELEASE}.jar -o /explorer-backend.jar && \
+RUN curl -L https://github.com/oxygenium-network/explorer-backend/releases/download/v${RELEASE}/explorer-backend-${RELEASE}.jar -o /explorer-backend.jar && \
  mkdir -p /oxygenium-home && usermod -d /oxygenium-home nobody && chown nobody /oxygenium-home && \
   mkdir -p ~nobody/.explorer && chown nobody ~nobody/.explorer
 

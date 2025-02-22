@@ -293,7 +293,7 @@ class TransactionQueriesSpec extends OxygeniumFutureSpec with DatabaseFixtureFor
     }
   }
 
-  // https://github.com/oxygenium/explorer-backend/issues/174
+  // https://github.com/oxygenium-network/explorer-backend/issues/174
   "return an empty list when not transactions are found - Isssue 174" in new Fixture {
     run(
       TransactionQueries.getTransactionsByAddress(address, Pagination.unsafe(1, 10))

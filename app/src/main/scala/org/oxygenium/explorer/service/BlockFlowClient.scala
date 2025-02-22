@@ -548,7 +548,7 @@ object BlockFlowClient extends StrictLogging {
     val inputs       = blockProtocolToInputEntities(block)
     val outputs      = blockProtocolToOutputEntities(block)
     // As defined in
-    // https://github.com/oxygenium/oxygenium/blob/1e359e155b37c2afda6011cdc319d54ae8e4c059/protocol/src/main/scala/org/oxygenium/protocol/model/Block.scala#L35
+    // https://github.com/oxygenium-network/oxygenium/blob/1e359e155b37c2afda6011cdc319d54ae8e4c059/protocol/src/main/scala/org/oxygenium/protocol/model/Block.scala#L35
     // Genesis blocks don't have any transactions
     val coinbaseTxId =
       if (block.height == Height.genesis.value) null else block.transactions.last.unsigned.txId

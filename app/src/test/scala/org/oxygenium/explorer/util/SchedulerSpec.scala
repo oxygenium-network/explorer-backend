@@ -65,7 +65,7 @@ class SchedulerSpec extends OxygeniumFutureSpec with ScalaCheckDrivenPropertyChe
             .toMinutes is 10
         }
 
-        /** <a href="https://github.com/oxygenium/explorer-backend/issues/335">#335</a>: The
+        /** <a href="https://github.com/oxygenium-network/explorer-backend/issues/335">#335</a>: The
           * following test is invalid for timezones in daylight savings.
           *
           * Restricting this test to run for known timezones only (Sydney & Switzerland).
@@ -99,7 +99,7 @@ class SchedulerSpec extends OxygeniumFutureSpec with ScalaCheckDrivenPropertyChe
             .toHours is 23
         }
 
-        /** <a href="https://github.com/oxygenium/explorer-backend/issues/335">#335</a>: The
+        /** <a href="https://github.com/oxygenium-network/explorer-backend/issues/335">#335</a>: The
           * following test is invalid for timezones in daylight savings.
           *
           * Restricting this test to run for known timezones only (Sydney & Switzerland).
